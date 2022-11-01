@@ -1,0 +1,29 @@
+body {
+  width: 90%;
+  margin: 30px auto;
+  font-family: Georgia, sans-serif, arial;
+  font-size: 12pt;
+  background-color: rgb(253,253,247);
+}
+
+p{
+    line-height: 30px;
+}
+
+.container{
+    margin-top : 2em;
+    margin-bottom : 2em;
+    margin-left : 5em;
+    margin-right : 3em;
+    padding : 2em;
+    background-color: white;
+    box-shadow: 2px 2px 8px 4px #222;
+}
+
+
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
