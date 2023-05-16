@@ -183,3 +183,8 @@ ul.publicationlist > li, ol.publicationlist > li{
     padding-left: 1em;
     padding-bottom: 1em;
 }
+
+table {
+  border-spacing: 15px 0px;
+  margin: 0px -15px;
+}
