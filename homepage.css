@@ -201,6 +201,43 @@ table {
 .areaheadline{
     font-size: 110%;  
 }
+
 .potentialprojects{
+    font-size: 110%;
+}
+.quicknote{
  font-size: 110%;  
+}
+
+
+
+
+.accordionbackup {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
+
+.accordion {
+  color: #444;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.active, .accordion:hover {
+  background-color: #ccc; 
+}
+
+.panel {
+  padding: 0 18px;
+  display: none;
+  background-color: white;
+  overflow: hidden;
 }

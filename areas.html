@@ -37,7 +37,7 @@
   <hr style="height: 2px; width: 100%;">
 </div>
 
-<p class="areaheadline"><b>Quick Note:</b> This page presents a short summary of my recent research directions. At the end of each section, I list some of the projects that I am currently working on, or potential projects I am going to explore. Happy to chat more if you are perspective students who are interested in working on these projects. <p>
+<p class="quicknote"><b>Quick Note:</b> This page presents a short summary of my recent research directions. At the end of each section, I list some of the projects that I am currently working on, or potential projects I am going to explore. Happy to chat more if you are perspective students who are interested in working on these projects. <p>
 
 <h2>Overview</h2>
 <p class="researchstatement">
@@ -50,6 +50,65 @@ are crucial for security goals, because they can show that no attack (with assum
 
 My research approach is to investigate sound, powerful, and pragmatic formal reasoning techniques for safety and security properties, and develop efficient enforcement mechanisms of these properties in constructing practical systems
 </p>
+
+
+<!-- divider  -->
+
+<h2>Security Analysis for Cyber-Physical Systems</h2>
+
+<p class="areadesc">
+  A major piece of my research is to develop fundamental concepts and methodologies for secure design and implementation of Cyber-Physical Systems (CPSs). CPSs, which interact continuously with the physical world, raise significant challenges for formal methods. Security and privacy models for CPSs have to be aware of the interaction between software systems and physical dynamics; enforcement of security properties requires us to go significantly beyond the state-of-the-art in the CPSs area.
+
+  I introduce frameworks for modeling and analyzing attacks on CPSs. The frameworks often introduce a threat model of attacks, formalization of security properties, and techniques developed for reasoning with the security properties.  
+</p>
+
+<div class="areapub">
+  <b class="areadesc">Relevant Publications</b>
+
+  <ul>
+
+    <li><a name="ChongLMTX2023" id="ChongLMTX2023"></a><span class="pubtitle">Quantitative Robustness Analysis of Sensor Attacks on Cyber-Physical Systems</span><br>
+  <span class="pubauthors">Stephen&nbsp;Chong, Ruggero&nbsp;Lanotte, Massimo&nbsp;Merro, Simone&nbsp;Tini, and Jian&nbsp;Xiang</span>. (all equal contributions)<br>
+  <span class="booktitle">Proceedings of the 26th ACM International Conference on Hybrid Systems: Computation and Control</span> (HSCC), May&nbsp;2023.<br>
+  [&nbsp;
+  <a href="./abstracts/HSCC2023.html" class="publink">Abstract</a>&nbsp;|&nbsp;
+  <a href="./pub/HSCC23.pdf" class="publink">PDF</a>&nbsp;|&nbsp; 
+  <a href="./bib/HSCC2023.bib" class="publink" >BibTeX</a>&nbsp;
+  ]
+</li>
+
+    
+   <li><a name="XiangFC2021" id="XiangFC2021">
+</a><span class="pubtitle">Relational Analysis of Sensor Attacks on Cyber-Physical Systems</span>
+<br>
+  <span class="pubauthors">Jian&nbsp;Xiang, Nathan&nbsp;Fulton, and Stephen&nbsp;Chong</span>.<br>
+  <span class="booktitle">Proceedings of the 34th IEEE Computer Security Foundations Symposium</span> (CSF), June&nbsp;2021.<br>
+  [&nbsp;
+  <a href="./abstracts/XiangFC2021.html"class="publink">Abstract</a>&nbsp;|&nbsp;
+  <a href="./pub/csf21.pdf" class="publink">PDF</a>&nbsp;|&nbsp;
+  <a href="./bib/csf2021.bib" class="publink">BibTeX</a>&nbsp;]
+   </li>
+
+   
+  </ul>
+
+<div class="potentialprojects">
+  <b>Ongoing / Potential Projects</b>
+
+  <ul> 
+   <li>Reasoning techniques, e.g., relational reasoning, for physical dynamics, e.g., ODE</li>
+   <li>Formal models of CPSs and their security properties </li>
+   <li>Correct-by-construction for implementations of CPS models  </li>
+   <li>Secure-by-construction for implementations of CPS models  </li>
+   <li>Build CPSs implementations with both security and performance guarantees </li>
+  </ul>
+
+</div>
+  
+  
+</div>
+
+<!--divider-->
 
 <h2>Language-based Approaches for Application Security</h2>
 
@@ -65,7 +124,7 @@ My research approach is to investigate sound, powerful, and pragmatic formal rea
 </div> </br -->
 
 <div class="areadesc">
-  One major piece of my research uses abstractions from programming languages to specify and enforce security properties, such as secure information flow, in software systems. The correctness and security of applications often rely on correctly enforcing appropriate restrictions on sensitive information. 
+  Another piece of my research uses abstractions from programming languages to specify and enforce security properties, such as secure information flow, in software systems. The correctness and security of applications often rely on correctly enforcing appropriate restrictions on sensitive information. 
   The main challenge is finding the right abstractions to enable formal methods for security, in particular, abstractions to present to the programmers, e.g., useful sets of formally defined, composable, verifiable, and high performance security primitives.
 
   <!-- Increasingly sophisticated and mature language techniques are becoming available to track and control the use of sensitive information in applications.
@@ -101,54 +160,9 @@ However, these information-flow control (IFC) techniques are often burdensome an
    <li>Runtime enforcement mechanisms for relational or hyper properties </li>
    <li>Interesting language-based abstractions or mechanisms... </li>
   </ul>
-
 </div>
 
 
-</div>
-
-
-<!-- divider  -->
-
-<h2>Security Analysis for Cyber-Physical Systems</h2>
-
-<p class="areadesc">
-  Another piece of my research is to develop fundamental concepts and methodologies for secure design and implementation of Cyber-Physical Systems (CPSs). CPSs, which interact continuously with the physical world, raise significant challenges for formal methods. Security and privacy models for CPSs have to be aware of the interaction between software systems and physical dynamics; enforcement of security properties requires us to go significantly beyond the state-of-the-art in the CPSs area.
-
-  I introduce frameworks for modeling and analyzing attacks on CPSs. The frameworks often introduce a threat model of attacks, formalization of security properties, and techniques developed for reasoning with the security properties.  
-</p>
-
-<div class="areapub">
-  <b class="areadesc">Relevant Publications</b>
-
-  <ul>
-
-    <li><a name="ChongLMTX2023" id="ChongLMTX2023"></a><span class="pubtitle">Quantitative Robustness Analysis of Sensor Attacks on Cyber-Physical Systems</span><br>
-  <span class="pubauthors">Stephen&nbsp;Chong, Ruggero&nbsp;Lanotte, Massimo&nbsp;Merro, Simone&nbsp;Tini, and Jian&nbsp;Xiang</span>. (all equal contributions)<br>
-  <span class="booktitle">Proceedings of the 26th ACM International Conference on Hybrid Systems: Computation and Control</span> (HSCC), May&nbsp;2023.<br>
-  [&nbsp;
-  <a href="./abstracts/HSCC2023.html" class="publink">Abstract</a>&nbsp;|&nbsp;
-  <a href="./pub/HSCC23.pdf" class="publink">PDF</a>&nbsp;|&nbsp; 
-  <a href="./bib/HSCC2023.bib" class="publink" >BibTeX</a>&nbsp;
-  ]
-</li>
-
-    
-   <li><a name="XiangFC2021" id="XiangFC2021">
-</a><span class="pubtitle">Relational Analysis of Sensor Attacks on Cyber-Physical Systems</span>
-<br>
-  <span class="pubauthors">Jian&nbsp;Xiang, Nathan&nbsp;Fulton, and Stephen&nbsp;Chong</span>.<br>
-  <span class="booktitle">Proceedings of the 34th IEEE Computer Security Foundations Symposium</span> (CSF), June&nbsp;2021.<br>
-  [&nbsp;
-  <a href="./abstracts/XiangFC2021.html"class="publink">Abstract</a>&nbsp;|&nbsp;
-  <a href="./pub/csf21.pdf" class="publink">PDF</a>&nbsp;|&nbsp;
-  <a href="./bib/csf2021.bib" class="publink">BibTeX</a>&nbsp;]
-   </li>
-
-   
-  </ul>
-
-  
 </div>
 
 
@@ -209,13 +223,70 @@ The interpreted formalism provides a framework for analyzing the consistency of 
 
   </ul>
 
+
+<div class="potentialprojects">
+  <b>Ongoing / Potential Projects</b>
+
+  <ul> 
+   <li>Automated mining of specifications for semantic type checking</li>
+   <li>Automated checking of units of measurement </li>
+   <li>Building / mining Libraries of semantics types and type rules</li>
+   <li>
+     <botton class="accordion">Section 1</botton>
+     <div class="panel">
+       <p>part one </p>
+     </div>
+   </li>
+  </ul>
+
+</div>
+
   
+</div>  
 </div>
 
 
 
 
-  
+
+
+
+
+<h2>Accordion</h2>
+
+<button class="accordion">Section 1</button>
+<div class="panel">
+  <p>part one </p>
 </div>
+
+<button class="accordion">Section 2</button>
+<div class="panel">
+  <p>part two </p>
+</div>
+
+<button class="accordion">Section 3</button>
+<div class="panel">
+  <p>part three</p>
+</div>
+
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+</script>
+
+
+
 </body>
 </html>
