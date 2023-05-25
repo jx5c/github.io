@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8">
+	<title>Jian Xiang</title>
+	<link href="./homepage.css" rel="stylesheet" type="text/css" />
+	<link href="img/smile.icon.png" rel="shortcut icon" />
+</head>
+<body>
+<div class="container">
+
+
+  
+<h1>Research Directions</h1>
+    <div class="navbar">
+      <hr style="height: 2px; width: 100%;">
+      <table style="text-align: left; margin-left: auto; margin-right: auto;" border="0" cellpadding="0" cellspacing="0">
+	<tbody><tr align="center">
+    	        <td width="10%">
+		  <a href="./index.html">Home</a> 
+		</td>
+    	        <td width="10%">
+		  <a href="./publications.html">Publications</a> 
+		</td>
+    	        <td width="10%">
+		  <a href="./teaching.html">Teaching</a> 
+		</td>
+    	        <td width="10%">
+		  <a href="./resources.html">Resources</a> 
+		</td>
+    	        </td>
+    	        <td width="10%">
+		  <a href="./contact.html">Contact</a> 
+		</td>
+</tr>
+</tbody>
+</table>
+  <hr style="height: 2px; width: 100%;">
+</div>
+
+<p class="areaheadline"><b>Quick Note:</b> This page presents a short summary of my recent research directions. At the end of each section, I list some of the projects that I am currently working on, or potential projects I am going to explore. Happy to chat more if you are perspective students who are interested in working on these projects. <p>
+
+<h2>Overview</h2>
+<p class="researchstatement">
+The primary goal of my research is to advance the state of the art of formal methods for correctness and security
+of computer systems, especially cyber-physical systems (CPSs), and to develop tools and techniques to help construct
+systems that are correct and secure. Many computer systems are safety and security critical. Systematic, correct, and
+secure system design and implementation are urgently needed, and I believe that rigorous formal methods are essential
+for substantial improvements. They enable reasoning from logical or mathematical specifications of the behaviors of computer systems and offer rigorous proofs that all system behaviors meet some desirable properties. Formal methods
+are crucial for security goals, because they can show that no attack (with assumptions) will cause a system to misbehave.
+
+My research approach is to investigate sound, powerful, and pragmatic formal reasoning techniques for safety and security properties, and develop efficient enforcement mechanisms of these properties in constructing practical systems
+</p>
+
+<h2>Language-based Approaches for Application Security</h2>
+
+<div class="areasection">
+<!-- div class="areatitle">
+  <a >ITIS 6200 / 8200: Principles of Information Security and Privacy</a>
+</div> </br -->
+
+
+
+<!--div class="classterm">
+<b>Term</b>: 2023 Fall
+</div> </br -->
+
+<div class="areadesc">
+  One major piece of my research uses abstractions from programming languages to specify and enforce security properties, such as secure information flow, in software systems. The correctness and security of applications often rely on correctly enforcing appropriate restrictions on sensitive information. 
+  The main challenge is finding the right abstractions to enable formal methods for security, in particular, abstractions to present to the programmers, e.g., useful sets of formally defined, composable, verifiable, and high performance security primitives.
+
+  <!-- Increasingly sophisticated and mature language techniques are becoming available to track and control the use of sensitive information in applications.
+However, these information-flow control (IFC) techniques are often burdensome and invasive, requiring an application programmer to provide many security annotations or to adapt the program design to conform to the enforcement mechanism -->
+</div>  
+
+<div class="areapub">
+  </br>
+  <b class="areadesc">Relevant Publications</b>
+
+  <ul> 
+   <li><a name="XiangC2021" id="XiangC2021"></a><span class="pubtitle">Co-Inflow: Coarse-grained Information Flow Control for Java-like Languages</span><br>
+  <span class="pubauthors">Jian&nbsp;Xiang and Stephen&nbsp;Chong</span>.<br>
+  <span class="booktitle">Proceedings of the 42nd IEEE Symposium on Security and Privacy</span> (Oakland), May&nbsp;2021.<br>
+  [&nbsp;
+  <a href="./abstracts/XiangC2021.html" class="publink">Abstract</a>&nbsp;|&nbsp; 
+  <a href="./pub/SP21.pdf" class="publink">PDF</a>&nbsp;|&nbsp;
+  <a href="https://github.com/HarvardPL/Co-InflowPrototype" class="publink">Implementation</a>&nbsp;|&nbsp;
+  <a href="https://github.com/HarvardPL/CIFC" class="publink">Coq formalization</a>&nbsp;|&nbsp;
+  <a href="./bib/oakland2021.bib">BibTeX</a>&nbsp;]
+</li>
+  </ul>
+
+</div>
+
+<div class="potentialprojects">
+  <b>Ongoing / Potential Projects</b>
+
+  <ul> 
+   <li>Better exception handling for Co-Inflow</li>
+   <li>Information-flow analysis for different programming languages, e.g., Rust</li>
+   <li>Language extensions / abstractions for reasoning with relational or hyper properties </li>
+   <li>Runtime enforcement mechanisms for relational or hyper properties </li>
+   <li>Interesting language-based abstractions or mechanisms... </li>
+  </ul>
+
+</div>
+
+
+</div>
+
+
+<!-- divider  -->
+
+<h2>Security Analysis for Cyber-Physical Systems</h2>
+
+<p class="areadesc">
+  Another piece of my research is to develop fundamental concepts and methodologies for secure design and implementation of Cyber-Physical Systems (CPSs). CPSs, which interact continuously with the physical world, raise significant challenges for formal methods. Security and privacy models for CPSs have to be aware of the interaction between software systems and physical dynamics; enforcement of security properties requires us to go significantly beyond the state-of-the-art in the CPSs area.
+
+  I introduce frameworks for modeling and analyzing attacks on CPSs. The frameworks often introduce a threat model of attacks, formalization of security properties, and techniques developed for reasoning with the security properties.  
+</p>
+
+<div class="areapub">
+  <b class="areadesc">Relevant Publications</b>
+
+  <ul>
+
+    <li><a name="ChongLMTX2023" id="ChongLMTX2023"></a><span class="pubtitle">Quantitative Robustness Analysis of Sensor Attacks on Cyber-Physical Systems</span><br>
+  <span class="pubauthors">Stephen&nbsp;Chong, Ruggero&nbsp;Lanotte, Massimo&nbsp;Merro, Simone&nbsp;Tini, and Jian&nbsp;Xiang</span>. (all equal contributions)<br>
+  <span class="booktitle">Proceedings of the 26th ACM International Conference on Hybrid Systems: Computation and Control</span> (HSCC), May&nbsp;2023.<br>
+  [&nbsp;
+  <a href="./abstracts/HSCC2023.html" class="publink">Abstract</a>&nbsp;|&nbsp;
+  <a href="./pub/HSCC23.pdf" class="publink">PDF</a>&nbsp;|&nbsp; 
+  <a href="./bib/HSCC2023.bib" class="publink" >BibTeX</a>&nbsp;
+  ]
+</li>
+
+    
+   <li><a name="XiangFC2021" id="XiangFC2021">
+</a><span class="pubtitle">Relational Analysis of Sensor Attacks on Cyber-Physical Systems</span>
+<br>
+  <span class="pubauthors">Jian&nbsp;Xiang, Nathan&nbsp;Fulton, and Stephen&nbsp;Chong</span>.<br>
+  <span class="booktitle">Proceedings of the 34th IEEE Computer Security Foundations Symposium</span> (CSF), June&nbsp;2021.<br>
+  [&nbsp;
+  <a href="./abstracts/XiangFC2021.html"class="publink">Abstract</a>&nbsp;|&nbsp;
+  <a href="./pub/csf21.pdf" class="publink">PDF</a>&nbsp;|&nbsp;
+  <a href="./bib/csf2021.bib" class="publink">BibTeX</a>&nbsp;]
+   </li>
+
+   
+  </ul>
+
+  
+</div>
+
+
+<!-- divider  -->
+
+<h2>System Assurance vis Real-World Semantics</h2>
+
+<p  class="areadesc">
+ One of my research directions focuses on the dependability of systems, by investigating a very general and comprehensive approach for enforcing safety and security constraints in computer systems like CPSs.
+It focuses on specifying and analyzing constraints that derive from the physical world through enriched specifications and enhanced error-checking techniques. Systems like CPSs interact with the real world in order to sense and affect it.
+ They should obey rules inherited from the real world, e.g., laws of physics. <!--However, important characteristics of real-world entities and their relationship to machine-world representations are often under-specified. As a result, constraints inherited from the real world are stated and enforced either in ad-hoc ways or not at all. -->
+
+ To enforce these constraints, I develop rich semantic types and type systems to analyze the consistency of software logic with the real-world entities with which the logic interacts. 
+ 
+<!-- I believe the problem can be fixed by an explicitly and rigorously documented interpretation, which can be in the forms of documents, structured data, and knowledge base. With such an interpretation, important characteristics of real-world entities and the associated real-world constraints can be clearly defined, and the real-world constraints that the interpretation exposes can be checked automatically. I introduce a new structure, the interpreted formalism, that combines: (a) the logic of the computation, i.e., the traditional notion of software, with (b) the interpretation of the logic, i.e., an explicit representation of the correspondence of software elements with the real world.
+The interpreted formalism provides a framework for analyzing the consistency of software logic with the real-world entities with which the logic interacts.  -->
+</p>
+
+  <div class="areapub">
+  <b  class="areadesc">Relevant Publications</b>
+
+  <ul> 
+<li><a name="HASE2017" id="HASE2017">
+</a><span class="pubtitle">Is My Software Consistent With the Real World?</span>
+<br>
+  <span class="pubauthors">Jian&nbsp;Xiang, John&nbsp;Knight, and Kevin&nbsp;Sullivan</span>.<br>
+  <span class="booktitle">Proceedings of the 18th IEEE Symposium on High Assurance Systems Engineering</span> (HASE), &nbsp;2017.<br>
+  [&nbsp;
+  <a href="./abstracts/HASE2017.html"class="publink">Abstract</a>&nbsp;|&nbsp;
+  <a href="./pub/HASE17.pdf" class="publink">PDF</a>&nbsp;|&nbsp;
+  <a href="./bib/HASE2017.bib" class="publink">BibTeX</a>&nbsp;]
+</li>
+
+
+<li><a name="HASE2016" id="HASE2016">
+</a><span class="pubtitle">Synthesis of Logic Interpretation</span>
+<br>
+  <span class="pubauthors">Jian&nbsp;Xiang, John&nbsp;Knight, and Kevin&nbsp;Sullivan</span>.<br>
+  <span class="booktitle">Proceedings of the 17th IEEE Symposium on High Assurance Systems Engineering</span> (HASE), &nbsp;2016.<br>
+  [&nbsp;
+  <a href="./abstracts/HASE2016.html"class="publink">Abstract</a>&nbsp;|&nbsp;
+  <a href="./pub/HASE16.pdf" class="publink">PDF</a>&nbsp;|&nbsp;
+  <a href="./bib/HASE2016.bib" class="publink">BibTeX</a>&nbsp;]
+</li>
+
+
+
+<li><a name="SAFECOMP15" id="SAFECOMP2015">
+</a><span class="pubtitle">Real-World Types and Their Application</span>
+<br>
+  <span class="pubauthors">Jian&nbsp;Xiang, John&nbsp;Knight, and Kevin&nbsp;Sullivan</span>.<br>
+  <span class="booktitle">Proceedings of the 34th Conference on Computer Safety, Reliability and Security</span> (SAFECOMP), &nbsp;2015.<br>
+  [&nbsp;
+  <a href="./abstracts/SAFECOMP2015.html"class="publink">Abstract</a>&nbsp;|&nbsp;
+  <a href="./pub/safecomp15.pdf" class="publink">PDF</a>&nbsp;|&nbsp;
+  <a href="./bib/safecomp2015.bib" class="publink">BibTeX</a>&nbsp;]
+</li>
+
+  </ul>
+
+  
+</div>
+
+
+
+
+  
+</div>
+</body>
+</html>
