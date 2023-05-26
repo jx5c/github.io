@@ -120,8 +120,8 @@ ul.publicationlist > li, ol.publicationlist > li{
     text-align: center;
     margin-top : 3em;
     margin-bottom : 3em;
-    margin-left : 8em;
-    margin-right : 8em;
+    margin-left : 2em;
+    margin-right : 2em;
 }
 .abstract .pubtitle {
     font-size: 200%;    
