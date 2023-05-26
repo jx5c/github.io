@@ -23,6 +23,7 @@ h2{
    font-family:tahoma, geneva, sans-serif;
 }
 
+
 p{
     line-height: 30px;
 }
@@ -85,7 +86,7 @@ p.faq-answer {
 
 
 a {
-  text-decoration: none;
+    text-decoration: none;
 }
 a:hover {
   text-decoration: underline;
@@ -97,7 +98,7 @@ ul, ol {
     margin-top: 0em;
     margin-left: 2em;
     padding-left: 0em;
-    margin-right: 2em;  
+    margin-right: 2em;
 }
 
 ul.publicationlist > li, ol.publicationlist > li{
@@ -192,21 +193,21 @@ table {
 
 
 .researchstatement {
-    font-size: 110%;  
+    font-size: 100%;  
 }
 
 .areadesc{
-    font-size: 110%;  
+    font-size: 100%;  
 }
 .areaheadline{
-    font-size: 110%;  
+    font-size: 100%;  
 }
 
 .potentialprojects{
-    font-size: 110%;
+    font-size: 100%;
 }
 .quicknote{
- font-size: 110%;  
+ font-size: 100%;  
 }
 
 
