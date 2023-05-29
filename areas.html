@@ -96,11 +96,45 @@ My research approach is to investigate sound, powerful, and pragmatic formal rea
   <b>Ongoing / Potential Projects</b>
 
   <ul> 
-   <li>Reasoning techniques, e.g., relational reasoning, for physical dynamics, e.g., ODE</li>
-   <li>Formal models of CPSs and their security properties </li>
-   <li>Correct-by-construction for implementations of CPS models  </li>
-   <li>Secure-by-construction for implementations of CPS models  </li>
-   <li>Build CPSs implementations with both security and performance guarantees </li>
+    <li>
+      <botton class="accordion">Specifying and verifying security properties of CPSs</botton>
+      <div class="panel">
+        <p>Express and verify security properties within formal models of CPSs. Develop extensions of formal logics to specify security properties, and develop algorithms to verify these properties. Some examples include compositional modeling and reasoning, specification-based testing, and proof techniques for relational or hyper properties.
+        </p>
+      </div>
+    </li>
+
+    <li>
+      <botton class="accordion">Reasoning techniques for physical dynamics</botton>
+      <div class="panel">
+        <p>Develop techniques to reason with dynamics of CPSs, i.e., differential equations (ODEs). Some examples include proving relational properties, e.g., robustness, of ODE, and sensitivity analysis of ODEs. 
+        </p>
+      </div>
+     </li>
+    
+    <li>
+      <botton class="accordion">Formal models of CPSs and their security properties</botton>
+      <div class="panel">
+        <p>Develop formal models of CPSs and their security properties with different formalisms of interests. For example, develop formal models of industrial robotic arms and their security requirements.     
+        </p>
+      </div>
+    </li>
+   <!--li>Correct-by-construction for implementations of CPS models  </li-->
+    <li>
+    <botton class="accordion">Secure-by-construction for implementations of CPS models</botton>
+      <div class="panel">
+        <p>Build verified pipelines that automatically transform high-level models of CPSs to controller executables, where the transformation preserves security properties verified at high-level models. This is a very challenging but also very interesting project.     
+        </p>
+      </div>
+    </li>        
+    <li>
+      <botton class="accordion">Build CPSs implementations with both security and performance guarantees</botton>
+      <div class="panel">
+        <p>Integrate system modeling, analysis, and synthesis of runtime enforcement into the development of CPSs, to provide security guarantees as well as performance guarantees. Some examples include framework to make tradeoff between security and performance, developing efficient security enforcement mechanisms for CPSs, and instrumenting state-or-art controllers with runtime security mechanisms.  
+        </p>
+      </div>
+    </li>     
+
   </ul>
 
 </div>
@@ -153,12 +187,48 @@ However, these information-flow control (IFC) techniques are often burdensome an
 <div class="potentialprojects">
   <b>Ongoing / Potential Projects</b>
 
-  <ul> 
-   <li>Better exception handling for Co-Inflow</li>
-   <li>Information-flow analysis for different programming languages, e.g., Rust</li>
-   <li>Language extensions / abstractions for reasoning with relational or hyper properties </li>
-   <li>Runtime enforcement mechanisms for relational or hyper properties </li>
-   <li>Interesting language-based abstractions or mechanisms... </li>
+  <ul>
+
+    <li>
+      <botton class="accordion">Better exception handling for Co-Inflow</botton>
+      <div class="panel">
+        <p>A follow-up work of Co-Inflow: develop sound exception handling mechanisms for Co-Inflow.   
+        </p>
+      </div>
+    </li>
+    <li>
+      <botton class="accordion">Information-flow analysis for programming languages</botton>
+      <div class="panel">
+        <p>Develop IFC mechanisms for different programming languages, e.g., Rust. Identify language abstractions that are suitable for information flow tracking, and develop mechanisms to enforce IFC policies. Common examples include secure type systems and coarse-grained dynamic analysis for a particular language.  
+        </p>
+      </div>
+    </li>
+
+     <li>
+      <botton class="accordion">Language extensions for reasoning with security properties</botton>
+      <div class="panel">
+        <p>Develop extensions of programming languages or formal logics to specify and reason with relational properties or hyperproperties.   
+        </p>
+      </div>
+     </li>
+
+    <li>
+      <botton class="accordion">Runtime enforcement mechanisms for security properties</botton>
+      <div class="panel">
+        <p>Develop efficient runtime mechanisms, e.g.,  monitors, to enforce relational or hyper properties within applications.    
+        </p>
+      </div>
+    </li>
+
+        
+   
+    <li>
+      <botton class="accordion">Interesting language-based abstractions or mechanisms...</botton>
+      <div class="panel">
+        <p>Interesting language abstractions that may be suitable for specify and/or verify security properties. 
+        </p>
+      </div>
+    </li>
   </ul>
 </div>
 
@@ -221,6 +291,15 @@ The interpreted formalism provides a framework for analyzing the consistency of 
   <a href="./bib/safecomp2015.bib" class="publink">BibTeX</a>&nbsp;]
 </li>
 
+<li><a name="bookchapter15" id="bookchapter15">
+</a><span class="pubtitle">A Rigorous Definition of Cyber-Physical Systems</span>
+<br>
+  <span class="pubauthors">John&nbsp;Knight, Jian&nbsp;Xiang, and Kevin&nbsp;Sullivan</span>.<br>
+  <span class="booktitle">Trustworthy Cyber-Physical Systems</span>. (Chapman and Hall/CRC), &nbsp;2016.<br>
+  [&nbsp;
+  <a href="./bib/bookchapter15.bib" class="publink">BibTeX</a>&nbsp;]
+</li>
+
   </ul>
 
 
@@ -228,15 +307,22 @@ The interpreted formalism provides a framework for analyzing the consistency of 
   <b>Ongoing / Potential Projects</b>
 
   <ul> 
-   <li>Automated mining of specifications for semantic type checking</li>
-   <li>Automated checking of units of measurement </li>
-   <li>Building / mining Libraries of semantics types and type rules</li>
    <li>
-     <botton class="accordion">Section 1</botton>
-     <div class="panel">
-       <p>part one </p>
-     </div>
+      <botton class="accordion">Automated mining of specifications for semantic type checking</botton>
+      <div class="panel">
+        <p>Using data-driven techniques to automatically mine specifications, i.e., rich semantic types and type rules, for an application domain of interest, e.g., geographic system. This can also help build libraries of rich semantic types and type rules for a particular application domain. 
+        </p>
+      </div>
    </li>
+   
+   <li>
+      <botton class="accordion">Automated checking of units of measurement</botton>
+      <div class="panel">
+        <p>Checking units consistency is a special kind of type checking. Develop mechanisms to automatically find units of measurement and check their consistency for software applications.
+        </p>
+      </div>
+   </li>
+
   </ul>
 
 </div>
@@ -246,28 +332,6 @@ The interpreted formalism provides a framework for analyzing the consistency of 
 </div>
 
 
-
-
-
-
-
-
-<h2>Accordion</h2>
-
-<button class="accordion">Section 1</button>
-<div class="panel">
-  <p>part one </p>
-</div>
-
-<button class="accordion">Section 2</button>
-<div class="panel">
-  <p>part two </p>
-</div>
-
-<button class="accordion">Section 3</button>
-<div class="panel">
-  <p>part three</p>
-</div>
 
 <script>
 var acc = document.getElementsByClassName("accordion");
@@ -285,7 +349,6 @@ for (i = 0; i < acc.length; i++) {
   });
 }
 </script>
-
 
 
 </body>
