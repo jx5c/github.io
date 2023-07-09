@@ -1,0 +1,244 @@
+
+
+body {
+  width: 95%;
+  margin: 10px auto;
+  font-family:  Palatino, Garamond, Times, serif;
+  font-weight: normal;
+  font-size: 18pt;
+  background-color: rgb(253,253,247);
+}
+
+
+h1 {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 250%;
+    padding:0em;
+    margin: 0em;
+}
+.publicationnav
+
+h2 {
+    font-size: 120%;
+}
+
+
+p{
+    line-height: 30px;
+}
+
+
+.navbar {
+    font-size: 100%;
+    line-height: 90%;
+}
+.navbar a {
+    font-size: 110%;
+    line-height: 90%;
+}
+.navbar table {
+    width:75%;
+}
+
+.indent {
+    margin-left: 2em;
+    margin-right: 2em;
+}
+.bigindent {
+    margin-left: 4em;
+    margin-right: 2em;
+}
+p.firstpara {
+    margin-left: 2em;
+    margin-right: 2em;
+    margin-top: 0em;
+}
+
+p.tightpara {
+    margin-left: 2em;
+    margin-right: 2em;
+    margin-top: 0em;
+    margin-bottom: 0em;
+}
+
+p.faq-question {
+    margin-right: 2em;
+    font-weight: bold;
+    padding: 0px;
+    margin-bottom: 0px;
+}
+p.faq-answer {
+    margin-left: 2em;
+    margin-right: 2em;
+    margin-top: 0em;
+}
+
+.container{
+    margin-top : 2em;
+    margin-bottom : 2em;
+    margin-left : 10em;
+    margin-right : 10em;
+    padding : 3em;
+    background-color: white;
+    box-shadow: 2px 2px 8px 4px #222;
+}
+
+
+a {
+    text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+
+
+ul, ol {
+    margin-top: 0em;
+    margin-left: 2em;
+    padding-left: 0em;
+    margin-right: 2em;
+}
+
+ul.publicationlist > li, ol.publicationlist > li{
+    margin-bottom: 1.5em;
+}
+
+.pubtitle {
+    font-size: 110%;
+}
+.booktitle, .journaltitle {
+    font-style: italic;
+}
+.publink {
+}
+.pubnote {
+    font-size: 90%;
+}
+
+.abstract {
+    text-align: center;
+    margin-top : 3em;
+    margin-bottom : 3em;
+    margin-left : 2em;
+    margin-right : 2em;
+}
+.abstract .pubtitle {
+    font-size: 200%;
+}
+
+.abstract .pubauthors {
+    font-size: 160%;
+    margin-top : 1em;
+    margin-bottom : 1em;
+}
+.abstract .abstractheader {
+    font-weight: bold;
+    font-size: 100%;
+    text-align: center;
+    margin-top : 3em;
+    margin-left : 8em;
+    margin-right : 8em;
+}
+.abstract .abstracttext {
+    font-size: 100%;
+    text-align: justify;
+    text-justify:inter-word;
+}
+.abstract .pubnote {
+    font-size: 90%;
+    font-style: italic;
+    margin-top : 0em;
+    margin-bottom : 0em;
+}
+
+.abstract p.firstpara {
+    margin-left: 0em;
+    margin-right: 0em;
+    margin-top: 0em;
+}
+
+
+.recentpublicationlist .pubtitle {
+    font-weight: normal;
+    font-style: italic;
+    font-size: 100%;
+}
+
+.recentpublicationlist .pubauthors {
+    font-size: 90%;
+}
+
+.contactinfo {
+    font-size: 90%;
+}
+
+.contactdetails td {
+    vertical-align: top;
+}
+.contactdetails table {
+    padding-left: 4em;
+}
+.contactdetails td {
+    padding-left: 1em;
+    padding-bottom: 1em;
+}
+
+table {
+  border-spacing: 15px 0px;
+  margin: 0px -15px;
+}
+
+
+
+.researchstatement {
+    font-size: 100%;
+}
+
+.areadesc{
+    font-size: 100%;
+}
+.areaheadline{
+    font-size: 100%;
+}
+
+.potentialprojects{
+    font-size: 100%;
+}
+.quicknote{
+ font-size: 100%;
+}
+
+
+
+
+.accordionbackup {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
+
+.accordion {
+  color: #0000FF;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.active, .accordion:hover {
+  background-color: #ccc;
+}
+
+.panel {
+  padding: 0 18px;
+  display: none;
+  background-color: white;
+  overflow: hidden;
+}
