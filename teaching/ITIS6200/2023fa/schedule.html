@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8">
 	<title>ITIS 6200/8200 UNC Charlotte</title>
-	<!--link href="../../../homepage.css" rel="stylesheet" type="text/css" /-->
+	<link href="./course.css" rel="stylesheet" type="text/css" />
 	<!--link href="../../../img/smile.icon.png" rel="shortcut icon" /-->
 	<link href="../../../homepage.css" rel="stylesheet" type="text/css" />
 <!-- Google tag (gtag.js) -->
@@ -20,131 +20,313 @@
 
 <body>
 <div class="container">
+	<div id="nav"></div>
 
-<h1>ITIS 6200 / 8200: Principles of Information Security and Privacy</h1>
-<!--Navigation bar-->
-<div id="nav"> </div>
+	      <div class="content">
 
-<!-- reuse this div for every page -->
-<!--end of Navigation bar-->
-
-<p>&nbsp;</p>
-
-
-  <div class="content">
-	<h2><a name="description"></a>Announcements</h2>
-	<!-- <ul>
-	     <li><a href="http://url.seas.harvard.edu/cs152feedback">Submit anonymous feedback</a> at any time during the semester.
-	     <ul> -->
-
-	<li> coming soon ...  </li>
-	</ul>
-
-	<h2><a name="description">
-	</a>Course information</h2>
-	<p>This course is an introduction to fundamental concepts of security. Common topics include: security concepts and mechanisms; security technologies; authentication mechanisms; mandatory and discretionary controls; basic cryptography and its applications; database security, intrusion detection and prevention; assurance requirement, assurance class, evaluation methods and assurance maintenance; anonymity and privacy issues for information systems.
+	<p><b>
+	  NOTE: The current schedule is tentative and subject to change. Nonetheless it gives an idea of the material to be covered in this course.
+	  </b>
+	  The lecture notes are seeded from previous years, and will be updated immediately before and after each lecture.
 	</p>
-	<p>See the <a href="schedule.html">lecture schedule</a> for more detailed information on topics covered.</p>
+	<p>Key to readings: P = Pierce; SF = Software Foundations; M = Mitchell; W = Winskel; K = Krishnamurthi 1st ed.; K2nd = Krishnamurthi 2nd ed.; H = Harper. The <b>readings are not required</b>, but may help your understanding of the lecture material.</p>
+	<p>The lecture notes here contain material from lecture notes
+	     by
+	     Stephen Chong, Nada Amin,
+	     Radu Rugina, Andrew Myers, Nate Foster, Jeff Vaughan, and Christos Dimoulas. </p>
 
-	<h3>Course staff</h3>
+	 <p>Videos of the lecture and section are available on <a href="https://canvas.harvard.edu/courses/116766">Canvas</a>. </p>
 
-	<ul>
-	  <li>Instructor:  <a href="https://jianxiang.info">Jian Xiang</a></li>
-	  <li>Teaching Assistants:
-	    <ul>
-	      <li>First</li>
-	      <li>Second</li>
-	      <li>Third</li>
-	    </ul>
-	  </li>
-	</ul>
-	<p>See <a href="#officehours">below for Office Hours</a>.
+	<p>
+	For background material on sets, relations, functions, and induction, see: W 1, H 2, H Appendix, and/or P 2.
+	</p>
+	      <table class="schedule">
+		<tr>
+		  <th>Lec.</th>
+		  <th>Date</th>
+		  <th>Topic</th>
+		  <th>Readings</th>
+	    <th>Notes</th>
+	    <th>Slides</th>
+	    <th>Code</th>
+	    <th>Assignments</th>
+		</tr>
+	<td colspan="8" class="topicheading">Semantics</td>
+	    <!-- THIS IS AN AUTOMATICALLY GENERATED FILE. DO NOT EDIT. Instead, see file buildWeb.pl -->
+	  	<tr>
+		  <td>1</td><td>Tue 24-Jan</td>
+		  <td>Intro to semantics</td>
+		  <td rowspan="6">P 2.4, 3<br> SF1-Induction,Imp<br> SF2-SmallStep<br> W 2,3,4<br> H 2</td>    <td><a href="lectures/lec01-intro.pdf
+	">PDF</a></td>
+	    <td></td>
+	    <td></td>
+		  <td><a href="https://forms.gle/cbABUPdSME2HWnch8">Assignment 0</a> due Wed Jan 25</td>
+		</tr>
+	    <!-- THIS IS AN AUTOMATICALLY GENERATED FILE. DO NOT EDIT. Instead, see file buildWeb.pl -->
+	  	<tr>
+		  <td>2</td><td>Thu 26-Jan</td>
+		  <td>Small-step semantics</td>
+	    <td><a href="lectures/lec02-smallstep.pdf
+	">PDF</a></td>
+	    <td></td>
+	    <td></td>
+		  <td></td>
+		</tr>
+	    <!-- THIS IS AN AUTOMATICALLY GENERATED FILE. DO NOT EDIT. Instead, see file buildWeb.pl -->
+	  	<tr>
+		  <td>3</td><td>Tue 31-Jan</td>
+		  <td>Induction</td>
+	    <td><a href="lectures/lec03-inductive-proof.pdf
+	">PDF</a></td>
+	    <td></td>
+	    <td></td>
+		  <td>A1 released</td>
+		</tr>
+	    <!-- THIS IS AN AUTOMATICALLY GENERATED FILE. DO NOT EDIT. Instead, see file buildWeb.pl -->
+	  	<tr>
+		  <td>4</td><td>Thu 2-Feb</td>
+		  <td>Large-step semantics</td>
+	    <td><a href="lectures/lec04-largestep.pdf
+	">PDF</a></td>
+	    <td></td>
+	    <td></td>
+		  <td></td>
+		</tr>
+	    <!-- THIS IS AN AUTOMATICALLY GENERATED FILE. DO NOT EDIT. Instead, see file buildWeb.pl -->
+	  	<tr>
+		  <td>5</td><td>Tue 7-Feb</td>
+		  <td>IMP: a simple imperative language</td>
+	    <td><a href="lectures/lec05-imp.pdf
+	">PDF</a></td>
+	    <td></td>
+	    <td></td>
+		  <td></td>
+		</tr>
+	    <!-- THIS IS AN AUTOMATICALLY GENERATED FILE. DO NOT EDIT. Instead, see file buildWeb.pl -->
+	  	<tr>
+		  <td>6</td><td>Thu 9-Feb</td>
+		  <td>Denotational semantics</td>
+	    <td><a href="lectures/lec06-denotational.pdf
+	">PDF</a></td>
+	    <td></td>
+	    <td></td>
+		  <td></td>
+		</tr>
+	<td colspan="8" class="topicheading">Lambda calculus</td>
+	    <!-- THIS IS AN AUTOMATICALLY GENERATED FILE. DO NOT EDIT. Instead, see file buildWeb.pl -->
+	  	<tr>
+		  <td>7</td><td>Tue 14-Feb</td>
+		  <td>Lambda calculus</td>
+		  <td rowspan="2">P 5<br>M 4.2<br>K 22</td>    <td><a href="lectures/lec07-lambdacalc.pdf
+	">PDF</a></td>
+	    <td></td>
+	    <td></td>
+		  <td>A1 due; A2 released</td>
+		</tr>
+	    <!-- THIS IS AN AUTOMATICALLY GENERATED FILE. DO NOT EDIT. Instead, see file buildWeb.pl -->
+	  	<tr>
+		  <td>8</td><td>Thu 16-Feb</td>
+		  <td>Lambda calculus encodings and Recursion</td>
+	    <td><a href="lectures/lec08-encodings.pdf
+	">PDF</a></td>
+	    <td></td>
+	    <td></td>
+		  <td></td>
+		</tr>
+	    <!-- THIS IS AN AUTOMATICALLY GENERATED FILE. DO NOT EDIT. Instead, see file buildWeb.pl -->
+	  	<tr>
+		  <td>9</td><td>Tue 21-Feb</td>
+		  <td>Definitional translations</td>
+		  <td></td>    <td><a href="lectures/lec09-definitional.pdf
+	">PDF</a></td>
+	    <td></td>
+	    <td></td>
+		  <td></td>
+		</tr>
+	    <!-- THIS IS AN AUTOMATICALLY GENERATED FILE. DO NOT EDIT. Instead, see file buildWeb.pl -->
+	  	<tr>
+		  <td>10</td><td>Thu 23-Feb</td>
+		  <td>References and continuations</td>
+		  <td>P 13<br>M 5,4, 8.3.2<br>H 29, 36<br>K 18-20</td>    <td><a href="lectures/lec10-references.pdf
+	">PDF</a></td>
+	    <td></td>
+	    <td></td>
+		  <td></td>
+		</tr>
+	<td colspan="8" class="topicheading">Types</td>
+	    <!-- THIS IS AN AUTOMATICALLY GENERATED FILE. DO NOT EDIT. Instead, see file buildWeb.pl -->
+	  	<tr>
+		  <td>11</td><td>Tue 28-Feb</td>
+		  <td>Simply-typed lambda calculus<br>Type soundness</td>
+		  <td>P 9<br>SF2-Stlc<br>M 6.1, 6.2<br>K 24-26</td>    <td><a href="lectures/lec11-types.pdf
+	">PDF</a></td>
+	    <td></td>
+	    <td></td>
+		  <td>A2 due</td>
+		</tr>
+	    <!-- THIS IS AN AUTOMATICALLY GENERATED FILE. DO NOT EDIT. Instead, see file buildWeb.pl -->
+	  	<tr>
+		  <td>12</td><td>Thu 2-Mar</td>
+		  <td>MID-TERM EXAM (Covers lectures 1-10)</td>
+		  <td></td>    <td></td>
+	    <td></td>
+	    <td></td>
+		  <td>A3 released</td>
+		</tr>
+	    <!-- THIS IS AN AUTOMATICALLY GENERATED FILE. DO NOT EDIT. Instead, see file buildWeb.pl -->
+	  	<tr>
+		  <td>13</td><td>Tue 7-Mar</td>
+		  <td>More types</td>
+		  <td>P 11, 13<br>SF2-Stlc2</td>    <td><a href="lectures/lec13-moretypes.pdf
+	">PDF</a></td>
+	    <td></td>
+	    <td></td>
+		  <td></td>
+		</tr>
+	    <!-- THIS IS AN AUTOMATICALLY GENERATED FILE. DO NOT EDIT. Instead, see file buildWeb.pl -->
+	  	<tr>
+		  <td>14</td><td>Thu 9-Mar</td>
+		  <td>Parameteric Polymorphism, Records and Subtyping</td>
+		  <td>P 23<br>M 6.4<br>P 11.8, 15</td>    <td><a href="lectures/lec14-polymorphism.pdf
+	">PDF</a></td>
+	    <td></td>
+	    <td></td>
+		  <td></td>
+		</tr>
+	<td colspan="8" class="holiday">Spring Recess</td>
+	    <!-- THIS IS AN AUTOMATICALLY GENERATED FILE. DO NOT EDIT. Instead, see file buildWeb.pl -->
+	  	<tr>
+		  <td>15</td><td>Tue 21-Mar</td>
+		  <td>Curry-Howard isomorphism; Existential types</td>
+		  <td>P 9.4<br>SF1-ProofObjects</td>    <td><a href="lectures/lec15-curryhoward.pdf
+	">PDF</a></td>
+	    <td></td>
+	    <td></td>
+		  <td>A4 released</td>
+		</tr>
+	    <!-- THIS IS AN AUTOMATICALLY GENERATED FILE. DO NOT EDIT. Instead, see file buildWeb.pl -->
+	  	<tr>
+		  <td>16</td><td>Thu 23-Mar</td>
+		  <td>Type inference</td>
+		  <td>P 22<br>K 30</td>    <td><a href="lectures/lec16-typeinference.pdf
+	">PDF</a></td>
+	    <td></td>
+	    <td></td>
+		  <td>A3 due</td>
+		</tr>
+	    <!-- THIS IS AN AUTOMATICALLY GENERATED FILE. DO NOT EDIT. Instead, see file buildWeb.pl -->
+	  	<tr>
+		  <td>17</td><td>Tue 28-Mar</td>
+		  <td>Sub-structural type systems</td>
+		  <td></td>    <td><a href="lectures/lec17-substructural.pdf
+	">PDF</a></td>
+	    <td></td>
+	    <td></td>
+		  <td></td>
+		</tr>
+	    <!-- THIS IS AN AUTOMATICALLY GENERATED FILE. DO NOT EDIT. Instead, see file buildWeb.pl -->
+	  	<tr>
+		  <td>18</td><td>Thu 30-Mar</td>
+		  <td>Algebraic structures</td>
+		  <td></td>    <td><a href="lectures/lec18-monads.pdf
+	">PDF</a></td>
+	    <td></td>
+	    <td></td>
+		  <td></td>
+		</tr>
+	<td colspan="8" class="topicheading">Reasoning About Programs</td>
+	    <!-- THIS IS AN AUTOMATICALLY GENERATED FILE. DO NOT EDIT. Instead, see file buildWeb.pl -->
+	  	<tr>
+		  <td>19</td><td>Tue 4-Apr</td>
+		  <td>Axiomatic Semantics and Hoare Logic</td>
+		  <td>SF2-Hoare</td>    <td><a href="lectures/lec19-axiomatic.pdf
+	">PDF</a></td>
+	    <td></td>
+	    <td></td>
+		  <td>A5 released</td>
+		</tr>
+	    <!-- THIS IS AN AUTOMATICALLY GENERATED FILE. DO NOT EDIT. Instead, see file buildWeb.pl -->
+	  	<tr>
+		  <td>20</td><td>Thu 6-Apr</td>
+		  <td>Dependent types</td>
+		  <td></td>    <td><a href="lectures/lec20-dependenttypes.pdf
+	">PDF</a></td>
+	    <td></td>
+	    <td></td>
+		  <td>A4 due</td>
+		</tr>
+	<td colspan="8" class="topicheading">Misc. Topics</td>
+	    <!-- THIS IS AN AUTOMATICALLY GENERATED FILE. DO NOT EDIT. Instead, see file buildWeb.pl -->
+	  	<tr>
+		  <td>21</td><td>Tue 11-Apr</td>
+		  <td>Logic Programming</td>
+		  <td>M 15<br>K32-34</td>    <td><a href="lectures/lec21-logicprogramming.pdf
+	">PDF</a></td>
+	    <td></td>
+	    <td></td>
+		  <td></td>
+		</tr>
+	    <!-- THIS IS AN AUTOMATICALLY GENERATED FILE. DO NOT EDIT. Instead, see file buildWeb.pl -->
+	  	<tr>
+		  <td>22</td><td>Thu 13-Apr</td>
+		  <td>Embedded EthiCS (Guest lecturer: <a href="https://philpeople.org/profiles/michael-pope">Michael Pope</a>)</td>
+		  <td></td>    <td><a href="lectures/lec22-embeth.pdf
+	">PDF</a></td>
+	    <td></td>
+	    <td></td>
+		  <td>A6 released</td>
+		</tr>
+	    <!-- THIS IS AN AUTOMATICALLY GENERATED FILE. DO NOT EDIT. Instead, see file buildWeb.pl -->
+	  	<tr>
+		  <td>23</td><td>Tue 18-Apr</td>
+		  <td>Dynamic Types</td>
+		  <td></td>    <td><a href="lectures/lec23-dynamictypes.pdf
+	">PDF</a></td>
+	    <td></td>
+	    <td></td>
+		  <td></td>
+		</tr>
+	    <!-- THIS IS AN AUTOMATICALLY GENERATED FILE. DO NOT EDIT. Instead, see file buildWeb.pl -->
+	  	<tr>
+		  <td>24</td><td>Thu 20-Apr</td>
+		  <td>Guest lecture: <a href="https://namin.seas.harvard.edu/">Prof. Nada Amin</a></td>
+		  <td></td>    <td></td>
+	    <td></td>
+	    <td></td>
+		  <td>A5 due</td>
+		</tr>
+	    <!-- THIS IS AN AUTOMATICALLY GENERATED FILE. DO NOT EDIT. Instead, see file buildWeb.pl -->
+	  	<tr>
+		  <td>25</td><td>Tue 25-Apr</td>
+		  <td>Issues in language design</td>
+		  <td></td>    <td></td>
+	    <td></td>
+	    <td></td>
+		  <td></td>
+		</tr>
+	    <!-- THIS IS AN AUTOMATICALLY GENERATED FILE. DO NOT EDIT. Instead, see file buildWeb.pl -->
+	  	<tr>
+		  <td></td><td>Thu 27-Apr</td>
+		  <td></td>
+		  <td></td>    <td></td>
+	    <td></td>
+	    <td></td>
+		  <td>A6 due</td>
+		</tr>
+	    <!-- THIS IS AN AUTOMATICALLY GENERATED FILE. DO NOT EDIT. Instead, see file buildWeb.pl -->
+	  	<tr>
+		  <td></td><td>Fri 5-May</td>
+		  <td>FINAL EXAM: 2pm-5pm, Science Center E</td>
+		  <td></td>    <td></td>
+	    <td></td>
+	    <td></td>
+		  <td></td>
+		</tr>
+	      </table>
+	<br><br><br><br><br><br><br><br><br><br></div>
+	<div id="footer"></div>
+	</div>
 
- <p>Class questions should be posted to the Discussion Forum.
-	 All questions and issues related to assignments, course content, etc., should be sent to
-	 email? or discussed on the Discussion Forum.
-	    Questions related to grades, special consideration, etc. can be sent directly to Prof. Xiang. In general, <b>sending email to individual course staff will delay a response</b>. Note that course staff may take up to 48 hours to respond.
- </p>
-
-	  <h3>Time and place</h3>
-	  <p>Tuesdays and Thursdays, 10:00am -11:15am-12:30pm, College of Education 010.</p>
-	  <h3>Prerequisites</h3>
-	  <p><a href="">Computer Science 51</a>. Also
-	    recommended is <a href="">Computer
-	    Science 121</a>.
-			Students must have <b>good programming skills</b>, be <b>very comfortable</b> with <b>recursion,
-	    proofs, basic mathematical ideas and
-	    notations, including sets, relations,
-	    functions, and induction</b>. See the <a href="schedule.html">schedule</a> for some suggested background reading on some of these concepts.
-			Feel free to contact the instructor if you have questions about the requirements or other aspects of the course.
-	  </p>
-
-	  <p> Two points to emphasize: (1) this is not an introduction to programming; students should already know how to program, ideally in at least couple of languages. (2) you must be  <b>very comfortable</b> with <b>recursion, proofs, basic mathematical ideas and
-	    notations, including sets, relations, functions, and
-	    induction</b>.</p>
-
-
-
-	    <h3>Homeworks, exams, and grading</h3>
-
-
- (from Chao) Attendance/Participation is a critical part of this class. Although we will not meet face to face, we will still count your accomplishments of the class slides, homework, projects, and other required activities. The weight of each activity in the final grade will be posted. Everyone is expected to finish every session and participate. Based on what I see, very frequently a student drops from "A" to "B" or "B" to "C" just because she/he/they miss one homework.
-	    <p>There will be an in-class midterm and a final exam. There
-	      will be about 4 homework assignments. Some of the assignments will contain a programming
-	      component in  OCaml, Coq, and Haskell and some other
-	      languages. Prior knowledge of these languages is not required.</p>
-	    <ul>
-	      <li>Midterm: In class; time: to be determined.</li>
-	      <li>Final exam: time: to be determined</li>
-	      <li>Homeworks: 4 assignments. Some will contain a programming
-		component.
-		See the <a href="schedule.html">Schedule</a> page for due dates, and the <a href="assignments.html">Assignments</a> page for details of the assignments.</li>
-	    </ul>
-	    <p>Your grade will be determined by a weighted average of your
-	      scores on homework assignments, the midterm
-	      exam, the final exam, and class participation. The percentage
-	      breakdown (roughly and subject to change) is 50% homework
-	      assignments, 20% midterm, 25% final exam, and 5% participation
-	      (which includes
-	      attendance and participation in class, section, and office
-	      hours, and contributing to online discussion).</p>
-
-
-
-
-	      <h3>Textbooks</h3>
-	      <p> There is no required textbook for the course. In most cases, the class materials should suffice. The instructor will provide written lecture notes where helpful. </p>
-
-	      <p>See the <a href="resources.html">Resources</a> page for additional material
-		that you can examine. </p>
-
-
-
-	      <h3>Lectures/schedule</h3>
-
-	      <p>See <a href="schedule.html">here</a> for more information.</p>
-
-
-	      <h3>Office hours</h3><a name="officehours"></a>
-	      <p>Office hours will start in the second week of classes.</p>
-              <!--p>We will use this Google calendar for office hour times:</p-->
-
-	      <!--iframe src="https://calendar.google.com/calendar/embed?src=c_a6b71f3f63c705b14efec7f3eda6c65d8b207e6c7a957643d33cc7284c7bcc23%40group.calendar.google.com&ctz=America%2FNew_York" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe-->
-
-
-	      <h3>Assignments</h3>
-
-		   <p>See <a href="assignments.html">here</a> for more information.</p>
-
-
-				<h3>Course Policies</h3>
-
-	      <p>See the <a href="policies.html">Course Policies page</a> for more information about course policies, including Diversity and Inclusion, Inclusive Learning and Accessibility, Mental Health, Financial Aid, Late minutes, Penalties, and Extensions, and Collaboration and Academic Integrity.</p>
-
-      </div>
-      <div id="footer"></div>
-
-			</div>
 
 </body>
 </html>
