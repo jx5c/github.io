@@ -17,7 +17,7 @@ table, td, tbody, tr, th {
 
 .contactheader {
     margin-left:14em;
-    /* text-align: center; */
+    text-align: left; 
 }
 
 .container{
