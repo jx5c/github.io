@@ -1,9 +1,9 @@
 body {
-  width: 95%;
+  width: 96%;
   margin: 10px auto;
   font-family:  Optima, Arial, sans-serif;
   font-weight: normal;
-  font-size: 18pt;
+  /* font-size: 18pt; */
   background-color: rgb(253,253,247);
 }
 
