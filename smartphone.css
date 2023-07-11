@@ -1,4 +1,4 @@
-container{
+.container{
     margin-top : 0.25em;
     margin-bottom : 0.25em;
     margin-left : 0.25em;
@@ -7,7 +7,7 @@ container{
     width: 500px;
 }
 
-body {
+.body {
   width: 95%;
   font-family:  Optima, Arial, sans-serif;
   font-weight: normal;
