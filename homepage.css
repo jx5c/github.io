@@ -1,9 +1,9 @@
 body {
     font-family:  Optima, Arial, sans-serif;
     font-weight: normal;
-    background-color: rgb(253,253,247);
+    background-color: rgb(90,0,0);
     color: rgb(0,0,0);
-    /*font-size: 100%; */
+    background-color: rgb(253,253,247);
     text-align: center;
 }
 
@@ -22,8 +22,8 @@ table, td, tbody, tr, th {
 }
 
 .content{
-    max-width : 130em;
-    min-width : 100em;
+    max-width : 70em;
+    min-width : 43em;
     margin-top : 0em;
     margin-bottom : 0em;
     margin-left: auto;
@@ -31,7 +31,6 @@ table, td, tbody, tr, th {
     padding : 0em;
     box-shadow: 2px 2px 8px 4px #000;
 }
-
 .contentinner {
     background-color: rgb(253,253,247);
     padding:1em;
@@ -344,7 +343,7 @@ img.logo {
 }
 
 #self-photo {
-    float:left;
+    float:right;
     margin: 0px;
     padding: 0px;
 }
