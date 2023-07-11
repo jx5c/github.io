@@ -6,6 +6,10 @@
     padding : 0em;
 }
 
+body{
+font-size: 100%;
+}
+
 .content{
     min-width : 3em;
 }
