@@ -10,7 +10,9 @@ body{
 font-size: 80%;
 }
 
-
+.contactheader {
+    margin-left:15em
+}
 
 .content{
     min-width : 3em;
@@ -188,9 +190,6 @@ div.publicationnav {
 {
     #self-photo {
         width: 160px;
-    }
-    .contactheader {
-        margin-left:15em
     }
 }
 
