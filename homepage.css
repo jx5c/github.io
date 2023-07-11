@@ -14,6 +14,14 @@ table, td, tbody, tr, th {
     font-weight: inherit;
 }
 
+td.specialtd{
+    padding-left:100px;
+}
+
+.specialindent{
+    padding-left:100px;
+}
+
 
 .contactheader {
     margin-left:10em;
