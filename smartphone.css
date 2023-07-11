@@ -6,14 +6,6 @@
     padding : 0em;
 }
 
-body {
-  width: 96%;
-  font-family:  Optima, Arial, sans-serif;
-  font-weight: normal;
-  /* font-size: 18pt; */
-  background-color: rgb(253,253,247);
-}
-
 .content{
     min-width : 3em;
 }
@@ -22,10 +14,10 @@ body {
 }
 
 h1 {
-    font-size: 100%;
+    font-size: 150%;
 }
 h2 {
-    font-size: 100%;
+    font-size: 120%;
 }
 
 .indent {
@@ -86,7 +78,6 @@ ul.indent, ol.indent {
 }
 
 .navbar table {
-    font-size: 70%;
     width:100%;
 }
 
@@ -174,7 +165,7 @@ div.publicationnav {
     float:none;
 }
 
-/*
+
 @media screen and (max-width: 469px)
 {
     #self-photo {
@@ -203,5 +194,3 @@ div.publicationnav {
     width:250;
     height:350;
 }
-
-*/
