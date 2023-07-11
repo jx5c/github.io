@@ -14,6 +14,10 @@ table, td, tbody, tr, th {
     font-weight: inherit;
 }
 
+.contactheader {
+    margin-left:10em;
+}
+
 .container{
     margin-top : 2em;
     margin-bottom : 2em;
