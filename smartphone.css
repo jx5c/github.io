@@ -187,7 +187,7 @@ div.publicationnav {
 @media screen and (min-width: 470px) and (max-width: 600px)
 {
     #self-photo {
-        width: 180px;
+        width: 160px;
     }
     .contactheader {
         margin-left:15em
