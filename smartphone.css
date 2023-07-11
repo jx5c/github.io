@@ -174,15 +174,12 @@ div.publicationnav {
 
 @media screen and (max-width: 469px)
 {
-    /* #self-photo {
+    #self-photo {
 	position:static;
 	display:none;
-    } */
-    #self-photo {
-        width: 150px;
     }
     .contactheader {
-        margin-left:13em
+        margin-left:2em
     }
 }
 
