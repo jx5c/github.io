@@ -252,3 +252,35 @@ table {
   background-color: white;
   overflow: hidden;
 }
+
+#people  {
+    -moz-column-count:2; /* Firefox */
+    -webkit-column-count:2; /* Safari and Chrome */
+    column-count: 2;
+}
+
+#self-photo {
+    float:right;
+    margin: 0px;
+    padding: 0px;
+}
+
+#self-photo p {
+    margin: 0px;
+    padding: 0px;
+}
+
+#self-photo img {
+    box-shadow: 0.5px 0.5px 2px 1px #888;
+}
+
+#index-header {
+}
+
+#iframe-schedule-full {
+    width:800;
+    height:650;
+}
+#iframe-schedule-mobile {
+    display:none;
+}
