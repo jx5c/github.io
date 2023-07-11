@@ -1,0 +1,196 @@
+.container{
+    margin-top : 0.25em;
+    margin-bottom : 0.25em;
+    margin-left : 0.25em;
+    margin-right : 0.25em;
+    padding : 0em;
+}
+
+.content{
+    min-width : 3em;
+}
+.contentinner {
+    padding:0.5em;
+}
+
+h1 {
+    font-size: 150%;
+}
+h2 {
+    font-size: 120%;
+}
+
+.indent {
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+}
+.bigindent {
+    margin-left: 1em;
+    margin-right: 0.5em;
+}
+p.firstpara {
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    margin-top: 0em;
+}
+
+p.tightpara {
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    margin-top: 0em;
+    margin-bottom: 0em;
+}
+
+p.faq-question {
+    margin-right: 0.5em;
+    font-weight: bold;
+    padding: 0px;
+    margin-bottom: 0px;
+}
+p.faq-answer {
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-top: 0em;
+}
+
+ul, ol {
+    margin-top: 0em;
+    margin-left: 2em;
+    padding-left: 0em;
+    margin-right: 0.5em;
+}
+ul.compactlist,  ol.compactlist {
+    margin-left: 2em;
+    padding-left: 0em;
+    margin-right: 0.5em;
+}
+ul.indent, ol.indent {
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+}
+
+.contactdetails table {
+    padding-left: 0.5em;
+}
+.contactdetails td {
+    padding-left: 0.5em;
+    padding-bottom: 0.5em;
+}
+
+.navbar table {
+    width:100%;
+}
+
+
+.pubtitle {
+    font-size: 100%;
+    font-weight: bold;
+}
+
+#people  {
+    -moz-column-count:1; /* Firefox */
+    -webkit-column-count:1; /* Safari and Chrome */
+    column-count: 1;
+}
+
+div.keeptogether {
+    display: inline;
+ }
+
+
+.abstract {
+    text-align: center;
+    margin-top : 0em;
+    margin-bottom : 0em;
+    margin-left : 0em;
+    margin-right : 0em;
+    padding-top : 0em;
+    padding-bottom : 0em;
+    padding-left : 0em;
+    padding-right : 0em;
+}
+.abstract .pubtitle {
+    font-size: 130%;
+}
+
+.abstract .pubauthors {
+    font-size: 100%;
+    margin-top : 1em;
+    margin-bottom : 1em;
+}
+.abstract .publinks {
+    margin-left : 0.5em;
+    margin-right : 0.5em;
+}
+.abstract .abstractheader {
+    font-weight: bold;
+    font-size: 100%;
+    text-align: center;
+    margin-top : 2em;
+    margin-left : 0em;
+    margin-right : 0em;
+}
+.abstract .abstracttext {
+    font-size: 100%;
+    text-align: left;
+    margin-left : 0em;
+    margin-right : 0em;
+}
+
+.abstract .pubnote {
+    font-size: 90%;
+    font-style: italic;
+    margin-top : 0em;
+    margin-bottom : 0em;
+}
+
+.abstract p.firstpara {
+    margin-left: 0em;
+    margin-right: 0em;
+    margin-top: 0em;
+}
+
+
+.recentpublicationlist .pubtitle {
+    font-weight: normal;
+    font-style: italic;
+    font-size: 100%;
+}
+
+.recentpublicationlist .pubauthors {
+    font-size: 90%;
+}
+
+div.publicationnav {
+    float:none;
+}
+
+
+@media screen and (max-width: 469px)
+{
+    #self-photo {
+	position:static;
+	display:none;
+    }
+}
+
+
+@media screen and (min-width: 470px) and (max-width: 600px)
+{
+    #self-photo {
+        width: 200px;
+    }
+}
+
+#index-header {
+    position:static;
+}
+
+#iframe-schedule-full {
+    display:none;
+}
+#iframe-schedule-mobile {
+    display:inline;
+    width:250;
+    height:350;
+}
