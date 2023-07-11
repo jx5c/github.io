@@ -1,9 +1,17 @@
-.container{
+container{
     margin-top : 0.25em;
     margin-bottom : 0.25em;
     margin-left : 0.25em;
     margin-right : 0.25em;
     padding : 0em;
+}
+
+body {
+  width: 95%;
+  font-family:  Optima, Arial, sans-serif;
+  font-weight: normal;
+  font-size: 18pt;
+  background-color: rgb(253,253,247);
 }
 
 .content{
