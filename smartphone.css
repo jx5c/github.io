@@ -7,7 +7,7 @@
 }
 
 body {
-  width: 100%;
+  width: 96%;
   font-family:  Optima, Arial, sans-serif;
   font-weight: normal;
   /* font-size: 18pt; */
@@ -86,6 +86,7 @@ ul.indent, ol.indent {
 }
 
 .navbar table {
+    font-size: 70%;
     width:100%;
 }
 
