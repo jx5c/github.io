@@ -14,8 +14,10 @@ table, td, tbody, tr, th {
     font-weight: inherit;
 }
 
+
 .contactheader {
-    margin-left:11em;
+    margin-left:14em;
+    /* text-align: center; */
 }
 
 .container{

@@ -10,9 +10,7 @@ body{
 font-size: 80%;
 }
 
-.contactheader {
-    margin-left:6em;
-}
+
 
 .content{
     min-width : 3em;
@@ -180,6 +178,9 @@ div.publicationnav {
 	position:static;
 	display:none;
     }
+    .contactheader {
+        margin-left:7em
+    }
 }
 
 
@@ -187,6 +188,9 @@ div.publicationnav {
 {
     #self-photo {
         width: 200px;
+    }
+    .contactheader {
+        margin-left:13em
     }
 }
 
