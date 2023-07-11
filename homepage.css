@@ -73,7 +73,7 @@ p.faq-answer {
     margin-right: 2em;
     margin-top: 0em;
 }
-/*
+
 .container{
     margin-top : 2em;
     margin-bottom : 2em;
@@ -82,15 +82,16 @@ p.faq-answer {
     padding : 2em;
     background-color: white;
     box-shadow: 2px 2px 8px 4px #222;
-}*/
+}
 
+/*
 .container{
     margin-top : 2em;
     margin-bottom : 2em;
     margin-left : 3em;
     margin-right : 3em;
     padding : 0em;
-}
+} */
 
 
 
@@ -250,38 +251,4 @@ table {
   display: none;
   background-color: white;
   overflow: hidden;
-}
-
-@media screen and (max-width: 469px)
-{
-  .container{
-      margin-top : 0.25em;
-      margin-bottom : 0.25em;
-      margin-left : 0.25em;
-      margin-right : 0.25em;
-      padding : 0em;
-  }
-}
-
-
-@media screen and (min-width: 470px) and (max-width: 600px)
-{
-  .container{
-     text-align: center;
-      margin-top : 0.25em;
-      margin-bottom : 0.25em;
-      margin-left : 0.25em;
-      margin-right : 0.25em;
-      padding : 0em;
-  }
-}
-
-@media (max-width: 1000px)  {
-    .container{
-        margin-top : 0.25em;
-        margin-bottom : 0.25em;
-        margin-left : 0.25em;
-        margin-right : 0.25em;
-        padding : 0em;
-    }
 }
