@@ -16,7 +16,7 @@ table, td, tbody, tr, th {
 
 
 .contactheader {
-    margin-left:14em;
+    margin-left:12em; 
     text-align: left; 
 }
 
@@ -365,6 +365,7 @@ img.logo {
 }
 
 #index-header {
+    margin-left: 11em;
 }
 
 #iframe-schedule-full {

@@ -180,7 +180,7 @@ div.publicationnav {
 	position:static;
 	display:none;
     }
-    .contactheader {
+    #index-header {
         margin-left:2em
     }
 }
@@ -189,15 +189,15 @@ div.publicationnav {
 @media screen and (min-width: 470px) and (max-width: 600px)
 {
     #self-photo {
-        width: 150px;
+        width: 180px;
     }
-    .contactheader {
-        margin-left:200px
+    #index-header {
+        margin-left:230px
     }
 }
 
 #index-header {
-    position:static;
+    margin-left:17em
 }
 
 #iframe-schedule-full {
