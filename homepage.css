@@ -8,12 +8,12 @@ body {
 }
 
 
-h1 { 
+h1 {
     font-style: normal;
     font-weight: normal;
     font-size: 250%;
     padding:0em;
-    margin: 0em; 
+    margin: 0em;
 }
 .publicationnav  h2 {
     font-size: 100%;
@@ -42,38 +42,38 @@ p{
 }
 
 .indent {
-    margin-left: 2em;  
-    margin-right: 2em;  
+    margin-left: 2em;
+    margin-right: 2em;
 }
 .bigindent {
-    margin-left: 4em;  
-    margin-right: 2em;  
+    margin-left: 4em;
+    margin-right: 2em;
 }
 p.firstpara {
-    margin-left: 2em;  
-    margin-right: 2em;  
+    margin-left: 2em;
+    margin-right: 2em;
     margin-top: 0em;
 }
 
 p.tightpara {
-    margin-left: 2em;  
-    margin-right: 2em;  
+    margin-left: 2em;
+    margin-right: 2em;
     margin-top: 0em;
     margin-bottom: 0em;
 }
 
 p.faq-question {
-    margin-right: 2em;  
+    margin-right: 2em;
     font-weight: bold;
     padding: 0px;
     margin-bottom: 0px;
 }
 p.faq-answer {
-    margin-left: 2em;  
-    margin-right: 2em;  
+    margin-left: 2em;
+    margin-right: 2em;
     margin-top: 0em;
 }
-
+/*
 .container{
     margin-top : 2em;
     margin-bottom : 2em;
@@ -82,7 +82,16 @@ p.faq-answer {
     padding : 2em;
     background-color: white;
     box-shadow: 2px 2px 8px 4px #222;
+}*/
+
+.container{
+    margin-top : 2em;
+    margin-bottom : 2em;
+    margin-left : 3em;
+    margin-right : 3em;
+    padding : 0em;
 }
+
 
 
 a {
@@ -106,15 +115,15 @@ ul.publicationlist > li, ol.publicationlist > li{
 }
 
 .pubtitle {
-    font-size: 110%;  
+    font-size: 110%;
 }
 .booktitle, .journaltitle {
     font-style: italic;
 }
-.publink {   
+.publink {
 }
 .pubnote {
-    font-size: 90%;    
+    font-size: 90%;
 }
 
 .abstract {
@@ -125,45 +134,45 @@ ul.publicationlist > li, ol.publicationlist > li{
     margin-right : 2em;
 }
 .abstract .pubtitle {
-    font-size: 200%;    
+    font-size: 200%;
 }
 
 .abstract .pubauthors {
-    font-size: 160%;    
+    font-size: 160%;
     margin-top : 1em;
     margin-bottom : 1em;
 }
 .abstract .abstractheader {
     font-weight: bold;
-    font-size: 100%;    
+    font-size: 100%;
     text-align: center;
     margin-top : 3em;
     margin-left : 8em;
     margin-right : 8em;
 }
 .abstract .abstracttext {
-    font-size: 100%;    
+    font-size: 100%;
     text-align: justify;
     text-justify:inter-word;
 }
 .abstract .pubnote {
-    font-size: 90%;    
+    font-size: 90%;
     font-style: italic;
     margin-top : 0em;
     margin-bottom : 0em;
 }
 
 .abstract p.firstpara {
-    margin-left: 0em;  
-    margin-right: 0em;  
+    margin-left: 0em;
+    margin-right: 0em;
     margin-top: 0em;
 }
 
 
 .recentpublicationlist .pubtitle {
-    font-weight: normal; 
+    font-weight: normal;
     font-style: italic;
-    font-size: 100%;  
+    font-size: 100%;
 }
 
 .recentpublicationlist .pubauthors {
@@ -193,21 +202,21 @@ table {
 
 
 .researchstatement {
-    font-size: 100%;  
+    font-size: 100%;
 }
 
 .areadesc{
-    font-size: 100%;  
+    font-size: 100%;
 }
 .areaheadline{
-    font-size: 100%;  
+    font-size: 100%;
 }
 
 .potentialprojects{
     font-size: 100%;
 }
 .quicknote{
- font-size: 100%;  
+ font-size: 100%;
 }
 
 
@@ -233,7 +242,7 @@ table {
 }
 
 .active, .accordion:hover {
-  background-color: #ccc; 
+  background-color: #ccc;
 }
 
 .panel {
