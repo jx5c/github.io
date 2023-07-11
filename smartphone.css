@@ -181,7 +181,7 @@ div.publicationnav {
 	display:none;
     }
     .contactheader {
-        margin-left:50px
+        margin-left:1em
     }
 }
 
@@ -189,10 +189,10 @@ div.publicationnav {
 @media screen and (min-width: 470px) and (max-width: 600px)
 {
     #self-photo {
-        width: 200px;
+        width: 10em;
     }
     .contactheader {
-        margin-left:220px
+        margin-left:11em
     }
 }
 
