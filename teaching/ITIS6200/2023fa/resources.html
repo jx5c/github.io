@@ -29,11 +29,11 @@ user-scalable=no">
 <div>
 	<h2>Resources</h2>
 	<h3>Text books</h3>
-	<p>A number of excellent books and on-line resources. 
-		Some books are available on reserve at the library; 
-		see the <a href="https://library.charlotte.edu/check-out-request/request-items/request-item-pick">Library Reserves page</a>.</p>	
+	<p>A number of excellent books and on-line resources overlap with the
+	  course's content and can provide alternate explanations despite
+	  differences in notation and approach. </p>
 	<ul>
-		<li><a href="http://www.cl.cam.ac.uk/~rja14/book.html">Security Engineering</a> by Ross Anderson	
+		<li><a href="http://www.cl.cam.ac.uk/~rja14/book.html">Security Engineering</a> by Ross Anderson <br> 
 		</li>
 		<li><a href="https://www.schneier.com/book-ce.html">Cryptography Engineering</a> by Ferguson, Schneier, and Kohno</li>
 		<li><a href="http://nob.cs.ucdavis.edu/book/book-intro/index.html">Introduction to Computer Security</a> by Matt Bishop</li>
@@ -41,6 +41,28 @@ user-scalable=no">
 		<li><a href="http://nob.cs.ucdavis.edu/book/book-aands/index.html">Computer Security: Art and Science</a> by Matt Bishop</li>
 		<li><a href="http://www.amazon.com/Security-Computing-Edition-Charles-Pfleeger/dp/0134085043">Security in Computing</a> by Charles P. Pfleeger</li>
 		<li><a href="http://www.securitybook.net">Introduction to Computer Security</a> by Michael Goodrich and Roberto Tamassia</li>
+		  
+		<li>&quot;Types and Programming Languages&quot; by <a href="http://www.cis.upenn.edu/~bcpierce/">Benjamin C. Pierce</a>, MIT Press, 2002.<br>
+	    <em>Available on reserve at the library; see the <a href="https://canvas.harvard.edu/courses/116766/external_tools/33436">Canvas Library Reserves page</a>.</em></li>
+
+    <li>&quot;<a href="https://softwarefoundations.cis.upenn.edu/">Software Foundations</a>&quot; by <a href="http://www.cis.upenn.edu/~bcpierce/">Benjamin C. Pierce</a> et al., <a href="https://softwarefoundations.cis.upenn.edu/lf-current/index.html">Volume 1: Logical Foundations</a> and <a href="https://softwarefoundations.cis.upenn.edu/plf-current/index.html">Volume 2: Programming Language Foundations</a>.<br>
+      <em>Available as literate Coq files.</em><br/>
+      <em>Also available as <a href="https://plfa.github.io/">literate Agda files</a></em> thanks to <a href="http://homepages.inf.ed.ac.uk/wadler/">Philip Wadler</a>, <a href="https://github.com/wenkokke">Wen Kokke</a> and <a href="https://wphomes.soic.indiana.edu/jsiek/">Jeremy Siek</a>.
+    </li>
+
+	  <li>&quot;Practical Foundations for Programming Languages&quot; by <a href="http://www.cs.cmu.edu/~rwh/">Robert Harper</a>, Cambridge University Press, 2013.<br>
+	    <em>Draft available on <a href="http://www.cs.cmu.edu/~rwh/#Books">Harper's website</a>. Available on reserve at the library; see the <a href="https://canvas.harvard.edu/courses/116766/external_tools/33436">Canvas Library Reserves page</a>.</em></li>
+
+	  <li>&quot;Concepts in Programming Languages&quot; by <a href="http://theory.stanford.edu/people/jcm/">John C. Mitchell</a>, Cambridge University Press, 2003.<br>
+	    <em>Available on reserve at the library; see the <a href="https://canvas.harvard.edu/courses/116766/external_tools/33436">Canvas Library Reserves page</a>..</em>
+	  </li>
+
+	  <li>&quot;The Formal Semantics of Programming Languages&quot; by <a href="http://www.cl.cam.ac.uk/~gw104/">Glynn Winskel</a>, MIT Press, 1993.<br>
+	    <em>Available on reserve at the library.</em></li>
+
+	  <li>&quot;Programming Languages: Application and Interpretation&quot; by <a href="http://www.cs.brown.edu/~sk/">Shriram Krishnamurthi</a>.<br>
+	    <em>There are two editions, both available on the author's website: <a href="http://www.cs.brown.edu/~sk/Publications/Books/ProgLangs/">http://www.cs.brown.edu/~sk/Publications/Books/ProgLangs/</a>.</em></li>
+
 	</ul>
 
 	<h3>Pointers from Lectures</h3>
@@ -55,6 +77,101 @@ user-scalable=no">
 	     </ul>
 	     </li>
 	     </ul> -->
+
+	<h3>OCaml resources</h3>
+	<ul>
+	  <li>Installation: <a href="https://ocaml.org/docs/install.html">https://ocaml.org/docs/install.html</a>
+	  <li>Tools: <a href="https://github.com/realworldocaml/book/wiki/Installation-Instructions">https://github.com/realworldocaml/book/wiki/Installation-Instructions</a>
+      <p>This link gives instructions for installing things like Tuareg (a useful emacs mode) and Merlin (advanced IDE features).</p>
+		  <p>Installing Tuareg is pretty simple and will make your OCaml coding experience a lot nicer (though it's of course not necessary).  Merlin is probably overkill unless you know what you're doing.</p>
+    </li>
+		<li>Learning:
+
+		  <ul>
+		    <li>Standard library documentation: <a href="http://caml.inria.fr/pub/docs/manual-ocaml/libref/index.html">http://caml.inria.fr/pub/docs/manual-ocaml/libref/index.html</a>
+			    <br/>The following documentation may be particularly useful as you work on your assignments.
+			    <ul>
+			      <li>Sets: <a href="http://caml.inria.fr/pub/docs/manual-ocaml/libref/Set.Make.html">http://caml.inria.fr/pub/docs/manual-ocaml/libref/Set.Make.html</a></li>
+			      <li>Maps: <a href="http://caml.inria.fr/pub/docs/manual-ocaml/libref/Map.Make.html">http://caml.inria.fr/pub/docs/manual-ocaml/libref/Map.Make.html</a></li>
+			    </ul>
+			  <li>Everything you need to know and more: <a href="http://caml.inria.fr/pub/docs/manual-ocaml/index.html">http://caml.inria.fr/pub/docs/manual-ocaml/index.html</a></li>
+
+			  <li>Code examples: <a href="http://ocaml.org/learn/tutorials/99problems.html">http://ocaml.org/learn/tutorials/99problems.html</a></li>
+		    </ul></li>
+	</ul>
+
+	<p>See also the <a href="http://cs51.io">CS51 Resources</a> web page for OCaml books, references, and tutorials.</p>
+
+  <h3>Coq resources</h3>
+	<ul>
+    <li><a href="https://coq.inria.fr/download">Download Coq</a>.</li>
+    <li>Coq includes an IDE, CoqIDE. Alternatively, with Emacs, you can use <a href="https://proofgeneral.github.io/">Proof General</a>.</li>
+    <li><a href="https://coq.inria.fr/documentation">Coq documentation</a>.</li>
+  </ul>
+
+  <h3>Dafny resources</h3>
+  <ul>
+    <li><a href="https://github.com/dafny-lang/dafny">Dafny on Github</a>.</li>
+    <li><a href="https://rise4fun.com/Dafny">Dafny on rise4fun</a>.</li>
+    <li><a href="https://marketplace.visualstudio.com/items?itemName=correctnessLab.dafny-vscode">Dafny in Visual Studio Code</a>.</li>
+  </ul>
+
+	<h3>Haskell resources</h3>
+
+	<ul>
+	  <li>Download <a href="http://www.haskell.org/platform/">The Haskell Platform.</a>
+	  <li><a href="http://www.haskell.org/haskellwiki/Tutorials">List of Haskell tutorials</a>. If you want to get more meta, see <a href="http://acm3.wustl.edu/functional/haskell.php">How to Learn Haskell</a>.</li>
+	  <li><a href="http://www.haskell.org/">haskell.org</a> contains lots of reference information, language specification, etc.</li>
+	</ul>
+
+	<!--
+	     <h3>Datalog resources</h3>
+	     <ul>
+	     <li><a href="http://abcdatalog.seas.harvard.edu/">AbcDatalog</a>, a simple Datalog execution engine.
+	     </ul>
+
+	     <h3>Rust resources</h3>
+	     <ul>
+	     <li>Official Rust website: <a href="https://www.rust-lang.org/">https://www.rust-lang.org/</a>
+
+	     <li>Pointers to resources for learning Rust: <a href="https://github.com/ctjhoa/rust-learning">https://github.com/ctjhoa/rust-learning</a>
+	     </ul>
+
+	     <h3>CML resources</h3>
+
+	     <ul>
+	     <li>CML is part of the SML/NJ distribution, available at <a href="http://www.smlnj.org/">http://www.smlnj.org/</a>. Download and install SML/NJ.
+	     A simple way to install SML/NJ is using your system's package manager:
+	     <ul>
+	     <li>Under Max OS X, using Homebrew (<a href="http://brew.sh">http://brew.sh</a>): <tt>brew install smlnj</tt></li>
+	     <li>Under Debian/Ubuntu: <tt>apt-get install smlnj libcml-smlnj libcmlutil-smlnj libsmlnj-smlnj ml-ulex ml-yacc</tt></li>
+	     </ul>
+	     Otherwise, follow the instructions at <a href="http://www.smlnj.org/dist/working/110.77/index.html">http://www.smlnj.org/dist/working/110.77/index.html</a>.
+	     </li>
+	     <li><a href="http://cml.cs.uchicago.edu/">Concurrent ML home page</a>, including a useful <a href="http://cml.cs.uchicago.edu/cml-faq.html">FAQ</a>.</li>
+	     <li>For Assignment 6, you won't need to code in CML, but if you are interested, here are some details:
+	     <ul><li>Library documentation:
+	     <ul>
+	     <li>The SML/NJ Basis library manual pages: <a href="http://sml-family.org/Basis/manpages.html">http://sml-family.org/Basis/manpages.html</a></li>
+	     <li>Documentation on CML channels: <a href="http://cml.cs.uchicago.edu/pages/cml.html">http://cml.cs.uchicago.edu/pages/cml.html</a></li>
+	     </ul>
+	     </li>
+	     <li>Differences between SML/CML and OCaml:
+	     <ul>
+	     <li>A comparison of syntax: <a href="https://www.mpi-sws.org/~rossberg/sml-vs-ocaml.html">https://www.mpi-sws.org/~rossberg/sml-vs-ocaml.html</a></li>
+	     <li>A more general comparison: <a href="http://adam.chlipala.net/mlcomp/">http://adam.chlipala.net/mlcomp/</a></li>
+	     </ul>
+	     </li>
+	     </ul>
+	     </ul>
+	-->
+	<!--      <h3>Datalog resources</h3>
+
+	     <ul>
+	     <li>CML is part of the SML/NJ distribution, available at <a href="http://www.smlnj.org/">http://www.smlnj.org/</a>. Download and install SML/NJ.</li>
+	     <li><a href="http://cml.cs.uchicago.edu/">Concurrent ML home page</a>, including a useful <a href="http://cml.cs.uchicago.edu/cml-faq.html">FAQ</a>.</li>
+	     </ul>
+	-->
 
       </div>
       <div id="footer"></div>
