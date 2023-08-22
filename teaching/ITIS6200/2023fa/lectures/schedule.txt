@@ -4,7 +4,8 @@ Security Principles
 
 Lecture 2:
 Continue Lecture1
-Intro to 
+Intro to Cryptography:
+  Overview of
 
 Lecture 3:
 Lecture 4:
