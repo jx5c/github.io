@@ -1,0 +1,37 @@
+
+Prof. Stephen Chong
+Department of Computer Science 
+Harvard University
+Science and Engineering Complex
+4.414 Allston, MA 02134 
+Email: chong@seas.harvard.edu
+Phone: +1 (617) 496-6382
+
+
+Prof. Massimo Merro
+Department of Computer Science 
+University of Verona
+Ca’ Vignal 2, Floor 1, Room 57
+Strada Le Grazie 15 - 37134 Verona, Italy 
+Email: massimo.merro@univr.it
+Phone: +39 (045) 802-7992
+
+
+
+Prof. Vijay Janapa Reddi
+School of Engineering and Applied Sciences
+Harvard University
+Science and Engineering Complex, 5.305
+Allston, MA 02134
+Email: vj@eecs.harvard.edu
+Phone: +1 (408) 390-2790
+
+
+
+Prof. Kevin Sullivan
+Department of Computer Science
+University of Virginia
+Rice Hall 508
+Charlottesville, VA 22904
+Email: sullivan@virginia.edu 
+Phone: +1 (434) 982-2206

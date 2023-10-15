@@ -1,0 +1,395 @@
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+%	The MIT License (MIT)
+%
+%	Copyright (c) 2021 Jitin Nair
+%
+%	Permission is hereby granted, free of charge, to any person obtaining a copy
+%	of this software and associated documentation files (the "Software"), to deal
+%	in the Software without restriction, including without limitation the rights
+%	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+%	copies of the Software, and to permit persons to whom the Software is
+%	furnished to do so, subject to the following conditions:
+%	
+%	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+%	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+%	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+%	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+%	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+%	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+%	THE SOFTWARE.
+%	
+%
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT DEFINITION
+%----------------------------------------------------------------------------------------
+
+% article class because we want to fully customize the page and not use a cv template
+\documentclass[11pt]{article}
+%\usepackage[T1]{fontenc}
+% \usepackage{txfonts}
+%\usepackage{tgtermes}
+%\usepackage{mathptmx}
+%\renewcommand\familydefault{\ttdefault}
+% \renewcommand\familydefault{sffamily}
+
+
+%----------------------------------------------------------------------------------------
+%	FONT
+%----------------------------------------------------------------------------------------
+
+% % fontspec allows you to use TTF/OTF fonts directly
+% \usepackage{fontspec}
+% \defaultfontfeatures{Ligatures=TeX}
+
+% % modified for ShareLaTeX use
+% \setmainfont[
+% SmallCapsFont = Fontin-SmallCaps.otf,
+% BoldFont = Fontin-Bold.otf,
+% ItalicFont = Fontin-Italic.otf
+% ]
+% {Fontin.otf}
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES
+%----------------------------------------------------------------------------------------
+\usepackage{url}
+\usepackage{parskip} 	
+
+%other packages for formatting
+\RequirePackage{color}
+\RequirePackage{graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+
+\usepackage[left=0.8in, right=0.8in, top=1.5in, bottom=1.5in]{geometry}
+
+
+
+%for lists within experience section
+\usepackage{enumitem}
+%tabularx environment
+\usepackage{tabularx}
+
+% centered version of 'X' col. type
+\newcolumntype{C}{>{\centering\arraybackslash}X} 
+
+
+%custom \section
+\usepackage{titlesec}				
+\usepackage{multicol}
+\usepackage{multirow}
+
+\renewcommand\familydefault{\sfdefault}
+
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{10pt}{10pt}
+
+
+%----------------------------------------------------------------------------------------
+%	BEGIN DOCUMENT
+%----------------------------------------------------------------------------------------
+\begin{document}
+
+\renewcommand{\baselinestretch}{1.2} 
+% \renewcommand{\arraystretch}{1}
+
+% non-numbered pages
+\pagestyle{empty} 
+
+%----------------------------------------------------------------------------------------
+%	TITLE
+%----------------------------------------------------------------------------------------
+
+\begin{tabularx}{\linewidth}{@{} C @{}}
+\Huge{\textsf{Jian Xiang}} \\[7.5pt]
+Curriculum Vitae  \\
+% Sep.2022\\
+\\
+%\noindent\rule{\textwidth}{0.4pt}
+\noindent \textit{Research Associate} \hfill { } \\
+\noindent \textit{John A. Paulson School of Engineering and Applied Sciences} \hfill { } \\
+\noindent \textit{Harvard University}     \hfill \textit{jxiang@seas.harvard.edu}  \\
+\noindent \textit{150 Western Avenue, Boston, MA, 02134} \hfill \textit{www.jianxiang.info}
+%\noindent\rule{\textwidth}{0.4pt}
+\end{tabularx}
+
+\vspace{4mm}
+
+%----------------------------------------------------------------------------------------
+% EXPERIENCE SECTIONS
+%----------------------------------------------------------------------------------------
+
+%Interests/ Keywords/ Summary
+\section{Research Interests}
+
+The primary goal of my research is to advance the state of art of formal methods for modeling and verifying the correctness and security of computer systems, especially cyber-physical systems, and to develop tools and techniques to help construct systems that are correct and secure.
+%
+My broad research interests include security, formal verification, cyber-physical system, and programming language.
+
+% , e.g., autonomous vehicles. These properties include safety properties, e.g., functional correctness, as well as security properties, e.g., robustness against adversarial attacks.
+%
+% Specifically, I am interested in developing tools and techniques to (1) help designers create, understand, and reason about their system’s specifications,
+% by developing new tools and reasoning techniques, e.g., compositional reasoning and new proof methods. 
+% and (2) ensure implementations of systems that are correct and secure by construction with verified toolchain.
+%
+
+
+
+% Specifically, I am interested in two main research directions: (1) developing new tools and techniques that help designers create, understand, and reason about their system’s specifications, and (2) ensuring implementations of systems that are correct and secure, by developing verified toolchain that enforce the safety and security properties by construction.   
+
+%  
+
+% for two purposes.
+% The first is to help designers create, understand, and reason about their system’s specifications. These include reasoning approaches that reduce
+
+% that and new proof techniques for verifying security properties, e.g., new logic     
+
+% These techniques help designers formalizing and verifying , with specifications of a system.
+% The second purpose is help engineers construct implementations of cyber-physical systems that are correct and secure. These techniques ensure that implementations are correct-by-construction and secure-by-construction, i.e., they adhere to the specifications. Moreover, enforcement of these properties  
+
+% Previous work [21] has used hybrid-program models to automatically generate templates (“sandboxes”) that contain run-time monitors. A programmer fills in the template with an implementation of the system, and the run-time monitors ensure that the implementation adheres to the specification. This is a powerful technique, ensuring that the implementation is correct by construction.
+
+
+% This includes reasoning techniques, such as compositional reasoning for
+% gaining assurance that the implementation meets the specification.
+
+
+
+
+% about system-level security guarantees of the whole system that will hold in any implementation of the system provided that the architectural constraints are enforced
+
+
+% will develop secure-by-construction techniques to ensure that implementations adhere to their designs, as well as explore what system-level security guarantees are achieved by compositional reasoning
+
+
+
+%
+
+
+% To enforce these properties in implementations, a system should be developed in a model-driven way, where the properties are formally specified and verified within a model of the system. These models are used to automatically generate implementation templates that contain run-time monitors, which ensure that the implementation adheres to the verified properties. 
+
+% A large portion of the implementation of a system would be automatically generated, the generation process is formally verified, and the properties verified in a formal model are preserved in the implementation.
+
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION
+%----------------------------------------------------------------------------------------
+\section{Education}
+
+\begin{itemize}
+  \item \textbf{Ph.D., Computer Science} \\
+\phantom{\qquad} University of Virginia, Charlottesville, VA, Dec.2016. \\
+\phantom{\qquad} Dissertation title: \emph{Interpreted Formalism: Towards System Assurance and the Real-World}\\
+\phantom{\qquad} \emph{Semantics of Software} \\
+\phantom{\qquad} Advisor: John Knight, Kevin Sullivan
+   \item \textbf{M.E., Software Engineering} \\
+\phantom{\qquad} Tsinghua University, Beijing, China, Aug.2008. \\
+\phantom{\qquad} Thesis title: \emph{SREM: A Service Requirements Elicitation Mechanism based on Ontology} \\
+\phantom{\qquad} Advisor: Lin Liu 
+   \item \textbf{B.S., Electronic Science and Technology} \\
+\phantom{\qquad} Huazhong University of Science and Technology, Wuhan, China, May 2005.
+\end{itemize}
+
+
+
+%Experience
+\section{Research Exprience}
+
+\setlist[itemize]{itemsep=-5pt, topsep=-4pt}
+
+\begin{itemize}
+    \item \textbf{Research Associate} \\
+Harvard University, Cambridge/Allston, MA \hfill Aug.2020 – Present
+    \item \textbf{Postdoctoral Researcher} \\
+Harvard University, Cambridge, MA \hfill Aug.2017 – Aug.2020
+    \item \textbf{Research Specialist}	\\
+University of Virginia, Charlottesville, VA \hfill  Sep.2016 – May.2017
+    \item \textbf{Research Intern} \\
+IBM China Research Center, Beijing, China \hfill  Jul.2006 – Sep.2006
+\end{itemize}
+
+
+
+%----------------------------------------------------------------------------------------
+%	PUBLICATIONS
+% ----------------------------------------------------------------------------------------
+
+
+\section{Publications}
+
+
+\textbf{Manuscripts Under Review/In Preparation}
+
+\begin{itemize}
+\item \textit{Formal Reasoning of Security for Industrial Robotic
+Manipulators}. (in preparation) \\
+\textbf{J. Xiang}, R. Ghosal, S. Ahmed, M. Juliato, V. Lesi, V. J. Reddi and M. R. Sastry. 
+%
+\item \textit{Extending Dynamic Logics with First-Class Relational Reasoning}. (Under Review) \\
+\textbf{J. Xiang}, N. Fulton, and S. Chong. 
+\end{itemize}
+
+\textbf{Refereed Conference Paper}
+
+\begin{itemize}
+\item \textit{Quantitative Robustness Analysis of Sensor Attacks on Cyber-Physical Systems}. (to appear) \\
+  ACM International Conference on Hybrid Systems: Computation and Control (HSCC), May 2023 \\
+  S. Chong*, R. Lanotte*, Massimo Merro*, S. Tini*, and \textbf{J. Xiang}*
+  (all authors contributed equally)
+\item \textit{Relational Analysis of Sensor Attacks on Cyber-Physical Systems}. \\
+  IEEE Computer Security Foundations Symposium (CSF),  June 2021. \\
+  \textbf{J. Xiang}, N. Fulton, and S. Chong. 
+  
+\item \textit{Co-Inflow: Coarse-grained Information Flow Control for Java-like Languages}. \\
+  IEEE Symposium on Security and Privacy (S\&P), May 2021.  \\
+  \textbf{J. Xiang} and S. Chong.
+  
+\item \textit{Is My Software Consistent with the Real World?}. \\
+  International Symposium on High Assurance Systems Engineering (HASE), Jan. 2017. \\
+  \textbf{J. Xiang}, J. Knight, and K. Sullivan.
+
+\item \textit{Synthesis of Logic Interpretation}. \\
+  International Symposium on High Assurance Systems Engineering (HASE), Jan. 2016. \\
+  \textbf{J. Xiang}, J. Knight, and K. Sullivan.
+  
+\item \textit{Real-World Types and Their Application}. \\
+  International Conference on Computer Safety, Reliability and Security (SAFECOMP), Sep. 2015. \\
+  \textbf{J. Xiang}, J. Knight, and K. Sullivan.
+  
+\item \textit{SREM: A Service Requirements Elicitation Mechanism based on Ontology}.  \\
+  IEEE International Computer Software and Applications Conference (COMPSAC). Jul. 2007 \\
+  \textbf{J. Xiang}, L. Liu, W. Qiao.  
+\end{itemize}
+    
+    
+\textbf{Book Chapter}
+
+\begin{itemize}
+\item \textit{A Rigorous Definition of Cyber-Physical Systems}. \\
+  Trustworthy Cyber-Physical Systems. CRC Press, 2016.\\
+  J. Knight, \textbf{J. Xiang}, and K. Sullivan. 
+\end{itemize}
+
+% \textbf{Journal Paper}
+% \begin{itemize}
+% \item
+%   \textit{Security Design Based on Social Modeling}. \\
+%   Acta Electronica Sinica, vol. 34, no.12A, pp 2350-2354, Dec 2006. \\
+%   \textbf{J. Xiang}, L. Liu, E. Yu. 
+% \end{itemize}
+
+
+\textbf{Workshop Paper}
+\begin{itemize}
+\item
+  \textit{A Safety Condition Monitoring System}. \\
+  International Workshop on Assurance Cases for Software-intensive Systems, Sep. 2015. \\
+  J. Knight, J. Rowanhill and \textbf{J. Xiang}.
+\end{itemize}  
+
+
+\textbf{PhD Thesis}
+\begin{itemize}
+\item \textit{Interpreted Formalism: Towards System Assurance and the Real-World Semantics of Software}
+ % \\ PhD Thesis. University of Virginia. Aug. 2016. 
+\end{itemize}
+
+%----------------------------------------------------------------------------------------
+%	Teaching
+%----------------------------------------------------------------------------------------
+
+\section{Teaching Experience}
+\begin{itemize}
+\item Teaching Assistant for \emph{Advanced Software Development} \hfill Fall 2014, Spring 2014 \\
+  Office hours, grading, lab lectures
+  
+\item Teaching Assistant for \emph{Discrete Mathematics} \hfill Fall 2013 \\
+  Office hours, grading, lab lectures
+
+\item Teaching Assistant for \emph{Requirements Engineering} \hfill Fall 2007 \\
+  Office hours, grading, lab lectures
+\end{itemize}
+
+
+% \section{Scholarship and Awards}  
+% \begin{itemize}
+% \item Toshiba Scholarship (2008)
+% \item IBM China Collegiate SOA Innovation Contest: Innovation Award (2006)
+% \end{itemize}
+
+
+
+\section{Professional Activity}
+\begin{itemize}
+  \item \emph{Program Committee}: Workshop on Programming Languages and Analysis for Security (PLAS 2021)
+\item \emph{Journal Reviewer}: ACM Transactions on Programming Languages and Systems (TOPLAS 2022)
+\end{itemize}
+
+\section{Invited Talk}
+
+
+% \renewcommand{\emph}[1]{\textit{\textbf{#1}}}
+\begin{itemize}
+\item \emph{Co-Inflow: Coarse-grained Information Flow Control for Java-like Languages} \\
+  Amazon AWS Privacy Engineering Seminar
+  
+
+\item   \emph{Co-Inflow: Coarse-grained Information Flow Control for Java-like Languages} \\
+  NIO.io Security Seminar 
+
+\end{itemize}
+
+\renewcommand{\emph}[1]{\textit{\textbf{#1}}}
+\section{References}
+
+\begin{minipage}{0.45\textwidth}
+\begin{itemize}
+  \item \emph{Prof. Stephen Chong} \\
+Department of Computer Science \\
+Harvard University \\
+Science and Engineering Complex, 4.414 \\
+Allston, MA 02134 \\
+Email: chong@seas.harvard.edu \\
+Phone: +1 (617) 496-6382 \\
+
+\item \emph{Prof. Vijay Janapa Reddi} \\
+School of Engineering and Applied Sciences \\
+Harvard University \\
+Science and Engineering Complex, 5.305 \\
+Allston, MA 02134 \\
+Email: vj@eecs.harvard.edu \\
+Phone: +1 (408) 390-2790 \\
+\end{itemize}
+\end{minipage}%
+\hfill
+\begin{minipage}{0.45\textwidth}
+\begin{itemize}
+  \item \emph{Prof. Massimo Merro} \\
+Department of Computer Science \\
+University of Verona \\
+Ca' Vignal 2,  Floor 1,  Room 57 \\
+Strada Le Grazie 15 - 37134 Verona, Italy \\
+Email: massimo.merro@univr.it \\
+Phone: +39  (045) 802-7992 \\
+
+    
+\item \emph{Prof. Kevin Sullivan} \\
+Department of Computer Science \\
+University of Virginia \\
+Rice Hall 508 \\
+Charlottesville, VA 22904 \\
+Email: sullivan@virginia.edu \\
+Phone: +1  (434) 982-2206 \\
+\end{itemize}
+\end{minipage}%
+
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "cv"
+%%% End:
