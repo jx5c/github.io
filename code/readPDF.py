@@ -3,18 +3,18 @@ import openai
 import PyPDF2
 
 # Set up OpenAI API key
-openai.api_key = 'YOUR_API_KEY'
+openai.api_key = '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'
 
 # Function to extract text from PDF using PyPDF2
 def extract_text_from_pdf(pdf_path):
     text = ''
     with open(pdf_path, 'rb') as pdf_file:
-        pdf_reader = PyPDF2.PdfFileReader(pdf_file)
-        num_pages = pdf_reader.numPages
+        pdf_reader = PyPDF2.PdfReader(pdf_file)
+        num_pages = len(pdf_reader.pages)
 
         for page_num in range(num_pages):
-            page = pdf_reader.getPage(page_num)
-            text += page.extractText()
+            page = pdf_reader.pages[page_num]
+            text += page.extract_text()
 
     return text
 
@@ -28,7 +28,7 @@ def summarize_with_gpt3(text):
     return response.choices[0].text.strip()
 
 # Loop through the PDF files in a directory
-pdf_folder = '/Users/llama/Research/github.io/drafts'
+pdf_folder = '../drafts'
 for file_name in os.listdir(pdf_folder):
     if file_name.endswith('.pdf'):
         # Use PyPDF2 or pdfplumber to extract text from the PDF
