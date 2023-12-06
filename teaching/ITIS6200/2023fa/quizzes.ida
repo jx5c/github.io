@@ -50,6 +50,7 @@ Secure System
 3. Access Control
     a. ACL versus Capability
 4. Network security
-    a. NIDS
-    b. HIDS
+    a. Firewall
+    b. NIDS
+    c. HIDS
     c. 
