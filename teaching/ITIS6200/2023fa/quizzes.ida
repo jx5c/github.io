@@ -1,0 +1,55 @@
+Security Attacks
+1. web security:
+    a. XSS
+    b. CSRF
+    c. DoS
+    d. SQL injection
+2. System security
+    a. Buffer overflow
+3. Network security
+    a. DoS and DDos
+    b. SYN flooding
+    c. TCP data injection    
+4. Crypto 
+    a. length extension attack
+
+
+Security Mechanism
+1. Cryto
+    a. AES
+    b. RSA
+    c. MAC and HMAC
+    d. Hash
+    e. Key exchange
+2. Web security
+    a. Cookies
+    b. Cookies defence
+3. Network security
+    a. Intrusion detection
+    b. Firewall
+    c. SYN cookies
+
+
+
+Security Policy
+1. Access control policies
+2. Intrusion detection policies
+3. Same origin policies
+4. IND-CPA
+
+Security Threat
+1. 
+
+Secure System
+1. Cryto
+    a. one-time pads
+    b. IND-CPA
+    c. A system with confidentiality and integrity
+2. Web security
+    a. 
+3. Access Control
+    a. ACL versus Capability
+4. Network security
+    a. NIDS
+    b. HIDS
+    c. 
