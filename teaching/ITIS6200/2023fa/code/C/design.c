@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h> 
 
-void foo(int a, int b){
+void bar(int a, int b){
     int age; 
     char name [12];
     printf("What is your name?\n");
@@ -9,7 +9,11 @@ void foo(int a, int b){
     printf("%s\n", name);
 }
 
+void foo(){
+    bar(1,2);
+}
+
 int main() {
-    foo(1,2);
+    foo();
     return 0;
 }
