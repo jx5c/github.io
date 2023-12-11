@@ -1,19 +1,18 @@
 #include <stdio.h>
 #include <stdlib.h> 
 
-void bar(int a, int b){
-    int age; 
-    char name [12];
+void bar(int a){
+    char name [20];
     printf("What is your name?\n");
     gets (name);
     printf("%s\n", name);
 }
 
-void foo(){
-    bar(1,2);
+void foo(int a){
+    bar(1);
 }
 
 int main() {
-    foo();
+    foo(2);
     return 0;
 }
