@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.7.12)  22 FEB 2024 09:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.7.12)  26 AUG 2024 12:07
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -412,12 +412,12 @@ Here is how much of TeX's memory you used:
  30846 multiletter control sequences out of 15000+600000
  517240 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 63i,9n,67p,1237b,629s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 63i,9n,67p,1237b,530s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfss1095.pfb>
-Output written on cv.link.pdf (3 pages, 77979 bytes).
+Output written on cv.link.pdf (3 pages, 78039 bytes).
 PDF statistics:
- 94 PDF objects out of 1000 (max. 8388607)
- 74 compressed objects within 1 object stream
+ 95 PDF objects out of 1000 (max. 8388607)
+ 75 compressed objects within 1 object stream
  11 named destinations out of 1000 (max. 500000)
  57 words of extra memory for PDF output out of 10000 (max. 10000000)
 

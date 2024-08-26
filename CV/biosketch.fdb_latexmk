@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1724353638 "/Users/jxiang1/Research/Personal-Site/CV/biosketch.tex" "biosketch.pdf" "biosketch" 1724353639 0
+["pdflatex"] 1724686962 "/Users/jxiang1/Research/Personal-Site/CV/biosketch.tex" "biosketch.pdf" "biosketch" 1724686963 0
   "/Users/jxiang1/Research/Personal-Site/CV/biosketch.tex" 1724353638 9333 446ab7e10667588c42d633fc77262334 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -94,8 +94,8 @@
   "/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1689194397 4623355 b8cad38412faebe1ce5b780a45db67bd ""
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1689194315 7883454 984691cc0f7345569b0806704dad526b ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
-  "biosketch.aux" 1724353639 1198 fbe1e201fc83f79bcab70855348ffd2e "pdflatex"
-  "biosketch.out" 1724353639 1049 4474c6b7cfe120549cb2daed6bc5a905 "pdflatex"
+  "biosketch.aux" 1724686963 1198 fbe1e201fc83f79bcab70855348ffd2e "pdflatex"
+  "biosketch.out" 1724686963 1049 4474c6b7cfe120549cb2daed6bc5a905 "pdflatex"
   "biosketch.tex" 1724353638 9333 446ab7e10667588c42d633fc77262334 ""
   (generated)
   "biosketch.aux"
