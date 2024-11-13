@@ -1,0 +1,203 @@
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+%	The MIT License (MIT)
+%
+%	Copyright (c) 2021 Jitin Nair
+%
+%	Permission is hereby granted, free of charge, to any person obtaining a copy
+%	of this software and associated documentation files (the "Software"), to deal
+%	in the Software without restriction, including without limitation the rights
+%	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+%	copies of the Software, and to permit persons to whom the Software is
+%	furnished to do so, subject to the following conditions:
+%	
+%	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+%	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+%	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+%	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+%	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+%	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+%	THE SOFTWARE.
+%	
+%
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT DEFINITION
+%----------------------------------------------------------------------------------------
+
+% article class because we want to fully customize the page and not use a cv template
+\documentclass[12pt]{article}
+%\usepackage[T1]{fontenc}
+% \usepackage{txfonts}
+%\usepackage{tgtermes}
+
+% \renewcommand\familydefault{sffamily}
+
+
+%----------------------------------------------------------------------------------------
+%	FONT
+%----------------------------------------------------------------------------------------
+
+% % fontspec allows you to use TTF/OTF fonts directly
+% \usepackage{fontspec}
+% \defaultfontfeatures{Ligatures=TeX}
+
+% % modified for ShareLaTeX use
+% \setmainfont[
+% SmallCapsFont = Fontin-SmallCaps.otf,
+% BoldFont = Fontin-Bold.otf,
+% ItalicFont = Fontin-Italic.otf
+% ]
+% {Fontin.otf}
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES
+%----------------------------------------------------------------------------------------
+\usepackage{url}
+\usepackage{parskip} 	
+\usepackage[colorlinks = true,
+            linkcolor = blue,
+            urlcolor  = blue,
+            citecolor = blue,
+            anchorcolor = blue]{hyperref}
+
+%other packages for formatting
+\RequirePackage{color}
+\RequirePackage{graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+
+\usepackage[left=0.8in, right=0.8in, top=1.5in, bottom=1.5in]{geometry}
+
+
+%for lists within experience section
+\usepackage{enumitem}
+%tabularx environment
+\usepackage{tabularx}
+\usepackage{ragged2e}
+% centered version of 'X' col. type
+\newcolumntype{C}{>{\centering\arraybackslash}X} 
+
+
+%custom \section
+\usepackage{titlesec}				
+\usepackage{multicol}
+\usepackage{multirow}
+
+% \renewcommand\familydefault{\sfdefault}
+\usepackage{mathptmx}
+% \renewcommand\familydefault{\ttdefault}
+
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{10pt}{10pt}
+
+
+%----------------------------------------------------------------------------------------
+%	BEGIN DOCUMENT
+%----------------------------------------------------------------------------------------
+\begin{document}
+
+\renewcommand{\baselinestretch}{1.6} 
+% \renewcommand{\arraystretch}{1}
+
+% non-numbered pages
+\pagestyle{empty} 
+
+%----------------------------------------------------------------------------------------
+%	TITLE
+%----------------------------------------------------------------------------------------
+
+\begin{tabularx}{\linewidth}{@{} C @{}}
+%    Biographical Sketch \\
+    \Huge{{Jian Xiang}} \\
+\\
+\vspace{1mm}
+%\noindent\rule{\textwidth}{0.4pt}
+\noindent \textit{Assistant Professor} \hfill \href{mailto:jian.xiang@charlotte.edu}{\textit{jian.xiang@charlotte.edu}} \\
+\noindent \textit{Software and Information System} \hfill { \href{https://www.jianxiang.info}{\textit{Personal Webpage}} } \\
+\noindent \textit{College of Computing and Informatics} \hfill  { \textit{Office: +1 (704) 687-0872} } \\
+\noindent \textit{University of North Carolina at Charlotte}     \hfill { } \\ 
+ \noindent \textit{Room 330D,
+ Woodward Hall,
+ 8812 Craver Rd,
+ Charlotte, NC 28223} \hfill { } \\ 
+% \noindent\rule{\textwidth}{0.4pt}
+\end{tabularx}
+
+\setlist[itemize]{itemsep=-5pt, topsep=-4pt, leftmargin=15pt}
+
+% \vspace{4mm}
+
+%----------------------------------------------------------------------------------------
+% EXPERIENCE SECTIONS
+%----------------------------------------------------------------------------------------
+
+%Interests/ Keywords/ Summary
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION
+%----------------------------------------------------------------------------------------
+\section{Professional Preparation}
+\newcolumntype{R}[1]{>{\RaggedLeft\arraybackslash}p{#1}}
+
+\begin{tabular}{p{6cm} p{9cm} R{1.5cm}}
+    {Ph.D., Computer Science} & University of Virginia, Charlottesville, VA & {2016} \\
+    {M.E., Software Engineering} & Tsinghua University, Beijing, China & {2008} \\
+    {B.S., Electronic Engineering} & Huazhong Uni. of Sci. and Tech., Wuhan, China & {2005} \\
+\end{tabular}
+
+
+
+%Experience
+\section{Appointment History}
+
+\begin{tabular}{p{5cm} p{7.5cm} R{4cm}}
+    {Assistant Professor} & 
+    UNC Charlotte, Charlotte, NC & Aug.2023–Present \\
+    Research Associate &
+    Harvard University, Cambridge/Allston, MA & Sep.2020–Aug.2023 \\
+    Postdoctoral Researcher &
+    Harvard University, Cambridge, MA & Sep.2017-Aug.2020 \\
+    Postdoctoral Researcher &
+    University of Virginia, Charlottesville, VA & Aug.2016-May.2017 \\
+\end{tabular}
+
+\section{Cybersecurity Research Interests}
+
+\textbf{Security Analysis}: program analysis, formal methods and verification
+
+%----------------------------------------------------------------------------------------
+%	PUBLICATIONS
+% ----------------------------------------------------------------------------------------
+
+\section{Recent Publications in Related Research}
+
+\begin{itemize}  \setlength\itemsep{3pt}
+
+\item \textit{Measuring Robustness in Cyber-Physical Systems under Sensor Attacks}. Nonlinear Analysis: Hybrid Systems (to appear). 
+Jian Xiang, Ruggero Lanotte, Simone Tini, Stephen Chong, and Massimo Merro.
+
+\item \textit{Quantitative Robustness Analysis of Sensor Attacks on Cyber-Physical Systems}.
+  ACM International Conference on Hybrid Systems: Computation and Control (HSCC), May 2023. 
+  S. Chong, R. Lanotte, Massimo Merro, S. Tini, and J. Xiang (all equal contributions).
+  % {\url{https://dl.acm.org/doi/pdf/10.1145/3575870.3587118}}
+\item \textit{Relational Analysis of Sensor Attacks on Cyber-Physical Systems}.
+  IEEE Computer Security Foundations Symposium (CSF),  June 2021. {J. Xiang}, N. Fulton, and S. Chong. 
+  % {\url{https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9505198}}
+  
+\item \textit{Co-Inflow: Coarse-grained Information Flow Control for Java-like Languages}.
+  IEEE Symposium on Security and Privacy (S\&P), May 2021.
+  {J. Xiang} and S. Chong. 
+  % {\url{https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9519397}}
+
+\end{itemize}
+
+
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "cv"
+%%% End:
