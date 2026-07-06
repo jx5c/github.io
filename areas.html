@@ -40,10 +40,7 @@ are crucial for security goals, because they can show that no attack (with assum
 My research approach is to investigate sound, powerful, and pragmatic formal reasoning techniques for safety and security properties, and develop efficient enforcement mechanisms of these properties in constructing practical systems
 </p>
 
-
-<!-- divider  -->
-
-<h2>Security Analysis for Cyber-Physical Systems</h2>
+<h2>Quantitative Safety and Security Analysis of Cyber-Physical Systems</h2>
 
 <p class="areadesc">
   A major piece of my research is to develop fundamental concepts and methodologies for secure design and implementation of Cyber-Physical Systems (CPSs). CPSs, which interact continuously with the physical world, raise significant challenges for formal methods. Security and privacy models for CPSs have to be aware of the interaction between software systems and physical dynamics; enforcement of security properties requires us to go significantly beyond the state-of-the-art in the CPSs area.
@@ -51,87 +48,54 @@ My research approach is to investigate sound, powerful, and pragmatic formal rea
   I introduce frameworks for modeling and analyzing attacks on CPSs. The frameworks often introduce a threat model of attacks, formalization of security properties, and techniques developed for reasoning with the security properties.
 </p>
 
-<div class="areapub">
-  <b class="areadesc">Relevant Publications</b>
+<h3>Specifying quantitative safety and tolerance</h3>
+<p>
+  Real CPS rarely satisfy a binary notion of safety; they operate with margins,
+  tolerate bounded sensor error, and degrade gracefully under attack. I develop
+  formal notions that make these quantitative aspects precise &mdash; quantitative
+  safety, robustness under attack, and attack tolerance over time.
+</p>
+<ul>
+  <li><a href="./abstracts/HSCC2023.html">HSCC&rsquo;23</a> &mdash; sensor-attack robustness</li>
+  <li><a href="./abstracts/CSF2025.html">CSF&rsquo;25</a> &mdash; timed quantitative safety and tolerance</li>
+  <li><a href="./abstracts/NFM2026.html">NFM&rsquo;26</a> &mdash; tolerance contracts for sensors</li>
+</ul>
 
-  <ul>
+<h3>Verifying quantitative properties relationally</h3>
+<p>
+  The technical core of my work is relational verification: establishing a
+  quantitative property of one system by relating its behavior to another (a
+  reference, a nominal model, or an uncompromised version of itself). This includes
+  forall-exists relational reasoning, simulation-distance techniques, and proof
+  systems for CPS models expressed in differential dynamic logic.
+</p>
+<ul>
+  <li><a href="./abstracts/CSF2021.html">CSF&rsquo;21</a> &mdash; boolean robustness under sensor attacks</li>
+  <li><a href="./abstracts/measure2024.html">NAHS&rsquo;25</a> &mdash; measuring robustness under sensor attacks</li>
+  <li><a href="./abstracts/NFM2025.html">NFM&rsquo;25</a> &mdash; relational reasoning for dynamical logics</li>
+  <li><a href="./abstracts/CSF2025.html">CSF&rsquo;25</a> &mdash; a proof calculus for forall-exists timed properties</li>
+</ul>
 
-    <li><a name="ChongLMTX2023" id="ChongLMTX2023"></a><span class="pubtitle">Quantitative Robustness Analysis of Sensor Attacks on Cyber-Physical Systems</span><br>
-  <span class="pubauthors">Stephen&nbsp;Chong, Ruggero&nbsp;Lanotte, Massimo&nbsp;Merro, Simone&nbsp;Tini, and Jian&nbsp;Xiang</span>. (all equal contributions)<br>
-  <span class="booktitle">Proceedings of the 26th ACM International Conference on Hybrid Systems: Computation and Control</span> (HSCC), May&nbsp;2023.<br>
-  [&nbsp;
-  <a href="./abstracts/HSCC2023.html" class="publink">Abstract</a>&nbsp;|&nbsp;
-  <a href="./pub/HSCC23.pdf" class="publink">PDF</a>&nbsp;|&nbsp;
-  <a href="./bib/HSCC2023.bib" class="publink" >BibTeX</a>&nbsp;
-  ]
-</li>
+<h3>Verified artifacts</h3>
+<p>
+  I mechanize key results in the Lean&nbsp;4 proof assistant, so that the formal
+  guarantees are machine-checked rather than argued on paper. These artifacts include
+  a from-scratch formalization of the underlying dynamical logic, the
+  quantitative-safety and simulation-distance results, and a mechanized audit of a
+  relational proof calculus.
+</p>
+<ul>
+  <li><a href="https://github.com/UNCC-FORTRESS/NFM26-ToleranceContract-Lean">Lean formalization of NFM&rsquo;26</a></li>
+  <li><a href="https://github.com/UNCC-FORTRESS/CSF25-Timed-Qsafety-Lean">Lean formalization of CSF&rsquo;25</a></li>
+  <li><a href="https://github.com/UNCC-FORTRESS/NFM25-relDL-Lean">Lean formalization of NFM&rsquo;25</a></li>
+  <li><a href="https://github.com/UNCC-FORTRESS/HSCC23-Qsafety-Lean">Lean formalization of HSCC&rsquo;23</a></li>
+  <li><a href="https://github.com/UNCC-FORTRESS/dL-formalization-Lean">A lightweight Lean formalization of dL</a></li>
+</ul>
 
-
-   <li><a name="XiangFC2021" id="XiangFC2021">
-</a><span class="pubtitle">Relational Analysis of Sensor Attacks on Cyber-Physical Systems</span>
-<br>
-  <span class="pubauthors">Jian&nbsp;Xiang, Nathan&nbsp;Fulton, and Stephen&nbsp;Chong</span>.<br>
-  <span class="booktitle">Proceedings of the 34th IEEE Computer Security Foundations Symposium</span> (CSF), June&nbsp;2021.<br>
-  [&nbsp;
-  <a href="./abstracts/XiangFC2021.html"class="publink">Abstract</a>&nbsp;|&nbsp;
-  <a href="./pub/csf21.pdf" class="publink">PDF</a>&nbsp;|&nbsp;
-  <a href="./bib/csf2021.bib" class="publink">BibTeX</a>&nbsp;]
-   </li>
-
-
-  </ul>
-
-<div class="potentialprojects">
-  <b>Ongoing / Potential Projects</b>
-
-  <ul>
-    <li>
-      <botton class="accordion">Specifying and verifying security of CPSs</botton>
-      <div class="panel">
-        <p>Express and verify security properties within formal models of CPSs. Develop extensions of formal logics to specify security properties, and develop algorithms to verify these properties. Some examples include compositional modeling and reasoning, specification-based testing, and proof techniques for relational or hyper properties.
-        </p>
-      </div>
-    </li>
-
-    <li>
-      <botton class="accordion">Reasoning techniques for physical dynamics</botton>
-      <div class="panel">
-        <p>Develop techniques to reason with dynamics of CPSs, i.e., differential equations (ODEs). Some examples include proving relational properties, e.g., robustness, of ODE, and sensitivity analysis of ODEs.
-        </p>
-      </div>
-     </li>
-
-    <li>
-      <botton class="accordion">Formal models of CPSs and their security properties</botton>
-      <div class="panel">
-        <p>Develop formal models of CPSs and their security properties with different formalisms of interests. For example, develop formal models of industrial robotic arms and their security requirements.
-        </p>
-      </div>
-    </li>
-   <!--li>Correct-by-construction for implementations of CPS models  </li-->
-    <li>
-    <botton class="accordion">Secure-by-construction for implementations of CPS models</botton>
-      <div class="panel">
-        <p>Build verified pipelines that automatically transform high-level models of CPSs to controller executables, where the transformation preserves security properties verified at high-level models. This is a very challenging but also very interesting project.
-        </p>
-      </div>
-    </li>
-    <li>
-      <botton class="accordion">Build CPSs implementations with both security and performance guarantees</botton>
-      <div class="panel">
-        <p>Integrate system modeling, analysis, and synthesis of runtime enforcement into the development of CPSs, to provide security guarantees as well as performance guarantees. Some examples include framework to make tradeoff between security and performance, developing efficient security enforcement mechanisms for CPSs, and instrumenting state-or-art controllers with runtime security mechanisms.
-        </p>
-      </div>
-    </li>
-
-  </ul>
-
-</div>
+<!-- divider  -->
 
 
-</div>
 
-<!--divider-->
 
 <h2>Language-based Approaches for Application Security</h2>
 
@@ -143,163 +107,10 @@ My research approach is to investigate sound, powerful, and pragmatic formal rea
 However, these information-flow control (IFC) techniques are often burdensome and invasive, requiring an application programmer to provide many security annotations or to adapt the program design to conform to the enforcement mechanism -->
   </p>
 
-<div class="areapub">
-  <b class="areadesc">Relevant Publications</b>
-
   <ul>
-   <li><a name="XiangC2021" id="XiangC2021"></a><span class="pubtitle">Co-Inflow: Coarse-grained Information Flow Control for Java-like Languages</span><br>
-  <span class="pubauthors">Jian&nbsp;Xiang and Stephen&nbsp;Chong</span>.<br>
-  <span class="booktitle">Proceedings of the 42nd IEEE Symposium on Security and Privacy</span> (Oakland), May&nbsp;2021.<br>
-  [&nbsp;
-  <a href="./abstracts/XiangC2021.html" class="publink">Abstract</a>&nbsp;|&nbsp;
-  <a href="./pub/SP21.pdf" class="publink">PDF</a>&nbsp;|&nbsp;
-  <a href="https://github.com/HarvardPL/Co-InflowPrototype" class="publink">Implementation</a>&nbsp;|&nbsp;
-  <a href="https://github.com/HarvardPL/CIFC" class="publink">Coq formalization</a>&nbsp;|&nbsp;
-  <a href="./bib/oakland2021.bib">BibTeX</a>&nbsp;]
-</li>
-  </ul>
+    <li><a href="./abstracts/XiangC2021.html">S&P&rsquo;21</a> &mdash; Dynamic IFC for Java-like languages</li>
+</ul>
 
-
-<div class="potentialprojects">
-  <b>Ongoing / Potential Projects</b>
-  <ul>
-    <li>
-      <botton class="accordion">Better exception handling for Co-Inflow</botton>
-      <div class="panel">
-        <p>A follow-up work of Co-Inflow: develop sound exception handling mechanisms for Co-Inflow.
-        </p>
-      </div>
-    </li>
-    <li>
-      <botton class="accordion">Information-flow analysis for programming languages</botton>
-      <div class="panel">
-        <p>Develop IFC mechanisms for different programming languages, e.g., Rust. Identify language abstractions that are suitable for information flow tracking, and develop mechanisms to enforce IFC policies. Common examples include secure type systems and coarse-grained dynamic analysis for a particular language.
-        </p>
-      </div>
-    </li>
-
-     <li>
-      <botton class="accordion">Language extensions for reasoning with security properties</botton>
-      <div class="panel">
-        <p>Develop extensions of programming languages or formal logics to specify and reason with relational properties or hyperproperties.
-        </p>
-      </div>
-     </li>
-
-    <li>
-      <botton class="accordion">Runtime enforcement mechanisms for security properties</botton>
-      <div class="panel">
-        <p>Develop efficient runtime mechanisms, e.g.,  monitors, to enforce relational or hyper properties within applications.
-        </p>
-      </div>
-    </li>
-
-
-
-    <li>
-      <botton class="accordion">Interesting language-based abstractions or mechanisms...</botton>
-      <div class="panel">
-        <p>Interesting language abstractions that may be suitable for specify and/or verify security properties.
-        </p>
-      </div>
-    </li>
-  </ul>
-</div>
-
-
-</div>
-
-
-<!-- divider  -->
-
-<h2>System Assurance vis Real-World Semantics</h2>
-
-<p  class="areadesc">
- One of my research directions focuses on the dependability of systems, by investigating a very general and comprehensive approach for enforcing safety and security constraints in computer systems like CPSs.
-It focuses on specifying and analyzing constraints that derive from the physical world through enriched specifications and enhanced error-checking techniques. Systems like CPSs interact with the real world in order to sense and affect it.
- They should obey rules inherited from the real world, e.g., laws of physics. <!--However, important characteristics of real-world entities and their relationship to machine-world representations are often under-specified. As a result, constraints inherited from the real world are stated and enforced either in ad-hoc ways or not at all. -->
-
- To enforce these constraints, I develop rich semantic types and type systems to analyze the consistency of software logic with the real-world entities with which the logic interacts.
-
-<!-- I believe the problem can be fixed by an explicitly and rigorously documented interpretation, which can be in the forms of documents, structured data, and knowledge base. With such an interpretation, important characteristics of real-world entities and the associated real-world constraints can be clearly defined, and the real-world constraints that the interpretation exposes can be checked automatically. I introduce a new structure, the interpreted formalism, that combines: (a) the logic of the computation, i.e., the traditional notion of software, with (b) the interpretation of the logic, i.e., an explicit representation of the correspondence of software elements with the real world.
-The interpreted formalism provides a framework for analyzing the consistency of software logic with the real-world entities with which the logic interacts.  -->
-</p>
-
-  <div class="areapub">
-  <b  class="areadesc">Relevant Publications</b>
-
-  <ul>
-<li><a name="HASE2017" id="HASE2017">
-</a><span class="pubtitle">Is My Software Consistent With the Real World?</span>
-<br>
-  <span class="pubauthors">Jian&nbsp;Xiang, John&nbsp;Knight, and Kevin&nbsp;Sullivan</span>.<br>
-  <span class="booktitle">Proceedings of the 18th IEEE Symposium on High Assurance Systems Engineering</span> (HASE), &nbsp;2017.<br>
-  [&nbsp;
-  <a href="./abstracts/HASE2017.html"class="publink">Abstract</a>&nbsp;|&nbsp;
-  <a href="./pub/HASE17.pdf" class="publink">PDF</a>&nbsp;|&nbsp;
-  <a href="./bib/HASE2017.bib" class="publink">BibTeX</a>&nbsp;]
-</li>
-
-
-<li><a name="HASE2016" id="HASE2016">
-</a><span class="pubtitle">Synthesis of Logic Interpretation</span>
-<br>
-  <span class="pubauthors">Jian&nbsp;Xiang, John&nbsp;Knight, and Kevin&nbsp;Sullivan</span>.<br>
-  <span class="booktitle">Proceedings of the 17th IEEE Symposium on High Assurance Systems Engineering</span> (HASE), &nbsp;2016.<br>
-  [&nbsp;
-  <a href="./abstracts/HASE2016.html"class="publink">Abstract</a>&nbsp;|&nbsp;
-  <a href="./pub/HASE16.pdf" class="publink">PDF</a>&nbsp;|&nbsp;
-  <a href="./bib/HASE2016.bib" class="publink">BibTeX</a>&nbsp;]
-</li>
-
-
-
-<li><a name="SAFECOMP15" id="SAFECOMP2015">
-</a><span class="pubtitle">Real-World Types and Their Application</span>
-<br>
-  <span class="pubauthors">Jian&nbsp;Xiang, John&nbsp;Knight, and Kevin&nbsp;Sullivan</span>.<br>
-  <span class="booktitle">Proceedings of the 34th Conference on Computer Safety, Reliability and Security</span> (SAFECOMP), &nbsp;2015.<br>
-  [&nbsp;
-  <a href="./abstracts/SAFECOMP2015.html"class="publink">Abstract</a>&nbsp;|&nbsp;
-  <a href="./pub/safecomp15.pdf" class="publink">PDF</a>&nbsp;|&nbsp;
-  <a href="./bib/safecomp2015.bib" class="publink">BibTeX</a>&nbsp;]
-</li>
-
-<li><a name="bookchapter15" id="bookchapter15">
-</a><span class="pubtitle">A Rigorous Definition of Cyber-Physical Systems</span>
-<br>
-  <span class="pubauthors">John&nbsp;Knight, Jian&nbsp;Xiang, and Kevin&nbsp;Sullivan</span>.<br>
-  <span class="booktitle">Trustworthy Cyber-Physical Systems</span>. (Chapman and Hall/CRC), &nbsp;2016.<br>
-  [&nbsp;
-  <a href="./bib/bookchapter15.bib" class="publink">BibTeX</a>&nbsp;]
-</li>
-
-  </ul>
-
-
-<div class="potentialprojects">
-  <b>Ongoing / Potential Projects</b>
-
-  <ul>
-   <li>
-      <botton class="accordion">Automated mining of specifications for semantic type checking</botton>
-      <div class="panel">
-        <p>Using data-driven techniques to automatically mine specifications, i.e., rich semantic types and type rules, for an application domain of interest, e.g., geographic system. This can also help build libraries of rich semantic types and type rules for a particular application domain.
-        </p>
-      </div>
-   </li>
-
-   <li>
-      <botton class="accordion">Automated checking of units of measurement</botton>
-      <div class="panel">
-        <p>Checking units consistency is a special kind of type checking. Develop mechanisms to automatically find units of measurement and check their consistency for software applications.
-        </p>
-      </div>
-   </li>
-
-  </ul>
-
-</div>
 
 
 </div>
