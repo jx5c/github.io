@@ -47,6 +47,18 @@ def build_slides(c):
         (0, f"Final: {c['exams']['final']}", 1),
         (0, f"Format: {c['exams']['rules']}", 0),
         (0, "Make-up exams are not guaranteed; follow university policy", 0)]})
+    # 5b weekly paper discussions (research course only)
+    if c.get('has_papers'):
+        papers_url = f"https://jianxiang.info/teaching/{c['dir_slug']}/{c['term_slug']}/papers.html"
+        S.append({'title': "Weekly Paper Discussions", 'bul': [
+            (0, "Everyone reads one required paper each week (~17 pp)", 1),
+            (0, "Each group leads one discussion (25–30 min); some weeks two groups", 0),
+            (1, "Facilitate discussion — don't just summarize", 0),
+            (1, "Leading group reads both papers; present the contrast", 0),
+            (0, "Sign up for a week via Canvas by 11:59pm Friday of week 1", 0),
+            (1, "First-come, first-served; unclaimed weeks are assigned", 0),
+            (0, "Graded: understanding, clarity, critical analysis, leadership (10%)", 0),
+            (0, f"Full reading list & background: {papers_url}", 0)]})
     # 6 policies
     S.append({'title': "Key Policies", 'bul': [
         (0, "AI use", 1),
@@ -59,10 +71,11 @@ def build_slides(c):
         (1, "Late accepted up to 48 hours, 10% per-day penalty", 0),
         (0, "Read the full syllabus & policies on the course website", 0)]})
     # 7 where to find
-    S.append({'title': "Where to Find Everything", 'bul': [
-        (0, "Course website (public)", 1),
-        (1, site, 0),
-        (1, "Syllabus, lecture schedule, policies, resources", 0),
+    wtf_web = [(0, "Course website (public)", 1), (1, site, 0),
+               (1, "Syllabus, lecture schedule, policies, resources", 0)]
+    if c.get('has_papers'):
+        wtf_web.append((1, "Paper Reading Schedule (weekly readings)", 0))
+    S.append({'title': "Where to Find Everything", 'bul': wtf_web + [
         (0, "Canvas (login required)", 1),
         (1, "Assignments, quizzes, grades, announcements", 0),
         (0, "Office-hours Google calendar (linked on both)", 1),
