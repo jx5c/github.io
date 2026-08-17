@@ -13,7 +13,21 @@ Reads course-src/courses/<name>.toml and writes:
 NOT generated (hand-maintained): policies.html, papers.html, course.css, jquery.
 Edit the .toml, rerun this script, commit. One change propagates everywhere.
 """
-import sys, os, tomllib, shutil
+import sys, os, re, tomllib, shutil
+
+# Relative site page -> Canvas page slug (for rewriting links in Canvas paste HTML)
+CANVAS_PAGE = {
+    'schedule':    'schedule',
+    'papers':      'weekly-paper-reading-schedule',
+    'policies':    'paper-reading-discussion-policies',
+    'resources':   'resources',
+}
+def canvasize(html, c):
+    """Rewrite relative <page>.html links to Canvas page URLs so paste-HTML works in Canvas."""
+    def repl(m):
+        slug = CANVAS_PAGE.get(m.group(1))
+        return f'href="https://instructure.charlotte.edu/courses/{c["canvas_id"]}/pages/{slug}"' if slug else m.group(0)
+    return re.sub(r'href="([a-z_]+)\.html"', repl, html)
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))   # repo root
 SRC  = os.path.join(ROOT, "course-src")
@@ -494,11 +508,11 @@ def build_one(name):
         with open(os.path.join(outdir, fn), 'w', encoding='utf-8') as fh: fh.write(html)
     # Canvas paste files
     cout = os.path.join(CANVAS_OUT, name); os.makedirs(cout, exist_ok=True)
-    with open(os.path.join(cout,'syllabus.html'),'w',encoding='utf-8') as fh: fh.write(render_canvas_syllabus(c))
+    with open(os.path.join(cout,'syllabus.html'),'w',encoding='utf-8') as fh: fh.write(canvasize(render_canvas_syllabus(c), c))
     if gen_sched and not has_papers:
-        with open(os.path.join(cout,'schedule.html'),'w',encoding='utf-8') as fh: fh.write(render_canvas_schedule(c))
+        with open(os.path.join(cout,'schedule.html'),'w',encoding='utf-8') as fh: fh.write(canvasize(render_canvas_schedule(c), c))
     if has_papers:
-        with open(os.path.join(cout,'paper_reading_schedule.html'),'w',encoding='utf-8') as fh: fh.write(render_canvas_papers(c))
+        with open(os.path.join(cout,'paper_reading_schedule.html'),'w',encoding='utf-8') as fh: fh.write(canvasize(render_canvas_papers(c), c))
     static = ['policies.html'] + (['paper_discussion_policies (Canvas)'] if has_papers else [])
     print(f"built {name}: public -> teaching/{cdir}/{term}/ ({len(writes)} pages), canvas -> course-src/canvas-out/{name}/")
     print(f"   NOT generated (hand-maintained): {', '.join(static)}")
