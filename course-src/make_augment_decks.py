@@ -145,23 +145,48 @@ def base_title(xml):
     ts = re.findall(r'<a:t>([^<]*)</a:t>', xml)
     return (ts[0].strip() if ts else "")
 
-def classify_base(parts, order_slidenums):
-    """Return (core_nums, appendix_nums) preserving order. Drop admin/filler by
-    title, then cap the core to CORE_CAP (overflow -> appendix)."""
-    core, appendix = [], []
-    for sn in order_slidenums:
-        xml = parts[f'ppt/slides/slide{sn}.xml'].decode('utf-8', 'ignore')
-        title = base_title(xml)
-        if (not title) or DROP_RE.search(title):
-            appendix.append(sn)
-        else:
-            core.append(sn)
-    if len(core) > CORE_CAP:                     # keep the first CORE_CAP concept slides
-        appendix = sorted(appendix + core[CORE_CAP:])   # overflow to appendix (by slide no.)
-        core = core[:CORE_CAP]
-    return core, appendix
+STOP = {'the','and','for','with','your','you','how','what','are','its','via','from','that',
+        'this','into','not','model','models','system','systems','using','use','intro',
+        'introduction','based','ways','method','methods','without','other','obtaining','their'}
+def _norm(s): return re.sub(r'[^a-z0-9]', '', s.lower())
+def week_keywords(w):
+    """Topic + paper titles/shorts -> relevance tokens for this week."""
+    txt = [U(w['topic'])]
+    for p in w.get('paper', []):
+        txt.append(U(p.get('title', '')))
+        txt.append(re.sub(r'<[^>]+>', '', U(p.get('short', ''))))
+    toks = set()
+    for s in txt:
+        for tk in re.findall(r'[A-Za-z]+', s.lower()):
+            if len(tk) >= 3 and tk not in STOP:
+                toks.add(tk)
+    return toks
 
-def augment(base_path, out_path, fronts, backs):
+def classify_base(parts, order_slidenums, w):
+    """Core = concept slides most relevant to the week's topic + paper (capped);
+    everything else (admin + off-topic depth) -> Appendix. Order preserved."""
+    kws = week_keywords(w)
+    scored = []                     # (slide_num, relevance) for non-admin slides
+    for sn in order_slidenums:
+        title = base_title(parts[f'ppt/slides/slide{sn}.xml'].decode('utf-8', 'ignore'))
+        if (not title) or DROP_RE.search(title):
+            continue                # admin/filler -> not core
+        nt = _norm(title)
+        scored.append((sn, sum(1 for tk in kws if tk in nt)))
+    order_idx = {sn: i for i, (sn, _) in enumerate(scored)}
+    rel = dict(scored)
+    matched   = [sn for sn, sc in scored if sc > 0]
+    unmatched = [sn for sn, sc in scored if sc == 0]
+    # fill core: paper/topic-relevant first (by relevance, then order), then remaining concept slides
+    core = sorted(matched, key=lambda sn: (-rel[sn], order_idx[sn]))[:CORE_CAP]
+    if len(core) < CORE_CAP:
+        core += unmatched[:CORE_CAP - len(core)]
+    core_set = set(core)
+    core_nums     = [sn for sn in order_slidenums if sn in core_set]         # original order
+    appendix_nums = [sn for sn in order_slidenums if sn not in core_set]     # everything else
+    return core_nums, appendix_nums
+
+def augment(base_path, out_path, fronts, backs, w):
     z = zipfile.ZipFile(base_path)
     parts = {nm: z.read(nm) for nm in z.namelist()}
     body_ly, section_ly = layout_map(parts)
@@ -184,7 +209,7 @@ def augment(base_path, out_path, fronts, backs):
         rid = re.search(r'r:id="(rId\d+)"', s).group(1)
         entries.append((s, rid2slide.get(rid)))
     ordered_nums = [n for _, n in entries if n is not None]
-    core_nums, appendix_nums = classify_base(parts, ordered_nums)
+    core_nums, appendix_nums = classify_base(parts, ordered_nums, w)
     sldid_of = {n: s for s, n in entries}
 
     max_sldid = max(int(re.search(r'id="(\d+)"', s).group(1)) for s, _ in entries)
@@ -253,7 +278,7 @@ def main():
         out = os.path.join(OUT, f"Week{wn:02d}_{slugify(w['topic'])}.pptx")
         if os.path.exists(out) and not force:
             print(f"  Week {wn}: skip (exists)"); continue
-        core, appx, scaf = augment(base, out, front_slides(w, c), back_slides(w, nxt, c))
+        core, appx, scaf = augment(base, out, front_slides(w, c), back_slides(w, nxt, c), w)
         note = f"  +merge: {', '.join(extras)}" if extras else ""
         print(f"  Week {wn:>2}: {os.path.basename(out):<34} core={core:>2} (~{round(core*2.5)}min) | appendix={appx:>3} | +{scaf} scaffold  [base:{basefn}]{note}")
         made += 1
