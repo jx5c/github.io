@@ -342,6 +342,126 @@ def render_canvas_schedule(c):
 </table>
 '''
 
+# ---------------------------------------------------------------- 6200 readings
+SANS = "-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif"
+DIFF_BADGE = {
+    'EASY':     'background: #e7f2ea; color: #2f6b45;',
+    'MODERATE': 'background: #f6efdd; color: #7a5c14;',
+    'HARD':     'background: #f6e8e8; color: #8a3a3a;',
+}
+ROLE_BADGE = {
+    'Required':    'background: #e7f2ea; color: #2f6b45;',
+    'Recommended': 'background: #eef0f3; color: #6b7278;',
+    'Reference':   'background: #eef0f3; color: #6b7278;',
+}
+ROLE_BORDER = {'Required': '#2f6b45', 'Recommended': '#dfe3e8', 'Reference': '#dfe3e8'}
+
+def _pages_line(p):
+    if p.get('pages_note') and p.get('pages'):
+        return f"{p['pages_note']} &middot; {p['pages']} pp"
+    return f"{p.get('pages','')} pp" if p.get('pages') else ""
+
+def paper_reading_body(c):
+    weeks = c['week']
+    both_weeks = ', '.join(str(w['n']) for w in weeks if w.get('both_required'))
+    out = []
+    out.append(f'<p style="font-family: {SANS}; margin: 0 0 16px; padding: 16px 18px; background: #e8f0f8; border-radius: 8px; color: #16191d; line-height: 1.65; font-size: 15px; border: 1px solid #2f5f8f;"><strong style="color: #2f5f8f;">How the reading works.</strong> You read <strong>one</strong> required paper each week &mdash; about 17 pages on average. The <strong>group leading that week reads both</strong> papers, and presenting the contrast between them is part of their job. Weeks {both_weeks} require both papers of everyone &mdash; marked <strong>BOTH REQUIRED</strong> below. Groups claim a week through Canvas by 11:59pm Friday of week 1.</p>')
+    out.append(f'<p style="font-family: {SANS}; margin: 0 0 16px 0; padding: 16px 18px; background: #f6f7f9; border-left: 4px solid #6b7278; color: #16191d; line-height: 1.65; font-size: 15px;"><strong>Why we read papers in this course.</strong> To understand the concepts from lecture more deeply &mdash; <strong>not</strong> to reproduce the research. You are not expected to follow every proof. Where a reading is excerpted, read only the sections listed. How discussions are run is on the <a href="policies.html">Policies</a> page.</p>')
+    out.append(f'<p style="font-family: {SANS}; margin: 0 0 26px 0; padding: 16px 18px; background: #e7f2ea; border-left: 4px solid #2f6b45; color: #16191d; line-height: 1.65; font-size: 15px;"><strong style="color: #2f6b45;">You do not need a security background.</strong> Every required paper lists exactly what you need to know first, and it is either taught earlier in this course or is general computer-science knowledge. Nothing required depends on a later lecture.</p>')
+    out.append(f'<h2 style="font-family: {SANS}; font-size: 19px; margin: 34px 0 10px 0; padding-bottom: 6px; border-bottom: 2px solid #dfe3e8; color: #16191d;">Reading load at a glance</h2>')
+    th = f'font-family: {SANS}; padding: 0 10px 8px 10px; border-bottom: 2px solid #dfe3e8; font-size: 11.5px; color: #6b7278;'
+    trs = []
+    for w in weeks:
+        if w.get('no_reading'):
+            label = 'Mid-term exam' if w['n'] == 7 else ('Project presentations' if w['n'] == 16 else 'Final exam')
+            n, topic, req, pages, both = str(w['n']), f'<em>{label}</em>', '&mdash;', '0', False
+        else:
+            note = f' <span style="font-size: 11px; color: #6b7278;">{w["glance_note"]}</span>' if w.get('glance_note') else ''
+            req = w.get('glance_req', '')
+            if w.get('both_required'): req += ' <span style="font-size: 11px; color: #8a5a12;">BOTH</span>'
+            n, topic, pages, both = str(w['n']), w['topic'].replace('<strong>','').replace('</strong>',''), w.get('glance_pages','0'), w.get('both_required')
+            req = req + note
+        bg = ' background: #fdf3e2;' if both else ''
+        td = f'font-family: {SANS}; padding: 8px 10px; border-bottom: 1px solid #dfe3e8; font-size: 14.5px;'
+        trs.append(f'<tr><td style="{td} color:#6b7278; text-align:right;{bg}">{n}</td>'
+                   f'<td style="{td} color:#16191d;{bg}">{topic}</td>'
+                   f'<td style="{td} color:#16191d;{bg}">{req}</td>'
+                   f'<td style="{td} color:#6b7278; text-align:right;{bg}">{pages}</td></tr>')
+    out.append(f'<table style="font-family: {SANS}; width: 100%; border-collapse: collapse; margin: 0 0 8px 0;"><thead><tr>'
+               f'<th style="{th} text-align:right;">Wk</th><th style="{th} text-align:left;">Topic</th>'
+               f'<th style="{th} text-align:left;">Required of everyone</th><th style="{th} text-align:right;">Pages</th>'
+               f'</tr></thead><tbody>{"".join(trs)}</tbody></table>')
+    out.append(f'<h2 style="font-family: {SANS}; font-size: 19px; margin: 34px 0 10px 0; padding-bottom: 6px; border-bottom: 2px solid #dfe3e8; color: #16191d;">If your group is leading</h2>'
+               f'<p style="font-family: {SANS}; margin: 0 0 12px 0; color: #4a5158; font-size: 15px; line-height: 1.65;">You read <strong>both</strong> papers that week, and presenting the contrast between them is part of your job &mdash; most of the room will have read only one. The third discussion question each week is a bridge question of exactly that kind. The five-part structure, time budget, and rubric are on the <a href="policies.html">Policies</a> page.</p>'
+               f'<h2 style="font-family: {SANS}; font-size: 19px; margin: 34px 0 10px 0; padding-bottom: 6px; border-bottom: 2px solid #dfe3e8; color: #16191d;">If your group is non-leading</h2>'
+               f'<p style="font-family: {SANS}; margin: 0 0 12px 0; color: #4a5158; font-size: 15px; line-height: 1.65;">Every non-leading group posts <strong>one discussion question</strong> (or one criticism/observation) by <strong>9:30 AM on the day of class</strong>. The leading group reviews these before class and incorporates some of them.</p>')
+    out.append(f'<h2 style="font-family: {SANS}; font-size: 19px; margin: 34px 0 10px 0; padding-bottom: 6px; border-bottom: 2px solid #dfe3e8; color: #16191d;">The readings</h2>')
+    for w in weeks:
+        if w.get('no_reading'): continue
+        badge = (f'<span style="font-family: {SANS}; font-size: 11.5px; color: #8a5a12; margin-left: 8px;">BOTH REQUIRED'
+                 + (' &middot; 2 GROUPS LEAD' if w.get('two_groups') else '') + '</span>') if w.get('both_required') else ''
+        tail = ', led in class' if w.get('led_in_class') else (', lightest week' if w.get('glance_note')=='lightest' else (', single paper' if w.get('glance_note')=='single' else ''))
+        pgtxt = f' &mdash; {w.get("glance_pages","")} pp{tail}'
+        out.append(f'<h3 style="font-family: {SANS}; margin: 34px 0 4px 0; padding: 10px 14px; background: #f6f7f9; border-left: 4px solid #2f5f8f; font-size: 16.5px; color: #16191d; line-height: 1.45;">'
+                   f'<span style="color: #2f5f8f;">Week {w["n"]}</span><span style="color: #6b7278; font-size: 14px;"> &middot; {w["date_long"]}</span><br />'
+                   f'{w["topic"].replace("<strong>","").replace("</strong>","")}<span style="color: #6b7278; font-size: 13.5px;">{pgtxt}</span>{badge}</h3>')
+        for p in w.get('paper', []):
+            rb = ROLE_BADGE.get(p['role'], ROLE_BADGE['Reference']); border = ROLE_BORDER.get(p['role'], '#dfe3e8')
+            dbadge = (f'<span style="font-family: {SANS}; font-size: 11px; padding: 1px 6px; border-radius: 4px; {DIFF_BADGE[p["diff"]]} margin-left: 6px; white-space: nowrap;">{p["diff"]}</span>' if p.get('diff') else '')
+            out.append(f'<p style="font-family: {SANS}; margin: 0 0 16px 0; padding: 2px 0 2px 14px; border-left: 3px solid {border}; line-height: 1.6;">'
+                       f'<span style="font-family: {SANS}; display: inline-block; font-size: 11px; padding: 2px 7px; border-radius: 4px; {rb} margin-right: 8px;">{p["role"]}</span>'
+                       f'<a style="color: #2f5f8f;" href="{p["url"]}">{p["title"]}</a>{dbadge}<br />'
+                       f'<span style="color: #6b7278; font-size: 13.5px;">{p["cite"]}</span><br />'
+                       f'<span style="color: #4a5158; font-size: 14.5px;">{p["blurb"]}</span><br />'
+                       f'<span style="font-family: {SANS}; font-size: 13.5px; color: #4a5158;"><strong style="color: #2f5f8f;">Background you need:</strong> {p["background"]}</span></p>')
+        if w.get('why_both'):
+            out.append(f'<p style="font-family: {SANS}; margin: 4px 0 0 0; padding: 10px 14px; background: #fdf3e2; border-radius: 6px; font-size: 14px; color: #4a5158; line-height: 1.6;"><strong style="color: #8a5a12;">Why both this week:</strong> {w["why_both"]}</p>')
+        if w.get('q'):
+            qs = ''.join(f'<li style="font-family: {SANS}; margin-bottom: 6px; color: #4a5158; font-size: 14.5px; line-height: 1.6;">{q}</li>' for q in w['q'])
+            out.append(f'<p style="font-family: {SANS}; margin: 14px 0 4px 0; font-size: 11.5px; color: #6b7278;">Discussion questions</p>'
+                       f'<ol style="font-family: {SANS}; margin: 0 0 8px 0; padding-left: 22px;">{qs}</ol>')
+    out.append(f'<p style="font-family: {SANS}; margin: 34px 0 0 0; padding-top: 14px; border-top: 1px solid #dfe3e8; color: #6b7278; font-size: 13px;">Every link above is a free, open-access copy &mdash; no library login required. Weeks with no reading are the mid-term, project presentations, and the final.</p>')
+    return '\n'.join(out)
+
+def render_papers(c):
+    return head(c) + f'''\t<div>
+\t<h2>Weekly Paper Reading Schedule</h2>
+\t<p>This is the reading list for the semester. How the discussions are run and graded is on the <a href="policies.html">Policies</a> page.</p>
+{paper_reading_body(c)}
+\t</div>
+''' + FOOT
+
+def render_canvas_papers(c):
+    return (f'<!--\n  {c["number"]} WEEKLY PAPER READING SCHEDULE ({c["term"]})  [GENERATED]\n'
+            f'  Do NOT edit by hand. Edit course-src/courses/{c["_name"]}.toml and rerun build.py.\n-->\n'
+            + paper_reading_body(c) + '\n')
+
+def render_schedule_weeks(c):
+    rows = []; last = None
+    for w in c['week']:
+        if w.get('section') and w['section'] != last:
+            rows.append(f'\t\t<tr><td class="topicheading" colspan="6"><strong>{w["section"]}</strong></td></tr>'); last = w['section']
+        if w.get('no_reading'):
+            cell = '<span style="color: #6b7278;">&mdash; <em>no reading</em></span>'
+        else:
+            req = [p for p in w.get('paper', []) if p['role'] == 'Required']; parts = []
+            if w.get('both_required'):
+                parts.append('<strong style="font-size: 0.8em; color: #8a5a12;">BOTH REQUIRED</strong>')
+            for p in req:
+                parts.append(f'<a href="{p["url"]}" target="_blank" rel="noopener">{p["short"]}</a>'
+                             f'<br /><span style="font-size: 0.85em; color: #6b7278;">{_pages_line(p)}</span>')
+            cell = '<br /><br />'.join(parts)
+        rows.append(f'\t\t<tr><td>{w["n"]}</td><td>{w["date"]}</td><td>{w["topic"]}</td><td>{cell}</td><td></td><td></td></tr>')
+    return head(c, title=c['number']+' UNC Charlotte') + f'''\t<div>
+\t<h2>Schedule</h2>
+\t<p><b>NOTE: The current schedule is tentative and subject to change.</b> The lecture notes are seeded from previous years' ITIS 6200. Some course materials are brought from <a href="https://sp23.cs161.org/">CS161: Computer Security</a> at UC Berkeley. Each week lists the <b>one paper required of everyone</b>; the leading group reads a second paper too. Full details on the <a href="papers.html">Paper Reading</a> page.</p>
+\t<table class="schedule">
+\t\t<tr><th>Wk.</th><th>Date</th><th>Topic</th><th>Reading (required)</th><th>Notes</th><th>Assignments</th></tr>
+{chr(10).join(rows)}
+\t</table>
+\t</div>
+''' + FOOT
+
 # ---------------------------------------------------------------- driver
 def build_one(name):
     path = os.path.join(COURSES, name + '.toml')
@@ -358,7 +478,8 @@ def build_one(name):
             for sib in sorted(os.listdir(os.path.join(ROOT,'teaching',cdir))):
                 cand = os.path.join(ROOT,'teaching',cdir,sib,asset)
                 if os.path.exists(cand): shutil.copy(cand, dst); break
-    gen_sched = c.get('gen_schedule', True)   # 6200 keeps its rich reading schedule static
+    gen_sched = c.get('gen_schedule', True)
+    has_papers = c.get('has_papers')
     writes = {
         'index.html': render_index(c),
         'officehours.html': render_officehours(c),
@@ -366,15 +487,19 @@ def build_one(name):
         'nav.html': render_nav(c),
     }
     if gen_sched:
-        writes['schedule.html'] = render_schedule(c)
+        writes['schedule.html'] = render_schedule_weeks(c) if has_papers else render_schedule(c)
+    if has_papers:
+        writes['papers.html'] = render_papers(c)
     for fn, html in writes.items():
         with open(os.path.join(outdir, fn), 'w', encoding='utf-8') as fh: fh.write(html)
     # Canvas paste files
     cout = os.path.join(CANVAS_OUT, name); os.makedirs(cout, exist_ok=True)
     with open(os.path.join(cout,'syllabus.html'),'w',encoding='utf-8') as fh: fh.write(render_canvas_syllabus(c))
-    if gen_sched:
+    if gen_sched and not has_papers:
         with open(os.path.join(cout,'schedule.html'),'w',encoding='utf-8') as fh: fh.write(render_canvas_schedule(c))
-    static = ['policies.html'] + (['papers.html','schedule.html'] if not gen_sched else [])
+    if has_papers:
+        with open(os.path.join(cout,'paper_reading_schedule.html'),'w',encoding='utf-8') as fh: fh.write(render_canvas_papers(c))
+    static = ['policies.html'] + (['paper_discussion_policies (Canvas)'] if has_papers else [])
     print(f"built {name}: public -> teaching/{cdir}/{term}/ ({len(writes)} pages), canvas -> course-src/canvas-out/{name}/")
     print(f"   NOT generated (hand-maintained): {', '.join(static)}")
 

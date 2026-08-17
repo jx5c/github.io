@@ -2,8 +2,8 @@
 <html>
 <head><meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-	<title>ITIS 6200/8200 UNC Charlotte</title>
-	<link href="./course.css" rel="stylesheet" type="text/css" />
+	<title>ITIS 6200 / 8200 UNC Charlotte</title>
+		<link href="./course.css" rel="stylesheet" type="text/css" />
 	<link href="../../../homepage.css" rel="stylesheet" type="text/css" />
 	<link rel="stylesheet" type="text/css" href="../../../smartphone.css" media="(max-width: 900px)"/>
 	<script src="jquery-3.2.1.min.js" type="text/javascript"></script>
@@ -17,112 +17,38 @@
 	<div id="nav"></div>
 	<div>
 	<h2>Schedule</h2>
-<p><strong>NOTE: The current schedule is tentative and subject to change. Nonetheless it gives an idea of the material to be covered in this course.</strong> The lecture notes are seeded from previous years' ITIS 6200, and will be updated immediately before and after each lecture. Some course materials are brought from the course <a href="https://sp23.cs161.org/" target="_blank" rel="noopener">CS 161: Computer Security</a> at UC Berkeley.</p>
-<p>Each week lists the <strong>one paper required of everyone</strong>. The group leading that week reads a second, paired paper as well. Full reading list, recommended papers, discussion questions and background notes are on the <a title="Weekly Paper Reading Schedule" href="papers.html"><strong>Paper Reading Schedule</strong></a> page.</p>
-<table class="schedule" style="border-collapse: collapse; width: 100%;" border="1">
-    <tbody>
-        <tr>
-            <th style="width: 4%;" scope="col">Wk.</th>
-            <th style="width: 9%;" scope="col">Date</th>
-            <th style="width: 26%;" scope="col">Topic</th>
-            <th style="width: 28%;" scope="col">Reading (required)</th>
-            <th style="width: 11%;" scope="col">Notes</th>
-            <th style="width: 22%;" scope="col">Assignments</th>
-        </tr>
-        <tr><td class="topicheading" colspan="6"><strong>Introduction</strong></td></tr>
-        <tr>
-            <td>1</td><td>Tue 18-Aug</td><td>Introduction to Security &amp; Cryptography</td>
-            <td><a href="https://web.mit.edu/Saltzer/www/publications/protection/" target="_blank" rel="noopener">Saltzer &amp; Schroeder, <em>Protection of Information in Computer Systems</em></a><br /><span style="font-size: 0.85em; color: #6b7278;">Section I only &middot; 8 pp</span></td>
-            <td></td><td>A1 release</td>
-        </tr>
-        <tr><td class="topicheading" colspan="6"><strong>Cryptography</strong></td></tr>
-        <tr>
-            <td>2</td><td>Tue 25-Aug</td><td>One-time pad &amp; Block Cipher</td>
-            <td><a href="https://www.cs.jhu.edu/~jason/papers/mason+al.ccs06.pdf" target="_blank" rel="noopener">Mason et al., <em>Automated Cryptanalysis of Two-Time Pads</em></a><br /><span style="font-size: 0.85em; color: #6b7278;">10 pp</span></td>
-            <td></td><td></td>
-        </tr>
-        <tr>
-            <td>3</td><td>Tue 1-Sep</td><td>Block Cipher &amp; Cryptographic Hashes</td>
-            <td><a href="https://www.usenix.org/system/files/sec20-leurent.pdf" target="_blank" rel="noopener">Leurent &amp; Peyrin, <em>SHA-1 is a Shambles</em></a><br /><span style="font-size: 0.85em; color: #6b7278;">18 pp</span></td>
-            <td></td><td></td>
-        </tr>
-        <tr>
-            <td>4</td><td>Tue 8-Sep</td><td>MAC &amp; Authenticated Encryption</td>
-            <td><a href="https://www.iacr.org/archive/eurocrypt2002/23320530/cbc02_e02d.pdf" target="_blank" rel="noopener">Vaudenay, <em>Security Flaws Induced by CBC Padding</em></a><br /><span style="font-size: 0.85em; color: #6b7278;">Sections 1&ndash;4, 6&ndash;7 &middot; 7 pp</span></td>
-            <td></td><td></td>
-        </tr>
-        <tr>
-            <td>5</td><td>Tue 15-Sep</td><td>PRNG &amp; Diffie-Hellman Exchange</td>
-            <td><a href="https://factorable.net/weakkeys12.extended.pdf" target="_blank" rel="noopener">Heninger et al., <em>Mining Your Ps and Qs</em></a><br /><span style="font-size: 0.85em; color: #6b7278;">16 pp</span></td>
-            <td></td><td></td>
-        </tr>
-        <tr>
-            <td>6</td><td>Tue 22-Sep</td><td>Public-Key Encryption &amp; Digital Signatures &amp; Certificates</td>
-            <td><a href="https://people.csail.mit.edu/rivest/Rsapaper.pdf" target="_blank" rel="noopener">Rivest, Shamir &amp; Adleman, <em>A Method for Obtaining Digital Signatures</em></a><br /><span style="font-size: 0.85em; color: #6b7278;">15 pp</span></td>
-            <td></td><td></td>
-        </tr>
-        <tr><td class="topicheading" colspan="6"><strong>Midterm</strong></td></tr>
-        <tr>
-            <td>7</td><td>Tue 29-Sep</td><td><strong>MID-TERM EXAM</strong> (Covers lectures on Cryptography)</td>
-            <td><span style="color: #6b7278;">&mdash; <em>no reading</em></span></td><td></td><td></td>
-        </tr>
-        <tr><td class="topicheading" colspan="6"><strong>Access Control</strong></td></tr>
-        <tr>
-            <td>8</td><td>Tue 6-Oct</td><td>Access Control</td>
-            <td><strong style="font-size: 0.8em; color: #8a5a12;">BOTH REQUIRED</strong><br /><a href="https://csrc.nist.gov/csrc/media/projects/role-based-access-control/documents/sandhu96.pdf" target="_blank" rel="noopener">Sandhu et al., <em>Role-Based Access Control Models</em></a><br /><span style="font-size: 0.85em; color: #6b7278;">10 pp</span><br /><br /><a href="https://www.usenix.org/system/files/sec19-reardon.pdf" target="_blank" rel="noopener">Reardon et al., <em>50 Ways to Leak Your Data</em></a><br /><span style="font-size: 0.85em; color: #6b7278;">20 pp</span></td>
-            <td></td><td></td>
-        </tr>
-        <tr><td class="topicheading" colspan="6"><strong>Web Security</strong></td></tr>
-        <tr>
-            <td>9</td><td>Tue 13-Oct</td><td>Intro to Web and Cookies</td>
-            <td><a href="https://www.microsoft.com/en-us/research/wp-content/uploads/2016/12/incoherencyAndWebAnalyzer.pdf" target="_blank" rel="noopener">Singh et al., <em>Incoherencies in Web Browser Access Control Policies</em></a><br /><span style="font-size: 0.85em; color: #6b7278;">16 pp</span></td>
-            <td></td><td></td>
-        </tr>
-        <tr>
-            <td>10</td><td>Tue 20-Oct</td><td>CSRF, XSS, SQL injection</td>
-            <td><strong style="font-size: 0.8em; color: #8a5a12;">BOTH REQUIRED</strong><br /><a href="https://seclab.stanford.edu/websec/csrf/csrf.pdf" target="_blank" rel="noopener">Barth et al., <em>Robust Defenses for Cross-Site Request Forgery</em></a><br /><span style="font-size: 0.85em; color: #6b7278;">12 pp</span><br /><br /><a href="https://www.ndss-symposium.org/wp-content/uploads/2019/02/ndss2019_01B-1_Steffens_paper.pdf" target="_blank" rel="noopener">Steffens et al., <em>Don't Trust The Locals</em></a><br /><span style="font-size: 0.85em; color: #6b7278;">15 pp</span></td>
-            <td></td><td></td>
-        </tr>
-        <tr><td class="topicheading" colspan="6"><strong>Network Security</strong></td></tr>
-        <tr>
-            <td>11</td><td>Tue 27-Oct</td><td>Intro to Network, ARP, TCP</td>
-            <td><a href="https://zoo.cs.yale.edu/classes/cs257/materials/p32-bellovin.pdf" target="_blank" rel="noopener">Bellovin, <em>Security Problems in the TCP/IP Protocol Suite</em></a><br /><span style="font-size: 0.85em; color: #6b7278;">17 pp</span></td>
-            <td></td><td></td>
-        </tr>
-        <tr>
-            <td>12</td><td>Tue 3-Nov</td><td>Firewall, Intrusion Detection</td>
-            <td><a href="https://users.ece.cmu.edu/~adrian/731-sp04/readings/Ptacek-Newsham-ids98.pdf" target="_blank" rel="noopener">Ptacek &amp; Newsham, <em>Insertion, Evasion, and Denial of Service</em></a><br /><span style="font-size: 0.85em; color: #6b7278;">Sections 1&ndash;4 &middot; 13 pp</span></td>
-            <td></td><td></td>
-        </tr>
-        <tr><td class="topicheading" colspan="6"><strong>System Security</strong></td></tr>
-        <tr>
-            <td>13</td><td>Tue 10-Nov</td><td>Intro to Memory layout, Stack, Heap</td>
-            <td><a href="https://phrack.org/issues/49/14" target="_blank" rel="noopener">Aleph One, <em>Smashing the Stack for Fun and Profit</em></a><br /><span style="font-size: 0.85em; color: #6b7278;">25 pp</span></td>
-            <td></td><td></td>
-        </tr>
-        <tr>
-            <td>14</td><td>Tue 17-Nov</td><td>Memory vulnerabilities</td>
-            <td><a href="https://hovav.net/ucsd/dist/geometry.pdf" target="_blank" rel="noopener">Shacham, <em>The Geometry of Innocent Flesh on the Bone</em></a><br /><span style="font-size: 0.85em; color: #6b7278;">Sections 1&ndash;3 &middot; 12 pp</span></td>
-            <td></td><td></td>
-        </tr>
-        <tr>
-            <td>15</td><td>Tue 24-Nov</td><td>Memory vulnerabilities and mitigation</td>
-            <td><strong style="font-size: 0.8em; color: #8a5a12;">BOTH REQUIRED</strong><br /><a href="https://www.cs.columbia.edu/~suman/secure_sw_devel/p340-abadi.pdf" target="_blank" rel="noopener">Abadi et al., <em>Control-Flow Integrity</em></a><br /><span style="font-size: 0.85em; color: #6b7278;">13 pp</span><br /><br /><a href="https://www.usenix.org/system/files/conference/usenixsecurity15/sec15-paper-carlini.pdf" target="_blank" rel="noopener">Carlini et al., <em>Control-Flow Bending</em></a><br /><span style="font-size: 0.85em; color: #6b7278;">16 pp</span></td>
-            <td></td><td></td>
-        </tr>
-        <tr><td class="topicheading" colspan="6"><strong>Project Presentation</strong></td></tr>
-        <tr>
-            <td>16</td><td>Tue 1-Dec</td><td>Project presentation</td>
-            <td><span style="color: #6b7278;">&mdash; <em>no reading</em></span></td><td></td><td></td>
-        </tr>
-        <tr><td class="topicheading" colspan="6"><strong>Final</strong></td></tr>
-        <tr>
-            <td>17</td><td>Tue 8-Dec</td><td><strong>Final Exam (8am-10:30am)</strong></td>
-            <td><span style="color: #6b7278;">&mdash; <em>no reading</em></span></td><td></td><td></td>
-        </tr>
-    </tbody>
-</table>
-	<br><br><br><br></div>
+	<p><b>NOTE: The current schedule is tentative and subject to change.</b> The lecture notes are seeded from previous years' ITIS 6200. Some course materials are brought from <a href="https://sp23.cs161.org/">CS161: Computer Security</a> at UC Berkeley. Each week lists the <b>one paper required of everyone</b>; the leading group reads a second paper too. Full details on the <a href="papers.html">Paper Reading</a> page.</p>
+	<table class="schedule">
+		<tr><th>Wk.</th><th>Date</th><th>Topic</th><th>Reading (required)</th><th>Notes</th><th>Assignments</th></tr>
+		<tr><td class="topicheading" colspan="6"><strong>Introduction</strong></td></tr>
+		<tr><td>1</td><td>Tue 18-Aug</td><td>Introduction to Security &amp; Cryptography</td><td><a href="https://web.mit.edu/Saltzer/www/publications/protection/" target="_blank" rel="noopener">Saltzer &amp; Schroeder, <em>Protection of Information in Computer Systems</em></a><br /><span style="font-size: 0.85em; color: #6b7278;">Section I only &middot; 8 pp</span></td><td></td><td></td></tr>
+		<tr><td class="topicheading" colspan="6"><strong>Cryptography</strong></td></tr>
+		<tr><td>2</td><td>Tue 25-Aug</td><td>One-time Pad &amp; Block Cipher</td><td><a href="https://www.cs.jhu.edu/~jason/papers/mason+al.ccs06.pdf" target="_blank" rel="noopener">Mason et al., <em>Automated Cryptanalysis of Two-Time Pads</em></a><br /><span style="font-size: 0.85em; color: #6b7278;">10 pp</span></td><td></td><td></td></tr>
+		<tr><td>3</td><td>Tue 1-Sep</td><td>Block Cipher &amp; Cryptographic Hashes</td><td><a href="https://www.usenix.org/system/files/sec20-leurent.pdf" target="_blank" rel="noopener">Leurent &amp; Peyrin, <em>SHA-1 is a Shambles</em></a><br /><span style="font-size: 0.85em; color: #6b7278;">18 pp</span></td><td></td><td></td></tr>
+		<tr><td>4</td><td>Tue 8-Sep</td><td>MAC &amp; Authenticated Encryption</td><td><a href="https://www.iacr.org/archive/eurocrypt2002/23320530/cbc02_e02d.pdf" target="_blank" rel="noopener">Vaudenay, <em>Security Flaws Induced by CBC Padding</em></a><br /><span style="font-size: 0.85em; color: #6b7278;">Sections 1&ndash;4, 6&ndash;7 &middot; 7 pp</span></td><td></td><td></td></tr>
+		<tr><td>5</td><td>Tue 15-Sep</td><td>PRNG &amp; Diffie-Hellman Exchange</td><td><a href="https://factorable.net/weakkeys12.extended.pdf" target="_blank" rel="noopener">Heninger et al., <em>Mining Your Ps and Qs</em></a><br /><span style="font-size: 0.85em; color: #6b7278;">16 pp</span></td><td></td><td></td></tr>
+		<tr><td>6</td><td>Tue 22-Sep</td><td>Public-Key Encryption &amp; Digital Signatures &amp; Certificates</td><td><a href="https://people.csail.mit.edu/rivest/Rsapaper.pdf" target="_blank" rel="noopener">Rivest, Shamir &amp; Adleman, <em>A Method for Obtaining Digital Signatures</em></a><br /><span style="font-size: 0.85em; color: #6b7278;">15 pp</span></td><td></td><td></td></tr>
+		<tr><td class="topicheading" colspan="6"><strong>Midterm</strong></td></tr>
+		<tr><td>7</td><td>Tue 29-Sep</td><td><strong>MID-TERM EXAM</strong> (Covers lectures on Cryptography)</td><td><span style="color: #6b7278;">&mdash; <em>no reading</em></span></td><td></td><td></td></tr>
+		<tr><td class="topicheading" colspan="6"><strong>Access Control</strong></td></tr>
+		<tr><td>8</td><td>Tue 6-Oct</td><td>Access Control</td><td><strong style="font-size: 0.8em; color: #8a5a12;">BOTH REQUIRED</strong><br /><br /><a href="https://csrc.nist.gov/csrc/media/projects/role-based-access-control/documents/sandhu96.pdf" target="_blank" rel="noopener">Sandhu et al., <em>Role-Based Access Control Models</em></a><br /><span style="font-size: 0.85em; color: #6b7278;">10 pp</span><br /><br /><a href="https://www.usenix.org/system/files/sec19-reardon.pdf" target="_blank" rel="noopener">Reardon et al., <em>50 Ways to Leak Your Data</em></a><br /><span style="font-size: 0.85em; color: #6b7278;">20 pp</span></td><td></td><td></td></tr>
+		<tr><td class="topicheading" colspan="6"><strong>Web Security</strong></td></tr>
+		<tr><td>9</td><td>Tue 13-Oct</td><td>Intro to Web and Cookies</td><td><a href="https://www.microsoft.com/en-us/research/wp-content/uploads/2016/12/incoherencyAndWebAnalyzer.pdf" target="_blank" rel="noopener">Singh et al., <em>Incoherencies in Web Browser Access Control Policies</em></a><br /><span style="font-size: 0.85em; color: #6b7278;">16 pp</span></td><td></td><td></td></tr>
+		<tr><td>10</td><td>Tue 20-Oct</td><td>CSRF, XSS, SQL injection</td><td><strong style="font-size: 0.8em; color: #8a5a12;">BOTH REQUIRED</strong><br /><br /><a href="https://seclab.stanford.edu/websec/csrf/csrf.pdf" target="_blank" rel="noopener">Barth et al., <em>Robust Defenses for Cross-Site Request Forgery</em></a><br /><span style="font-size: 0.85em; color: #6b7278;">12 pp</span><br /><br /><a href="https://www.ndss-symposium.org/wp-content/uploads/2019/02/ndss2019_01B-1_Steffens_paper.pdf" target="_blank" rel="noopener">Steffens et al., <em>Don't Trust The Locals</em></a><br /><span style="font-size: 0.85em; color: #6b7278;">15 pp</span></td><td></td><td></td></tr>
+		<tr><td class="topicheading" colspan="6"><strong>Network Security</strong></td></tr>
+		<tr><td>11</td><td>Tue 27-Oct</td><td>Intro to Network, ARP, TCP</td><td><a href="https://zoo.cs.yale.edu/classes/cs257/materials/p32-bellovin.pdf" target="_blank" rel="noopener">Bellovin, <em>Security Problems in the TCP/IP Protocol Suite</em></a><br /><span style="font-size: 0.85em; color: #6b7278;">17 pp</span></td><td></td><td></td></tr>
+		<tr><td>12</td><td>Tue 3-Nov</td><td>Firewall, Intrusion Detection</td><td><a href="https://users.ece.cmu.edu/~adrian/731-sp04/readings/Ptacek-Newsham-ids98.pdf" target="_blank" rel="noopener">Ptacek &amp; Newsham, <em>Insertion, Evasion, and Denial of Service</em></a><br /><span style="font-size: 0.85em; color: #6b7278;">Sections 1&ndash;4 &middot; 13 pp</span></td><td></td><td></td></tr>
+		<tr><td class="topicheading" colspan="6"><strong>System Security</strong></td></tr>
+		<tr><td>13</td><td>Tue 10-Nov</td><td>Intro to Memory layout, Stack, Heap</td><td><a href="https://phrack.org/issues/49/14" target="_blank" rel="noopener">Aleph One, <em>Smashing the Stack for Fun and Profit</em></a><br /><span style="font-size: 0.85em; color: #6b7278;">25 pp</span></td><td></td><td></td></tr>
+		<tr><td>14</td><td>Tue 17-Nov</td><td>Memory vulnerabilities</td><td><a href="https://hovav.net/ucsd/dist/geometry.pdf" target="_blank" rel="noopener">Shacham, <em>The Geometry of Innocent Flesh on the Bone</em></a><br /><span style="font-size: 0.85em; color: #6b7278;">Sections 1&ndash;3 &middot; 12 pp</span></td><td></td><td></td></tr>
+		<tr><td>15</td><td>Tue 24-Nov</td><td>Memory vulnerabilities and mitigation</td><td><strong style="font-size: 0.8em; color: #8a5a12;">BOTH REQUIRED</strong><br /><br /><a href="https://www.cs.columbia.edu/~suman/secure_sw_devel/p340-abadi.pdf" target="_blank" rel="noopener">Abadi et al., <em>Control-Flow Integrity</em></a><br /><span style="font-size: 0.85em; color: #6b7278;">13 pp</span><br /><br /><a href="https://www.usenix.org/system/files/conference/usenixsecurity15/sec15-paper-carlini.pdf" target="_blank" rel="noopener">Carlini et al., <em>Control-Flow Bending</em></a><br /><span style="font-size: 0.85em; color: #6b7278;">16 pp</span></td><td></td><td></td></tr>
+		<tr><td class="topicheading" colspan="6"><strong>Project Presentation</strong></td></tr>
+		<tr><td>16</td><td>Tue 1-Dec</td><td>Project presentation</td><td><span style="color: #6b7278;">&mdash; <em>no reading</em></span></td><td></td><td></td></tr>
+		<tr><td class="topicheading" colspan="6"><strong>Final</strong></td></tr>
+		<tr><td>17</td><td>Tue 8-Dec</td><td><strong>Final Exam (8am-10:30am)</strong></td><td><span style="color: #6b7278;">&mdash; <em>no reading</em></span></td><td></td><td></td></tr>
+	</table>
+	</div>
+	<br><br><br><br>
 	<div id="footer"></div>
 	</div>
 </div>
