@@ -28,21 +28,20 @@ For each course the build **overwrites**:
 
 | Output | Path |
 |---|---|
-| Public site pages | `teaching/<DIR>/<term>/{index, officehours, resources, nav}.html` |
-| Public schedule (ITIS 3200 only) | `teaching/<DIR>/<term>/schedule.html` |
-| Canvas paste HTML | `course-src/canvas-out/<course>/{syllabus, schedule}.html` |
+| Public site pages | `teaching/<DIR>/<term>/{index, schedule, officehours, resources, nav}.html` |
+| Public paper-reading page (6200) | `teaching/<DIR>/<term>/papers.html` |
+| Canvas paste HTML | `course-src/canvas-out/<course>/{syllabus, schedule or paper_reading_schedule}.html` |
 
 **Never edit those by hand** — your edits are lost on the next build. Edit the
-`.toml` instead.
+`.toml` instead. The ITIS 6200 schedule + reading list come from the `[[week]]`
+blocks in its `.toml`.
 
 **Hand-maintained** (the build leaves them alone — rich, low-churn content):
 
 - `policies.html` — course policies (both courses)
-- `papers.html` and `schedule.html` — ITIS 6200 only (`gen_schedule = false`,
-  because the weekly reading list is long hand-authored content)
 - `course.css`, `jquery-*.js`
-- The ITIS 6200 Canvas paper-reading / discussion pages (in the Dropbox
-  `Teaching/ITIS6200/Canvas_pages/`)
+- The ITIS 6200 Canvas **paper-discussion policy** page (stable prose) in
+  `Teaching/ITIS6200/Canvas_pages/`
 
 ## Common edits
 
