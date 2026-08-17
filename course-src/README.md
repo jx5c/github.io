@@ -67,3 +67,29 @@ blocks in its `.toml`.
 
 Open `course-src/canvas-out/<course>/syllabus.html` (or `schedule.html`), copy
 all, and in Canvas: **Edit page → HTML editor (`</>`) → paste**.
+
+## Weekly lecture decks (ITIS 6200)
+
+`make_lecture_decks.py` builds one **discussion-centred scaffold deck per
+teaching week** from the `[[week]]` data, aligned to the schedule, on the
+lec01 template:
+
+```bash
+python3 course-src/make_lecture_decks.py            # itis6200-2026fa -> <6200>/Fall26/
+python3 course-src/make_lecture_decks.py itis6200-2026fa "<outdir>" --force
+```
+
+Each deck (150-min, talk-light) has: title, timed agenda, objectives,
+recap+quiz, **[Core concepts]** stubs *you fill in*, **[Paper discussion]**
+slides *auto-filled from the TOML* (paper, why-it-matters, background, the 3
+discussion questions, and the both-required contrast), **[Additional / backup]**
+optional deep-dive readings, and a wrap/next-week slide.
+
+**These are one-time scaffolds — existing decks are NOT overwritten** (so your
+authored content is safe). Re-run with `--force` only to regenerate from
+scratch. The decks live in the course Dropbox `Fall26/` folder, not in git.
+
+## Logistics decks
+
+`make_logistics_pptx.py <course> <out.pptx> [template.pptx]` builds a
+first-class logistics deck from the same TOML, on the course template.

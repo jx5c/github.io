@@ -108,9 +108,78 @@ def title_slide(s):
 
 def content_slide(s):
     title = _ph_sp(2, "Title", '<p:ph type="title"/>', _p(s['title']))
-    body_paras = ''.join(_p(text, bold, lvl if lvl else None) for lvl, text, bold in s['bul'])
+    body_paras = ''.join(_p(text, bold, lvl if lvl else None) for lvl, text, bold in s.get('bul', []))
     body = _ph_sp(3, "Body", '<p:ph type="body" idx="1"/>', body_paras)
     return _wrap(title + body)
+
+def section_slide(s):
+    """Title-only divider slide (uses the section-header layout)."""
+    title = _ph_sp(2, "Title", '<p:ph type="title"/>', _p(s['section']))
+    return _wrap(title)
+
+def slide_to_xml(s):
+    if 'subtitle' in s: return title_slide(s), TITLE_LAYOUT
+    if 'section'  in s: return section_slide(s), "slideLayout2.xml"   # SECTION_HEADER
+    return content_slide(s), CONTENT_LAYOUT
+
+def write_deck(slide_dicts, outpath, template, master_label=None):
+    """Package a list of slide dicts onto a template deck (keeps master/layouts/theme).
+    master_label: if set, replace the template's baked-in course banner text
+    ("ITIS 3200") in the slide master, so decks for another course brand correctly."""
+    n = len(slide_dicts)
+    rendered = [slide_to_xml(s) for s in slide_dicts]
+    slide_xmls = [x for x, _ in rendered]
+    layouts    = [ly for _, ly in rendered]
+
+    tz = zipfile.ZipFile(template)
+    keep = {}
+    for nm in tz.namelist():
+        if nm.startswith('ppt/slides/') or nm.startswith('ppt/notesSlides/'): continue
+        if nm in ('[Content_Types].xml', 'ppt/presentation.xml', 'ppt/_rels/presentation.xml.rels'): continue
+        keep[nm] = tz.read(nm)
+    if master_label and master_label != "ITIS 3200":
+        for nm in list(keep):
+            if nm.startswith('ppt/slideMasters/') and nm.endswith('.xml'):
+                keep[nm] = keep[nm].replace(b"ITIS 3200", master_label.encode('utf-8'))
+    needed = set()
+    for nm, b in keep.items():
+        if nm.endswith('.rels'):
+            for m in re.findall(r'media/([^"\\]+)', b.decode('utf-8', 'ignore')):
+                needed.add('ppt/media/' + m)
+    keep = {nm: b for nm, b in keep.items() if not (nm.startswith('ppt/media/') and nm not in needed)}
+
+    pres = tz.read('ppt/presentation.xml').decode('utf-8')
+    rels = tz.read('ppt/_rels/presentation.xml.rels').decode('utf-8')
+    kept_rels, maxid = [], 0
+    for it in re.findall(r'<Relationship [^>]*/>', rels):
+        rid = int(re.search(r'Id="rId(\d+)"', it).group(1)); maxid = max(maxid, rid)
+        if 'relationships/slide"' in it: continue
+        kept_rels.append(it)
+    base = maxid + 1
+    sldids = ''.join(f'<p:sldId id="{256+i}" r:id="rId{base+i}"/>' for i in range(n))
+    if '<p:sldIdLst>' in pres:
+        pres = re.sub(r'<p:sldIdLst>.*?</p:sldIdLst>', f'<p:sldIdLst>{sldids}</p:sldIdLst>', pres, flags=re.S)
+    else:
+        pres = pres.replace('</p:sldMasterIdLst>', f'</p:sldMasterIdLst><p:sldIdLst>{sldids}</p:sldIdLst>')
+    slide_rels = [f'<Relationship Id="rId{base+i}" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/slide" Target="slides/slide{i+1}.xml"/>' for i in range(n)]
+    new_rels = ('<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">'
+                + ''.join(kept_rels) + ''.join(slide_rels) + '</Relationships>')
+    ct = tz.read('[Content_Types].xml').decode('utf-8')
+    ct = re.sub(r'<Override PartName="/ppt/slides/slide\d+\.xml"[^>]*/>', '', ct)
+    ct = re.sub(r'<Override PartName="/ppt/notesSlides/[^"]*"[^>]*/>', '', ct)
+    new_ov = ''.join(f'<Override PartName="/ppt/slides/slide{i+1}.xml" ContentType="application/vnd.openxmlformats-officedocument.presentationml.slide+xml"/>' for i in range(n))
+    ct = ct.replace('</Types>', new_ov + '</Types>')
+
+    os.makedirs(os.path.dirname(outpath) or '.', exist_ok=True)
+    with zipfile.ZipFile(outpath, 'w', zipfile.ZIP_DEFLATED) as z:
+        z.writestr('[Content_Types].xml', ct)
+        z.writestr('ppt/presentation.xml', pres)
+        z.writestr('ppt/_rels/presentation.xml.rels', new_rels)
+        for nm, b in keep.items(): z.writestr(nm, b)
+        for i, (xml, layout) in enumerate(zip(slide_xmls, layouts)):
+            z.writestr(f'ppt/slides/slide{i+1}.xml', xml)
+            z.writestr(f'ppt/slides/_rels/slide{i+1}.xml.rels', SLIDE_RELS.format(layout=layout))
+    return n
 
 SLIDE_RELS = ('<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n'
               '<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">'
@@ -122,83 +191,7 @@ def build(name, outpath, template):
     with open(os.path.join(HERE, 'courses', name + '.toml'), 'rb') as fh:
         data = tomllib.load(fh)
     c = {**data.pop('course'), **data}
-    slides = build_slides(c)
-    n = len(slides)
-    slide_xmls = [title_slide(slides[0])] + [content_slide(s) for s in slides[1:]]
-    layouts = [TITLE_LAYOUT] + [CONTENT_LAYOUT] * (n - 1)
-
-    tz = zipfile.ZipFile(template)
-    keep = {}
-    for nm in tz.namelist():
-        if nm.startswith('ppt/slides/') or nm.startswith('ppt/notesSlides/'):
-            continue                                   # drop template slides + notes
-        if nm in ('[Content_Types].xml', 'ppt/presentation.xml', 'ppt/_rels/presentation.xml.rels'):
-            continue                                   # regenerated below
-        keep[nm] = tz.read(nm)
-
-    # Drop embedded media not referenced by any kept part (template slide images
-    # would otherwise bloat the deck by tens of MB).
-    needed = set()
-    for nm, b in keep.items():
-        if nm.endswith('.rels'):
-            for m in re.findall(r'media/([^"\\]+)', b.decode('utf-8', 'ignore')):
-                needed.add('ppt/media/' + m)
-    keep = {nm: b for nm, b in keep.items()
-            if not (nm.startswith('ppt/media/') and nm not in needed)}
-
-    # ---- presentation.xml : new sldIdLst, keep master list + slide size ----
-    pres = tz.read('ppt/presentation.xml').decode('utf-8')
-    sldids = ''.join(f'<p:sldId id="{256+i}" r:id="rId{i+1}"/>' for i in range(n))
-    pres = re.sub(r'<p:sldIdLst>.*?</p:sldIdLst>', f'<p:sldIdLst>{sldids}</p:sldIdLst>', pres, flags=re.S)
-    if '<p:sldIdLst>' not in pres:                      # template had none: insert after master list
-        pres = pres.replace('</p:sldMasterIdLst>', f'</p:sldMasterIdLst><p:sldIdLst>{sldids}</p:sldIdLst>')
-
-    # ---- presentation rels : keep non-slide rels, add slides with fresh ids ----
-    rels = tz.read('ppt/_rels/presentation.xml.rels').decode('utf-8')
-    rel_items = re.findall(r'<Relationship [^>]*/>', rels)
-    kept_rels, maxid = [], 0
-    for it in rel_items:
-        rid = int(re.search(r'Id="rId(\d+)"', it).group(1)); maxid = max(maxid, rid)
-        if 'relationships/slide"' in it:               # drop old slide rels
-            continue
-        kept_rels.append(it)
-    # renumber new slide rels after existing max, and map sldId r:ids
-    slide_rels = []
-    for i in range(n):
-        rid = i + 1                                    # sldIdLst used rId{i+1}
-        # ensure no collision with kept rels: bump kept rels that used low ids? simpler: give slides high ids and fix sldIdLst
-    # Use high, collision-free ids for slides:
-    base = maxid + 1
-    sldids = ''.join(f'<p:sldId id="{256+i}" r:id="rId{base+i}"/>' for i in range(n))
-    pres = re.sub(r'<p:sldIdLst>.*?</p:sldIdLst>', f'<p:sldIdLst>{sldids}</p:sldIdLst>', pres, flags=re.S)
-    for i in range(n):
-        slide_rels.append(f'<Relationship Id="rId{base+i}" '
-                          f'Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/slide" '
-                          f'Target="slides/slide{i+1}.xml"/>')
-    new_rels = ('<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n'
-                '<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">'
-                + ''.join(kept_rels) + ''.join(slide_rels) + '</Relationships>')
-
-    # ---- Content_Types : drop slide/notesSlide overrides, add new slides ----
-    ct = tz.read('[Content_Types].xml').decode('utf-8')
-    ct = re.sub(r'<Override PartName="/ppt/slides/slide\d+\.xml"[^>]*/>', '', ct)
-    ct = re.sub(r'<Override PartName="/ppt/notesSlides/[^"]*"[^>]*/>', '', ct)
-    new_ov = ''.join(
-        f'<Override PartName="/ppt/slides/slide{i+1}.xml" '
-        f'ContentType="application/vnd.openxmlformats-officedocument.presentationml.slide+xml"/>'
-        for i in range(n))
-    ct = ct.replace('</Types>', new_ov + '</Types>')
-
-    os.makedirs(os.path.dirname(outpath) or '.', exist_ok=True)
-    with zipfile.ZipFile(outpath, 'w', zipfile.ZIP_DEFLATED) as z:
-        z.writestr('[Content_Types].xml', ct)
-        z.writestr('ppt/presentation.xml', pres)
-        z.writestr('ppt/_rels/presentation.xml.rels', new_rels)
-        for nm, b in keep.items():
-            z.writestr(nm, b)
-        for i, (xml, layout) in enumerate(zip(slide_xmls, layouts)):
-            z.writestr(f'ppt/slides/slide{i+1}.xml', xml)
-            z.writestr(f'ppt/slides/_rels/slide{i+1}.xml.rels', SLIDE_RELS.format(layout=layout))
+    n = write_deck(build_slides(c), outpath, template, master_label=c['number'])
     print(f"wrote {outpath} ({n} slides) from {name}, template={os.path.basename(template)}")
 
 if __name__ == '__main__':
