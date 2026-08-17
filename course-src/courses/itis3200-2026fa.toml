@@ -1,0 +1,232 @@
+# =============================================================================
+#  ITIS 3200 — Fall 2026 — SINGLE SOURCE OF TRUTH
+#  Edit this file, then run:  python3 course-src/build.py
+#  It regenerates the public site pages AND the Canvas paste-HTML.
+#  (policies.html, resources.html, course.css, jquery are NOT generated.)
+# =============================================================================
+
+[course]
+number        = "ITIS 3200"
+title         = "Introduction to Information Security and Privacy"
+level         = "undergraduate"          # undergraduate | graduate  (affects blurbs)
+term          = "Fall 2026"
+term_slug     = "2026fa"
+dir_slug      = "ITIS3200"
+credit        = 3
+canvas_id     = "266122"
+meeting       = "M,W 10:00-11:15am"
+meeting_long  = "There are two 75-minute lectures per week: Mondays and Wednesdays, 10:00am-11:15am, in Mebane Hall, Room 065."
+location      = "Mebane Hall, Room 065"
+has_papers    = false                    # true only for the 6200/8200 research course
+oh_calendar   = "c_36741d22b1d924b4827f2daa661b6b4561606fdf35282235bbebed5f7748497d"
+reg_contact   = "Katie Watson"
+reg_email     = "katie.watson@charlotte.edu"
+description   = "An introduction to fundamental concepts of security. Common topics include: security concepts and mechanisms; security technologies; mandatory and discretionary controls; basic cryptography and its applications; web security; network security; and system security. The course includes programming assignments and projects through which students learn how to use and implement security mechanisms."
+
+[instructor]
+name          = "Jian Xiang"
+url           = "https://jianxiang.info"
+office_hours  = "Fridays 1:00-2:30pm, Woodward Hall 330D, or by appointment"
+
+[[ta]]
+name          = "Tahmid Chowdhury"
+email         = "tchowdh4@charlotte.edu"
+office_hours  = "Tuesdays 10-11am and Fridays 9-10am; Woodward Hall Lab 306"
+
+[[ta]]
+name          = "Utkarsh Parashar"
+email         = "uparash1@charlotte.edu"
+office_hours  = "TBD; Woodward Hall Lab 306 and online"
+
+[[ta]]
+name          = "Ashim Samal"
+email         = "asamal2@charlotte.edu"
+office_hours  = "Thursdays 2:00-3:00pm; Woodward Hall Lab 306"
+
+[exams]
+midterm       = "Mon, Sep 28; 10:00-11:15am. Covers the cryptography lectures."
+final         = "Wed, Dec 9; 8:00-10:30am (University final-exam schedule)."
+rules         = "open-book, but no AI tools and no internet; a lockdown browser is required"
+
+# Grading components  (weight is a %, extra=true renders as extra credit)
+[[weight]]
+label = "Homework (35%)"
+text  = "assigned approximately weekly via Canvas. Each assignment has two parts: hands-on exercises and scenario-based analysis questions."
+[[weight]]
+label = "Midterm exam (20%)"
+text  = "in class; Mon, Sep 28; 10:00-11:15am. Covers the cryptography lectures."
+[[weight]]
+label = "Final exam (25%)"
+text  = "in class; Wed, Dec 9; 8:00-10:30am (University final-exam schedule)."
+[[weight]]
+label = "Course project (10%)"
+text  = "group project (maximum four students). Includes design, implementation, and evaluation, with a proposal, a final report, code on GitHub, and a 10-minute presentation."
+[[weight]]
+label = "In-class quizzes (10%)"
+text  = "short quizzes at the start of most lectures (4-5 single- or multiple-choice questions on the previous lecture). No late submissions; the lowest two scores are dropped."
+[[weight]]
+label = "Engagement and interaction (extra credit, capped at 3%)"
+text  = "meaningful academic engagement such as in-class Q&amp;A and attending office hours."
+
+# Schedule rows. section = topic-heading band (optional). holiday = grey row.
+# Any of date/topic/note/assign may be empty.
+[[row]]
+section = "Introduction"
+[[row]]
+week = "1"
+date = "Mon 17-Aug"
+topic = "Introduction to Security"
+assign = "A0 released"
+[[row]]
+date = "Wed 19-Aug"
+topic = "Intro to Cryptography"
+assign = "A1 released"
+[[row]]
+section = "Cryptography"
+[[row]]
+week = "2"
+date = "Mon 24-Aug"
+topic = "One-time Pad"
+assign = "A0 due"
+[[row]]
+date = "Wed 26-Aug"
+topic = "Block Cipher &amp; Operating Modes"
+[[row]]
+section = "Cryptography"
+[[row]]
+week = "3"
+date = "Mon 31-Aug"
+topic = "Block Cipher &amp; Operating Modes (continued)"
+assign = "A1 due; A2 released"
+[[row]]
+date = "Wed 2-Sep"
+topic = "Cryptographic Hashes"
+[[row]]
+section = "Cryptography"
+[[row]]
+week = "4"
+date = "Mon 7-Sep"
+topic = "Labor Day &ndash; No class"
+holiday = true
+[[row]]
+date = "Wed 9-Sep"
+topic = "MAC &amp; Authenticated Encryption"
+[[row]]
+section = "Cryptography"
+[[row]]
+week = "5"
+date = "Mon 14-Sep"
+topic = "PRNG &amp; Diffie-Hellman Exchange"
+[[row]]
+date = "Wed 16-Sep"
+topic = "Public-Key Encryption"
+[[row]]
+section = "Cryptography"
+[[row]]
+week = "6"
+date = "Mon 21-Sep"
+topic = "Digital Signatures &amp; Certificates"
+[[row]]
+date = "Wed 23-Sep"
+topic = "Certificates &amp; Password Hashing"
+[[row]]
+section = "Midterm &amp; Access Control"
+[[row]]
+week = "7"
+date = "Mon 28-Sep"
+topic = "<b>MID-TERM EXAM</b> (Covers the cryptography lectures)"
+[[row]]
+date = "Wed 30-Sep"
+topic = "Access Control"
+[[row]]
+section = "Web Security"
+[[row]]
+week = "8"
+date = "Mon 5-Oct"
+topic = "Access Control &amp; Intro to Web"
+[[row]]
+date = "Wed 7-Oct"
+topic = "JavaScript + Cookies"
+[[row]]
+section = "Web Security"
+[[row]]
+week = "9"
+date = "Mon 12-Oct"
+topic = "Fall Break &ndash; No class"
+holiday = true
+[[row]]
+date = "Wed 14-Oct"
+topic = "CSRF"
+assign = "Project proposal due"
+[[row]]
+section = "Web Security"
+[[row]]
+week = "10"
+date = "Mon 19-Oct"
+topic = "XSS &amp; SQL Injection"
+[[row]]
+date = "Wed 21-Oct"
+topic = "SQL Injection"
+[[row]]
+section = "Network Security"
+[[row]]
+week = "11"
+date = "Mon 26-Oct"
+topic = "Intro to Network"
+[[row]]
+date = "Wed 28-Oct"
+topic = "ARP &amp; TCP"
+[[row]]
+section = "Network Security"
+[[row]]
+week = "12"
+date = "Mon 2-Nov"
+topic = "TCP"
+[[row]]
+date = "Wed 4-Nov"
+topic = "Denial of Service"
+[[row]]
+section = "Network Security"
+[[row]]
+week = "13"
+date = "Mon 9-Nov"
+topic = "Firewall"
+[[row]]
+date = "Wed 11-Nov"
+topic = "Veterans Day &ndash; No class"
+holiday = true
+[[row]]
+section = "System Security"
+[[row]]
+week = "14"
+date = "Mon 16-Nov"
+topic = "Introduction to Heap and Stack"
+[[row]]
+date = "Wed 18-Nov"
+topic = "Introduction to Heap and Stack"
+[[row]]
+section = "System Security"
+[[row]]
+week = "15"
+date = "Mon 23-Nov"
+topic = "Project Presentation + Memory Vulnerability"
+[[row]]
+date = "Wed 25-Nov"
+topic = "Thanksgiving Break &ndash; No class"
+holiday = true
+[[row]]
+section = "System Security"
+[[row]]
+week = "16"
+date = "Mon 30-Nov"
+topic = "Memory Vulnerability"
+[[row]]
+date = "Wed 2-Dec"
+topic = "Final Review"
+[[row]]
+section = "Final"
+[[row]]
+week = "17"
+date = "Wed 9-Dec (8:00 - 10:30am)"
+topic = "<b>FINAL EXAM</b> (University final-exam schedule)"
+finalexam = true

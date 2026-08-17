@@ -1,29 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 	<title>ITIS 3200 UNC Charlotte</title>
+		<link href="./course.css" rel="stylesheet" type="text/css" />
 	<link href="../../../homepage.css" rel="stylesheet" type="text/css" />
-     <meta name="viewport" content="width=device-width, initial-scale=1.0,
-user-scalable=no">
-     <link rel="stylesheet" type="text/css" href="../../../smartphone.css" media="(max-width: 900px)"/>
-     <script src="jquery-3.2.1.min.js" type="text/javascript"></script>
-     <script>
-        $(function(){
-          $('#nav').load('./nav.html');
-        });
-     </script>
-    </head>
-
+	<link rel="stylesheet" type="text/css" href="../../../smartphone.css" media="(max-width: 900px)"/>
+	<script src="jquery-3.2.1.min.js" type="text/javascript"></script>
+	<script>$(function(){ $('#nav').load('./nav.html'); });</script>
+</head>
 <body>
 <div class="container">
-    <div class="content">
+   <div class="content">
 		<div class="contentinner">
-
-
-<h1>ITIS 3200: Introduction to Information Security and Privacy</h1>
-<!--Navigation bar-->
-<div id="nav"> </div>
-<!--end of Navigation bar-->
+	<h1>ITIS 3200: Introduction to Information Security and Privacy</h1>
+	<div id="nav"></div>
 
 <center>
 	<b><a href="https://jianxiang.info">Prof. Jian Xiang</a></b>
@@ -36,15 +27,12 @@ user-scalable=no">
 	</p>
 </center>
 
-
   <div>
 	<h3><a name="description"></a>Announcements</h3>
-
 	<ul>
-		<li>Assignments, quizzes, and grades are distributed and submitted through Canvas.</li>
-		<li><b>AI use policy:</b> you must <b>disclose</b> how you used AI in your submissions, and you may not copy/paste AI output as your answer. See the course policies for details.</li>
+		<li>We follow this <a href="schedule.html">schedule</a> of teaching and assignments.</li>
+		<li><b>AI use policy:</b> you must <b>disclose</b> how you used AI in your submissions, and you may not copy/paste AI output as your answer. See the <a href="policies.html">policies</a> for details.</li>
 	</ul>
-
 
 	<h3>Syllabus:
 		<a href="#basic">Course Information</a> |
@@ -54,77 +42,55 @@ user-scalable=no">
 		<a href="#policies">Policies</a>
 	</h3>
 
-
-
 	<hr>
-	<h2><a id="basic" name="description">
-	</a>Course information</h2>
-	<p>This course is an introduction to fundamental concepts of security. Common topics include: security concepts and mechanisms; security technologies; mandatory and discretionary controls; basic cryptography and its applications; web security; network security; and system security. The course includes programming assignments and projects through which students learn how to use and implement security mechanisms.
-	</p>
+	<h2><a id="basic" name="description"></a>Course information</h2>
+	<p>An introduction to fundamental concepts of security. Common topics include: security concepts and mechanisms; security technologies; mandatory and discretionary controls; basic cryptography and its applications; web security; network security; and system security. The course includes programming assignments and projects through which students learn how to use and implement security mechanisms.</p>
 	<p>Credit hours: 3</p>
 	<p>See the <a href="schedule.html">lecture schedule</a> for more detailed information on topics covered.</p>
 
 	<h3>Course staff</h3>
 	<ul>
 	  <li>Instructor:  <a href="https://jianxiang.info">Jian Xiang</a>
-		<ul>
-			<li>Office Hours: Fridays 1:00-2:30pm, Woodward Hall 330D, or by appointment</li>
-		</ul>
+		<ul><li>Office Hours: Fridays 1:00-2:30pm, Woodward Hall 330D, or by appointment</li></ul>
 	  </li>
 	  <li>Teaching Assistants:
 	    <ul>
 			<li>Tahmid Chowdhury (<a href="mailto:tchowdh4@charlotte.edu">tchowdh4@charlotte.edu</a>)
-				<ul>
-					<li>Office Hours: Tuesdays 10-11am and Fridays 9-10am; Woodward Hall Lab 306 (check the calendar before you go)</li>
-				</ul>
+				<ul><li>Office Hours: Tuesdays 10-11am and Fridays 9-10am; Woodward Hall Lab 306 (check the calendar before you go)</li></ul>
 			</li>
 			<li>Utkarsh Parashar (<a href="mailto:uparash1@charlotte.edu">uparash1@charlotte.edu</a>)
-				<ul>
-					<li>Office Hours: TBD; Woodward Hall Lab 306 and online (check the calendar before you go)</li>
-				</ul>
+				<ul><li>Office Hours: TBD; Woodward Hall Lab 306 and online (check the calendar before you go)</li></ul>
 			</li>
 			<li>Ashim Samal (<a href="mailto:asamal2@charlotte.edu">asamal2@charlotte.edu</a>)
-				<ul>
-					<li>Office Hours: Thursdays 2:00-3:00pm; Woodward Hall Lab 306 (check the calendar before you go)</li>
-				</ul>
+				<ul><li>Office Hours: Thursdays 2:00-3:00pm; Woodward Hall Lab 306 (check the calendar before you go)</li></ul>
 			</li>
 		</ul>
 	  </li>
 	</ul>
-	<p>See <a href="#officehours">below for a calendar of Office Hours</a>. Office hours may change due to unexpected conflicts, so double check the calendar to be certain of the location and time before you go to office hours. </p>
 
-	<p>All questions and issues related to assignments, course content, etc., should be sent to the course staff. Questions related to grades, special consideration, etc. can be sent directly to Prof. Xiang. Note that course staff may take up to 48 hours to respond.
-    </p>
-
+	<p>See <a href="#officehours">below for a calendar of Office Hours</a>. Office hours may change due to unexpected conflicts, so double check the calendar before you go.</p>
+	<p>All questions and issues related to assignments, course content, etc., should be sent to the course staff. Questions related to grades, special consideration, etc. can be sent directly to Prof. Xiang. Note that course staff may take up to 48 hours to respond.</p>
 
 	<h3>Time and place</h3>
-	<p>There are two 75-minute lectures per week: Mondays and Wednesdays, 10:00am -11:15am, in Mebane Hall, Room 065.</p>
-
-
+	<p>There are two 75-minute lectures per week: Mondays and Wednesdays, 10:00am-11:15am, in Mebane Hall, Room 065.</p>
 
 	<hr>
 	<h2 id="grading">Homework, exams, and grading</h2>
-
-	    <p>There will be an in-class <b>open-book</b> midterm and final exam (no AI tools and no internet access; a lockdown browser is required). Homework is assigned approximately weekly, along with in-class quizzes and a group course project.
-		  Your grade is determined by a weighted average of the components below. (The percentage breakdown is subject to change with reasonable notice.)
-		</p>
-
-		<ul>
+	<p>There will be an in-class <b>open-book</b> midterm and final exam (open-book, but no AI tools and no internet; a lockdown browser is required). Your grade is determined by a weighted average of the components below. (The percentage breakdown is subject to change with reasonable notice.)</p>
+	<ul>
 			<li>Homework (35%): assigned approximately weekly via Canvas. Each assignment has two parts: hands-on exercises and scenario-based analysis questions.</li>
 			<li>Midterm exam (20%): in class; Mon, Sep 28; 10:00-11:15am. Covers the cryptography lectures.</li>
 			<li>Final exam (25%): in class; Wed, Dec 9; 8:00-10:30am (University final-exam schedule).</li>
 			<li>Course project (10%): group project (maximum four students). Includes design, implementation, and evaluation, with a proposal, a final report, code on GitHub, and a 10-minute presentation.</li>
 			<li>In-class quizzes (10%): short quizzes at the start of most lectures (4-5 single- or multiple-choice questions on the previous lecture). No late submissions; the lowest two scores are dropped.</li>
 			<li>Engagement and interaction (extra credit, capped at 3%): meaningful academic engagement such as in-class Q&amp;A and attending office hours.</li>
-	    </ul>
+	</ul>
+	<p><b>Grading scale:</b> A: 90-100, B: 80-89, C: 70-79, D: 60-69, F: below 60.</p>
 
-		<p><b>Grading scale:</b> A: 90-100, B: 80-89, C: 70-79, D: 60-69, F: below 60.</p>
-
-    <hr>
+	<hr>
 	<h2 id="textbook">Textbooks</h2>
-
 	<p>No textbook is required, but if you would like additional references, we recommend:</p>
-		<ul>
+	<ul>
 			<li><a href="http://www.cl.cam.ac.uk/~rja14/book.html">Security Engineering</a> by Ross Anderson</li>
 			<li><a href="https://www.schneier.com/book-ce.html">Cryptography Engineering</a> by Ferguson, Schneier, and Kohno</li>
 			<li><a href="http://nob.cs.ucdavis.edu/book/book-intro/index.html">Introduction to Computer Security</a> by Matt Bishop</li>
@@ -132,42 +98,30 @@ user-scalable=no">
 			<li><a href="http://nob.cs.ucdavis.edu/book/book-aands/index.html">Computer Security: Art and Science</a> by Matt Bishop</li>
 			<li><a href="http://www.amazon.com/Security-Computing-Edition-Charles-Pfleeger/dp/0134085043">Security in Computing</a> by Charles P. Pfleeger</li>
 			<li><a href="http://www.securitybook.net">Introduction to Computer Security</a> by Michael Goodrich and Roberto Tamassia</li>
-			<li><a href="https://textbook.cs161.org">Computer Security</a>, a freely available course textbook from UC Berkeley.</li>
-		  </ul>
-
-	      <p>See the <a href="resources.html">Resources</a> page for additional material
-		that you can examine. </p>
-
+			<li><a href="https://textbook.cs161.org">Computer Security</a>, a freely available course textbook from UC Berkeley</li>
+	</ul>
+	<p>See the <a href="resources.html">Resources</a> page for additional material.</p>
 
 	<hr>
 	<h2 id="schedule">Schedule</h2>
+	<h3>Lecture schedule</h3>
+	<p>See <a href="schedule.html">here</a> for a detailed schedule of lectures.</p>
+	Check <a href="https://registrar.charlotte.edu/printable-calendar?field_semester_tid=3&field_school_year_tid=73">University Academic Calendar</a> for other important dates and deadlines.
 
-		<h3>Lecture schedule</h3>
-		<p>See <a href="schedule.html">here</a> for a detailed schedule of lectures.</p>
+	<h3>Office hours</h3><a id="officehours"></a>
+	<p>Office hours will start in the second week of classes. We will use this Google calendar for office hour times:</p>
+	<iframe src="https://calendar.google.com/calendar/embed?src=c_36741d22b1d924b4827f2daa661b6b4561606fdf35282235bbebed5f7748497d%40group.calendar.google.com&ctz=America%2FNew_York" style="border: 0" width="96%" height="600" frameborder="0" scrolling="no"></iframe>
 
-		Check <a href="https://registrar.charlotte.edu/printable-calendar?field_semester_tid=3&field_school_year_tid=73">University Academic Calendar</a> for other important dates and deadlines.
+	<hr>
+	<h2 id="policies">Course Policies</h2>
+	<p>See the <a href="policies.html">Course Policies page</a> for more information about course policies, including Late/Extension policy, Exams, Diversity and Inclusion, Inclusive Learning and Accessibility, Mental Health, and Collaboration and Academic Integrity.</p>
 
-  		<h3>Office hours</h3><a id="officehours"></a>
-		<p>Office hours will start in the second week of classes.</p>
-		<p>We will use this Google calendar for office hour times:</p>
-		<iframe src="https://calendar.google.com/calendar/embed?src=c_36741d22b1d924b4827f2daa661b6b4561606fdf35282235bbebed5f7748497d%40group.calendar.google.com&ctz=America%2FNew_York" style="border: 0" width="96%" height="600" frameborder="0" scrolling="no"></iframe>
-
-
-
-
-		<hr>
-		<h2 id="policies">Course Policies</h2>
-
-	      <p>See the <a href="policies.html">Course Policies page</a> for more information about course policies, including Diversity and Inclusion, Inclusive Learning and Accessibility, Mental Health, Late and Extension policy, and Collaboration and Academic Integrity.</p>
-
-
-		<h3>Syllabus Revisions</h3>
-		  <p>The instructor may modify standards and requirements set forth in this syllabus at any time. Notice of such changes will be by announcement to the class.</p>
-
-      </div>
-      <div id="footer"></div>
-
-			</div>
+	<h3>Syllabus Revisions</h3>
+	<p>The instructor may modify standards and requirements set forth in this syllabus at any time. Notice of such changes will be by announcement to the class.</p>
+  </div>
+	<br><br><br><br>
+	<div id="footer"></div>
+	</div>
 </div>
 </div>
 </body>
