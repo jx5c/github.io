@@ -136,6 +136,16 @@ def build(name, outpath, template):
             continue                                   # regenerated below
         keep[nm] = tz.read(nm)
 
+    # Drop embedded media not referenced by any kept part (template slide images
+    # would otherwise bloat the deck by tens of MB).
+    needed = set()
+    for nm, b in keep.items():
+        if nm.endswith('.rels'):
+            for m in re.findall(r'media/([^"\\]+)', b.decode('utf-8', 'ignore')):
+                needed.add('ppt/media/' + m)
+    keep = {nm: b for nm, b in keep.items()
+            if not (nm.startswith('ppt/media/') and nm not in needed)}
+
     # ---- presentation.xml : new sldIdLst, keep master list + slide size ----
     pres = tz.read('ppt/presentation.xml').decode('utf-8')
     sldids = ''.join(f'<p:sldId id="{256+i}" r:id="rId{i+1}"/>' for i in range(n))
