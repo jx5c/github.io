@@ -21,14 +21,15 @@ body {
 
 
 .topicheading {
-    background-color: rgb(200,200,200);
+    background-color: #eef1f4;
+    color: #16191d;
     font-weight: bold;
     text-align: left;
     text-indent:1em;
 }
 
 .holiday {
-    background-color: rgb(240,240,240);
+    background-color: #f6f7f9;
     font-style: italic;
     text-align: center;
 }
@@ -59,7 +60,7 @@ table.homeworks th {
 	border-width: 2px 2px 2px 2px;
 	padding: 4px 4px 4px 4px;
 	border-style: inset inset inset inset;
-	border-color: rgb(200,200,200) rgb(200,200,200) rgb(200,200,200) rgb(200,200,200);
+	border-color: #dfe3e8 #dfe3e8 #dfe3e8 #dfe3e8;
 	-moz-border-radius: 0px 0px 0px 0px;
         text-align : center;
 }
@@ -67,7 +68,7 @@ table.homeworks td {
 	border-width: 2px 2px 2px 2px;
 	padding: 4px 4px 4px 4px;
 	border-style: inset inset inset inset;
-	border-color: rgb(200,200,200) rgb(200,200,200) rgb(200,200,200) rgb(200,200,200);
+	border-color: #dfe3e8 #dfe3e8 #dfe3e8 #dfe3e8;
 	-moz-border-radius: 0px 0px 0px 0px;
         vertical-align:top;
         text-align : left;
@@ -88,14 +89,14 @@ table.schedule th {
 	border-width: 2px 2px 2px 2px;
 	padding: 4px 4px 4px 4px;
 	border-style: inset inset inset inset;
-	border-color: rgb(200,200,200) rgb(200,200,200) rgb(200,200,200) rgb(200,200,200);
+	border-color: #dfe3e8 #dfe3e8 #dfe3e8 #dfe3e8;
 	-moz-border-radius: 0px 0px 0px 0px;
 }
 table.schedule td {
 	border-width: 2px 2px 2px 2px;
 	padding: 4px 4px 4px 4px;
 	border-style: inset inset inset inset;
-	border-color: rgb(200,200,200) rgb(200,200,200) rgb(200,200,200) rgb(200,200,200);
+	border-color: #dfe3e8 #dfe3e8 #dfe3e8 #dfe3e8;
 	-moz-border-radius: 0px 0px 0px 0px;
         vertical-align:middle;
 }
@@ -124,7 +125,7 @@ table.officehours th {
 	border-width: 2px 2px 2px 2px;
 	padding: 4px 4px 4px 4px;
 	border-style: inset inset inset inset;
-	border-color: rgb(200,200,200) rgb(200,200,200) rgb(200,200,200) rgb(200,200,200);
+	border-color: #dfe3e8 #dfe3e8 #dfe3e8 #dfe3e8;
 	-moz-border-radius: 0px 0px 0px 0px;
         text-align : center;
 }
@@ -132,7 +133,7 @@ table.officehours td {
 	border-width: 2px 2px 2px 2px;
 	padding: 4px 4px 4px 4px;
 	border-style: inset inset inset inset;
-	border-color: rgb(200,200,200) rgb(200,200,200) rgb(200,200,200) rgb(200,200,200);
+	border-color: #dfe3e8 #dfe3e8 #dfe3e8 #dfe3e8;
 	-moz-border-radius: 0px 0px 0px 0px;
         vertical-align:top;
         text-align : left;
