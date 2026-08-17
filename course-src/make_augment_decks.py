@@ -129,6 +129,38 @@ def render(slide, body_ly, section_ly):
     if 'section' in slide: return section_slide(slide), section_ly
     return content_slide(slide), body_ly
 
+CORE_CAP = 20    # target lean core (~50 min at ~2.5 min/slide)
+# slides whose title matches these are non-core -> Appendix (admin, drills, filler)
+DROP_RE = re.compile(
+    r'announc|assignment|\bdue\b|logistic|administr|syllabus|enrol|grading|'
+    r"today.?s|agenda|outline|roadmap|table of contents|"
+    r'\bquiz\b|poll|\bbreak\b|backup|appendix|acknowledg|thank|references?\s*$|'
+    r'any questions|questions\??\s*$|feedback|survey', re.I)
+
+def base_title(xml):
+    for sp in re.findall(r'<p:sp>.*?</p:sp>', xml, re.S):
+        if re.search(r'<p:ph type="(?:ctrTitle|title)"', sp):
+            ts = re.findall(r'<a:t>([^<]*)</a:t>', sp)
+            if ts: return " ".join(ts).strip()
+    ts = re.findall(r'<a:t>([^<]*)</a:t>', xml)
+    return (ts[0].strip() if ts else "")
+
+def classify_base(parts, order_slidenums):
+    """Return (core_nums, appendix_nums) preserving order. Drop admin/filler by
+    title, then cap the core to CORE_CAP (overflow -> appendix)."""
+    core, appendix = [], []
+    for sn in order_slidenums:
+        xml = parts[f'ppt/slides/slide{sn}.xml'].decode('utf-8', 'ignore')
+        title = base_title(xml)
+        if (not title) or DROP_RE.search(title):
+            appendix.append(sn)
+        else:
+            core.append(sn)
+    if len(core) > CORE_CAP:                     # keep the first CORE_CAP concept slides
+        appendix = sorted(appendix + core[CORE_CAP:])   # overflow to appendix (by slide no.)
+        core = core[:CORE_CAP]
+    return core, appendix
+
 def augment(base_path, out_path, fronts, backs):
     z = zipfile.ZipFile(base_path)
     parts = {nm: z.read(nm) for nm in z.namelist()}
@@ -136,51 +168,68 @@ def augment(base_path, out_path, fronts, backs):
     if not body_ly:
         raise RuntimeError(f"no title+body layout found in {base_path}")
 
-    # existing slides + numbering
-    slide_nums = sorted(int(re.search(r'slide(\d+)\.xml', nm).group(1))
-                        for nm in parts if re.match(r'ppt/slides/slide\d+\.xml$', nm))
+    slide_nums = [int(re.search(r'slide(\d+)\.xml', nm).group(1))
+                  for nm in parts if re.match(r'ppt/slides/slide\d+\.xml$', nm)]
     next_num = max(slide_nums) + 1
-
     pres = parts['ppt/presentation.xml'].decode('utf-8')
     rels = parts['ppt/_rels/presentation.xml.rels'].decode('utf-8')
     ct   = parts['[Content_Types].xml'].decode('utf-8')
 
-    existing_sldids = re.findall(r'<p:sldId [^>]*/>', re.search(r'<p:sldIdLst>(.*?)</p:sldIdLst>', pres, re.S).group(1))
-    max_sldid = max(int(re.search(r'id="(\d+)"', s).group(1)) for s in existing_sldids)
+    # map existing sldId entries (in presentation order) -> their base slide number
+    rid2slide = {m.group(1): int(m.group(2)) for m in
+                 re.finditer(r'Id="(rId\d+)"[^>]*Target="slides/slide(\d+)\.xml"', rels)}
+    lst_inner = re.search(r'<p:sldIdLst>(.*?)</p:sldIdLst>', pres, re.S).group(1)
+    entries = []                                   # (sldId_str, slide_num) in presentation order
+    for s in re.findall(r'<p:sldId [^>]*/>', lst_inner):
+        rid = re.search(r'r:id="(rId\d+)"', s).group(1)
+        entries.append((s, rid2slide.get(rid)))
+    ordered_nums = [n for _, n in entries if n is not None]
+    core_nums, appendix_nums = classify_base(parts, ordered_nums)
+    sldid_of = {n: s for s, n in entries}
+
+    max_sldid = max(int(re.search(r'id="(\d+)"', s).group(1)) for s, _ in entries)
     max_rid   = max(int(m) for m in re.findall(r'Id="rId(\d+)"', rels))
 
     def make(dicts, start_num, start_sldid, start_rid):
-        new_parts = {}; sldids = []; rel_lines = []; overrides = []
+        np_, sldids, rl, ov = {}, [], [], []
         num, sid, rid = start_num, start_sldid, start_rid
         for s in dicts:
             xml, layout = render(s, body_ly, section_ly)
-            new_parts[f'ppt/slides/slide{num}.xml'] = xml.encode('utf-8')
-            new_parts[f'ppt/slides/_rels/slide{num}.xml.rels'] = SLIDE_RELS.format(layout=layout).encode('utf-8')
+            np_[f'ppt/slides/slide{num}.xml'] = xml.encode('utf-8')
+            np_[f'ppt/slides/_rels/slide{num}.xml.rels'] = SLIDE_RELS.format(layout=layout).encode('utf-8')
             sldids.append(f'<p:sldId id="{sid}" r:id="rId{rid}"/>')
-            rel_lines.append(f'<Relationship Id="rId{rid}" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/slide" Target="slides/slide{num}.xml"/>')
-            overrides.append(f'<Override PartName="/ppt/slides/slide{num}.xml" ContentType="application/vnd.openxmlformats-officedocument.presentationml.slide+xml"/>')
+            rl.append(f'<Relationship Id="rId{rid}" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/slide" Target="slides/slide{num}.xml"/>')
+            ov.append(f'<Override PartName="/ppt/slides/slide{num}.xml" ContentType="application/vnd.openxmlformats-officedocument.presentationml.slide+xml"/>')
             num += 1; sid += 1; rid += 1
-        return new_parts, sldids, rel_lines, overrides, num, sid, rid
+        return np_, sldids, rl, ov, num, sid, rid
 
     fp, f_ids, f_rels, f_ov, next_num, nsid, nrid = make(fronts, next_num, max_sldid+1, max_rid+1)
     bp, b_ids, b_rels, b_ov, next_num, nsid, nrid = make(backs, next_num, nsid, nrid)
+    ap, ap_ids, ap_rels, ap_ov = {}, [], [], []
+    if appendix_nums:
+        ap, ap_ids, ap_rels, ap_ov, next_num, nsid, nrid = make(
+            [{'section': "Appendix — extra depth (cover only if time)"}], next_num, nsid, nrid)
 
-    new_lst = '<p:sldIdLst>' + ''.join(f_ids) + ''.join(existing_sldids) + ''.join(b_ids) + '</p:sldIdLst>'
-    pres = re.sub(r'<p:sldIdLst>.*?</p:sldIdLst>', new_lst, pres, flags=re.S)
-    rels = rels.replace('</Relationships>', ''.join(f_rels) + ''.join(b_rels) + '</Relationships>')
-    ct   = ct.replace('</Types>', ''.join(f_ov) + ''.join(b_ov) + '</Types>')
+    order = (''.join(f_ids)
+             + ''.join(sldid_of[n] for n in core_nums)
+             + ''.join(b_ids)
+             + ''.join(ap_ids)
+             + ''.join(sldid_of[n] for n in appendix_nums))
+    pres = re.sub(r'<p:sldIdLst>.*?</p:sldIdLst>', f'<p:sldIdLst>{order}</p:sldIdLst>', pres, flags=re.S)
+    rels = rels.replace('</Relationships>', ''.join(f_rels + b_rels + ap_rels) + '</Relationships>')
+    ct   = ct.replace('</Types>', ''.join(f_ov + b_ov + ap_ov) + '</Types>')
 
     parts['ppt/presentation.xml'] = pres.encode('utf-8')
     parts['ppt/_rels/presentation.xml.rels'] = rels.encode('utf-8')
     parts['[Content_Types].xml'] = ct.encode('utf-8')
-    parts.update(fp); parts.update(bp)
+    parts.update(fp); parts.update(bp); parts.update(ap)
 
     os.makedirs(os.path.dirname(out_path) or '.', exist_ok=True)
     with zipfile.ZipFile(out_path, 'w', zipfile.ZIP_DEFLATED) as zo:
         zo.writestr('[Content_Types].xml', parts.pop('[Content_Types].xml'))
         for nm, b in parts.items():
             zo.writestr(nm, b)
-    return len(fronts) + len(backs), len(slide_nums)
+    return len(core_nums), len(appendix_nums), len(fronts) + len(backs) + (1 if appendix_nums else 0)
 
 def slugify(topic):
     base = re.split(r'\s*(?:&|,|\+|/| and )\s*', U(topic))[0]
@@ -204,9 +253,9 @@ def main():
         out = os.path.join(OUT, f"Week{wn:02d}_{slugify(w['topic'])}.pptx")
         if os.path.exists(out) and not force:
             print(f"  Week {wn}: skip (exists)"); continue
-        ins, kept = augment(base, out, front_slides(w, c), back_slides(w, nxt, c))
-        note = f"  + merge in PowerPoint: {', '.join(extras)}" if extras else ""
-        print(f"  Week {wn:>2}: {os.path.basename(out)}  ({kept} lecture + {ins} scaffold = {kept+ins} slides)  [base: {basefn}]{note}")
+        core, appx, scaf = augment(base, out, front_slides(w, c), back_slides(w, nxt, c))
+        note = f"  +merge: {', '.join(extras)}" if extras else ""
+        print(f"  Week {wn:>2}: {os.path.basename(out):<34} core={core:>2} (~{round(core*2.5)}min) | appendix={appx:>3} | +{scaf} scaffold  [base:{basefn}]{note}")
         made += 1
     print(f"done: {made} augmented decks -> {OUT}")
 
