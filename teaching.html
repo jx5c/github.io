@@ -84,7 +84,28 @@
             font-weight: bold;
         }
         .tp-termlist li a:before { content: "\2192 \0020"; }
-     </style>
+     
+        /* dark mode: keep the teaching cards consistent with homepage.css */
+        @media (prefers-color-scheme: dark) {
+            .tp-sectionlabel {
+                color: rgb(165,170,178);
+                border-bottom-color: rgb(70,74,80);
+            }
+            .tp-card {
+                background-color: rgb(38,41,47);
+                border-color: rgb(62,66,72);
+                border-left-color: rgb(198,86,86);
+            }
+            .tp-card .tp-meta { color: rgb(170,175,182); }
+            .tp-card .tp-meta b { color: rgb(230,232,236); }
+            .tp-card .tp-reg { color: rgb(160,165,172); }
+            .tp-pastgroup {
+                background-color: rgb(34,37,43);
+                border-color: rgb(62,66,72);
+            }
+            .tp-terms { color: rgb(170,175,182); }
+        }
+</style>
 </head>
 
 <body>
